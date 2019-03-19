@@ -1,0 +1,430 @@
+@import url(galeria-style.css);
+
+html{
+    position: relative;
+}
+
+@font-face {
+  font-family: 'DaxlinePro - Bold';
+  src: url("../font/DaxlinePro-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'TodaySHOP-Ultra';
+  src: url("../font/TodaySHOP-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'TodaySHOP-Regular';
+  src: url("../font/TodaySHOP-Ultra.woff") format("woff");
+}
+
+body {
+    font-family: 'DaxlinePro - Bold';
+    font-size: 10px;
+    background-color: #182e08;
+    background: url('../img/fondo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+#collapsibleNavbar a{
+  font-size: 13px;
+  padding-right: 15px;
+  line-height: 1;
+}
+
+.navbar.scrolled{
+  background-color: #182e08;
+  transition: background-color 200ms linear;
+}
+
+.navbar-nav, .dropdown-item, .dropdown-menu, .dropdown-menu a{
+    background-color: rgb(247, 255, 247, 0.25);
+}
+
+.navbar-nav a:hover{
+  background-color: rgb(247, 255, 247, 0.4);
+}
+
+.navbar-nav .nav-link{
+    color: white !important;
+}
+
+.dropdown-menu{
+  padding: 0;
+}
+
+.dropdown-menu a{
+  padding: 8px;
+  color: white;
+  font-size: 12px;
+}
+
+.dropdown-menu a:hover{
+  color: white;
+}
+
+.container{
+  max-width: 1200px;;
+}
+
+#normas p{
+    font-weight: inherit;
+}
+
+#normas h1{
+    padding-left: 100px;
+    padding-bottom: 20px;
+}
+
+#normas ul{
+    padding-left: 120px;
+    font-size: 14px;
+    list-style: none;
+}
+
+#normas ul li{
+    margin-bottom: 2px;
+}
+
+#normas{
+    padding-top: 50px;
+    margin: 0 auto;
+    color: white;
+    width: 90%;
+    text-align: justify;
+    padding-bottom: 100px;
+}
+
+#normas .button{
+    margin-top: 50px;
+    width: 50px;
+}
+
+img#encabezado{
+    max-width: 350px;
+}
+
+.buttonContact{
+    font-family: 'DaxlinePro - Bold';
+    background-color: rgb(247, 255, 247, 0.6);
+    border: none;
+    color: #182e08;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    opacity: 1;
+    font-size: 14px;
+}
+
+.col-12 a:hover{
+  text-decoration: none;
+  color: #182e08;
+}
+
+.col-12 h2{
+  font-family: 'DaxlinePro - Bold';
+  font-size: 20px;
+}
+
+.underline{
+  /*text-decoration: underline;*/
+  border-bottom: 4px solid #97bf72;
+}
+
+.titulo{
+    font-family: 'TodaySHOP-Regular';
+    height: 130vh;
+    color: white;
+}
+
+.titulo h1{
+  font-size: 35px;
+}
+
+#logos img{
+  width: 13%;
+  height: 13%;
+  display: block;
+  padding-top: 3%;
+  border-image: 1px solid #97bf72;
+}
+
+h3.titulo_seccion{
+    color: #97bf72;
+    font-size: 21px;
+    font-weight: bolder;
+}
+
+section p{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+  #normas p{
+    color: white;
+    font-weight: bold;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 15px;
+    top: 200px;
+    text-align: justify
+  }
+
+#evento, #presentacion, #parte, #realizar, #seccion, #comite, #sede{
+    min-height: 100vh;
+    padding-top: 200px;
+}
+
+#sede img{
+  width: 90%;
+  margin: 30px;
+}
+
+#seccion h1{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+#seccion h2{
+    font-size: 1.5em;
+}
+
+footer{
+    display: block;
+    bottom: 0;
+    width: 100%;
+    background-color: #182e08;
+    padding-top: 30px;
+}
+
+footer ul{
+  border-left: 3px solid #97bf72;
+}
+
+footer a{
+  text-decoration: none;
+  color:white;
+}
+
+footer a:hover{
+  background-color: rgb(247, 255, 247, 0.4);
+}
+
+footer h2{
+    font-size: 1.5rem;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer ul li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+footer .logo-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.container-body{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+}
+
+.column1{
+  align-self: center;
+}
+
+.column1 img{
+  width: 400px;
+  height: 170px;
+}
+
+.column2{
+  align-self: center;
+  padding-bottom: 40px;
+}
+
+
+.row2, .row3, .row4, .row5{
+  margin-top: 5px;
+  display: flex;
+}
+
+.row2 img, .row3 img, .row4 img, .row5 img{
+  width: 25px;
+  height: 25px;
+  padding-left: 0px;
+}
+
+.row2 a, .row3 a, .row4 a, .row5 a{
+  text-decoration: none;
+  color: white;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.rowa, .rowb, .rowc, .rowd{
+  margin-top: 5px;
+  display: flex;
+
+}
+
+.rowa a, .rowb a, .rowc a, .rowd a{
+  text-decoration: none;
+  color: white;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.column4{
+  padding-right: 250px;
+  align-self: center;
+}
+
+.rowx h3, .rowy h3, .rowz h3{
+  padding-left: 0px;
+  color: white;
+  font-size: 16px;
+}
+
+.containerfooter h3{
+  padding-left: 0;
+}
+
+#direccion h3{
+  font-size: 20px;
+  text-align: center;
+
+
+}
+
+table{
+  color:white;
+  min-height: 100vh;
+  padding-top: 200px;
+}
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  margin-bottom: 30px;
+}
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+/*Flecha para hacer la pagina hacia arriba*/
+.ir-arriba {
+  display:none;
+  /*padding:30px;*/
+  background-repeat: no-repeat;
+  font-size:30px;
+  /*color:black;*/
+  color:#182e08;
+  cursor:pointer;
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  z-index: 2;
+}
+
+/*--------------MEDIA!!!!--------------*/
+
+@media screen and (max-width: 768px){
+    .navbar{
+        background-color: #182e08; 
+    }
+}
+
+@media screen and (max-height: 768px){
+  
+  img#encabezado{
+    
+  
+  }
+
+  footer{
+    width: 100%;
+    padding-top: 5px;
+    font-size: 90%;
+  }
+
+  .column1 img{
+    width: 300px;
+    height: 130px;
+    padding-left: 50px;
+  }
+  
+  .column2{
+    padding-bottom: 40px;
+  }
+  
+  .column4{
+    padding-right: 100px;
+  }
+
+}
+
+@media screen and (max-height: 800px){
+  img#encabezado{
+    
+  
+  }
+
+  footer{
+  
+    bottom: 0;
+    width: 100%;
+    background-color: #182e08;
+    padding-top: 30px;
+  }
+}
+
+
+
+@media screen and (max-width: 500px){
+
+  body{
+    width: 100%;
+  }
+  
+  img#encabezado{
+  
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+

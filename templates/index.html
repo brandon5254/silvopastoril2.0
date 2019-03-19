@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril BLANCO - Horizontal-04.png')}}" id="encabezado">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto p-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="html" data-toggle="collapse" data-target=".navbar-collapse.show"><span style="color: #97bf72;">|</span> Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#presentacion"><span style="color: #97bf72;">|</span> Presentación</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                <span style="color: #97bf72;">|</span> Congreso
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#evento"><span style="color: #97bf72;">|</span> El Evento</a>
+                                <a class="dropdown-item" href="{{url_for('normas')}}"><span style="color: #97bf72;">|</span> Normas</a>
+                                <a class="dropdown-item" href="#sede"><span style="color: #97bf72;">|</span> Sede</a>
+                                <a class="dropdown-item" href="#comite"><span style="color: #97bf72;">|</span> Comite Cientifico</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#parte"><span style="color: #97bf72;">|</span> ¿Por qué ser parte?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#realizar"><span style="color: #97bf72;">|</span> ¿Dónde se realizará?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#seccion"><span style="color: #97bf72;">|</span> Sesiones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('galeria')}}"><span style="color: #97bf72;">|</span> Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/homei"><span style="color: #97bf72;">|</span> English</a>
+                        </li>
+                        <!--<li class="nav-item">
+                                        <a class="nav-link" href="#comite">COMITE CIENTIFICO</a>
+                                </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <!--<div id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/QX4bt_8bslE',containment:'body',autoPlay:true, showControls:false, mute:true, startAt:10, stopAt:68, opacity:0.5}">My video</div>-->
+            <section class="titulo">
+                <div class="row align-items-center h-100">
+                    <div class="col-12">
+                        <h1>X CONGRESO INTERNACIONAL<br><span class="underline">DE SISTEMAS SILVOPASTORILES</span></h1>
+                        <h2>24 AL 26 DE SEPTIEMBRE / 2019</h2>
+                        <a href="mailto:info@silvopastoril.org.py" class="buttonContact">Contactanos</a>
+                        <div id="logos">
+                            <a href="#"><img class="img-fluid" src="{{url_for('static', filename='img/senatur.png')}}"></a>
+                            <a href="#"><img class="img-fluid" src="{{url_for('static', filename='img/registur.png')}}"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="presentacion" class="px-md-4 px-xl-5">
+                <h3 class="titulo_seccion px-md-5">PRESENTACIÓN</h3>
+                <div class="text-justify text-light px-md-5">
+                    <p>A través del mundo, en un período u otro de la historia, la agroforestería ha sido la práctica común de
+                        utilizar árboles con cultivos agrícolas en una íntima combinación (King, 1987). El 46% de la superficie
+                        agrícola mundial tiene una cobertura arbórea superior al 10% y se concentran en las regiones tropicales
+                        y subtropicales. El 17% (una sexta parte) de la superficie agrícola mundial dispone de una cobertura
+                        arbórea superior al 30%. Los sistemas Silvopastoriles representan una modalidad de uso de la tierra
+                        donde coexisten interacciones ecológicas y/o económicas, tanto positivas como negativas entre los
+                        componentes arbóreos, forrajeros y ganaderos, bajo un manejo sustentable.</p>
+                    <p>Los sistemas silvopastoriles requieren de una administración de sus componentes de manera que perduren en
+                        el tiempo los árboles, arbustos, especies forrajeras, suelo, así como su aprovechamiento por parte de
+                        los animales. La importancia de los árboles y arbustos forrajeros es que además de producir bienes
+                        materiales tangibles (madera, forraje, …) también, a través del mantenimiento de una cobertura vegetal
+                        continua, contribuyen con el bienestar animal, traer beneficios verificables en la producción animal, el
+                        mantenimiento de la fertilidad y de la biodiversidad y la sostenibilidad en el tiempo. Estos sistemas
+                        son también una opción para revertir los procesos de degradación de los pastizales, al aumentar la
+                        protección física del suelo y contribuir a la recuperación de la fertilidad a través de la inclusión de
+                        especies leguminosas que fijan el nitrógeno al suelo y de árboles de raíces pivotantes que reciclan
+                        nutrientes gracias a la profundidad que alcanzan.</p>
+                    <p>Con el fin de compartir estos conocimientos y reunir a actores de diferentes partes de América Latina, en
+                        1999 se llevó a cabo el Primer Congreso de Agroforestería Pecuaria en Cali (Colombia). El evento fue
+                        convocado por la Fundación CIPAV y la FAO, y de él ha surgido y seguido evolucionando una red de
+                        expertos en el tema. Posteriormente, se unió a esta iniciativa el CATIE, así como universidades y
+                        centros de investigación de varios países de la región. El proceso desde entonces ha sido continuo y
+                        exitoso; recorriendo varios países de América Latina: El segundo congreso en San José (Costa Rica) en el
+                        año 2001; el tercero en Mérida (México) en 2004; el cuarto en Varadero (Cuba) en 2006; el quinto en
+                        Maracay (Venezuela) en 2008; el sexto en Ciudad de Panamá (Panamá) en 2010; el séptimo en Belén de Para
+                        (Brasil) en 2012, el octavo en Iguazú (Argentina) en 2015 y en su novena edición, el Congreso
+                        Internacional Silvopastoril en Manizales (Colombia) en 2017.</p>
+                </div>
+            </section>
+
+            <section id="evento" class="px-md-4 px-xl-5">
+                <h3 class="titulo_seccion px-md-5">EL EVENTO</h3>
+                <div class="text-justify text-light px-md-5">
+                    <p>El Congreso Internacional de Sistemas Silvopastoriles es el principal encuentro de Silvopasturas a nivel
+                        mundial. Debido a la relevancia del tema, el evento reúne formadores de opinión. Promueve el intercambio
+                        técnico y científico entre profesionales e instituciones que actúan en el área forestal.</p>
+                    <p>El número de participantes va aumentando en cada edición, y los organizadores encuentran en este evento
+                        una gran oportunidad de unir a un público altamente especializado.</p>
+                    <p>En 2019, el Instituto Forestal Nacional (INFONA) lidera la organización de la edición X del Congreso
+                        Internacional de Sistemas Silvopastoriles a realizarse en Mariano Roque Alonso - Paraguay, del 24 al 26
+                        de setiembre.</p>
+                    <p>En esta oportunidad, Paraguay será sede del X Congreso Internacional de Sistemas Silvopastoriles. Será la
+                        segunda vez que se alcanzan nuestras latitudes y en ocasión de cumplir los 20 años de continuos avances
+                        y tangibles resultados para los que los practican y la sociedad en su conjunto.</p>
+                </div>
+            </section>
+
+            <section id="parte" class="px-md-4 px-xl-5">
+                <h3 class="titulo_seccion px-md-5">¿POR QUÉ SER PARTE?</h3>
+                <div class="text-justify text-light px-md-5">
+                    <p>En el Congreso se pretende crear un espacio a través del cual puedan ser debatidas nuevas soluciones para
+                        los desafíos en la gestión sostenible de los sistemas silvopastoriles en bosques implantados y en el
+                        manejo de bosques con ganadería integrada.</p>
+                    <p>Aquí conocerás qué estrategias utilizan otros países, qué avances tecnológicos están siendo desarrollados
+                        e implementados en el sector silvopastoril.</p>
+                </div>
+            </section>
+
+            <section id="realizar" class="px-md-4 px-xl-5">
+                <h3 class="titulo_seccion px-md-5">¿DÓNDE SE REALIZARÁ?</h3>
+                <div class="text-justify text-light px-md-5">
+                    <p>El evento se llevará a cabo en la Asociación Rural del Paraguay, la (ARP) es una entidad privada sin
+                        fines de lucro, que reúne a productores agropecuarios de todo el país. Su sede central está ubicada en
+                        el municipio de Mariano Roque Alonso sobre un predio de 28 hectáreas.</p>
+                    <p>Para más información sobre el congreso, puedes contactar a info@silvopastoril2019.org.py</p>
+                </div>
+            </section>
+
+            <section id="seccion" class="px-md-4 px-xl-5">
+                <h3 class="titulo_seccion px-md-5">SESIONES PRINCIPALES</h3>
+                <div class="text-justify text-light px-md-5">
+                    <h2>SESION 1:</h2>
+                    <h1>GANADERIA SOSTENIBLE, BIODIVERSIDAD, AMBIENTE Y CAMBIO CLIMATICO</h1>
+                    <p>Se presentarán resultados de investigaciones y proyectos donde se resalten las contribuciones positivas
+                        de la producción pecuaria sostenible con bienestar animal (todas las especies domésticas de producción)
+                        a la conservación de la naturaleza, los servicios ecosistémicos de escalas global, regional o nacional,
+                        así como la restauración ecológica.</p>
+                    <h2>SESION 2:</h2>
+                    <h1>PRODUCCION SIMULTÁNEA DE BIENES PECUARIOS Y FORESTALES</h1>
+                    <p>Esta sección presentará una visión amplia de los diferentes bienes derivados de la integración entre
+                        ganadería y bosques tales como carne, leche, lana, pieles, madera, leña, carbón vegetal, frutos, fibras
+                        y productos no maderables del bosque. Se destacarán progresos en la calidad que diferencie estos
+                        productos en los mercados internacionales, nacionales y locales.</p>
+                    <p>Además de las presentaciones magistrales, se tendrán tres simposios sobre temas específicos de interés y
+                        con desarrollos importantes en la investigación actual.</p>
+                    <h2>SESION 3:</h2>
+                    <h1>SOCIOECONOMIA EN SISTEMAS SILVOPASTORILES</h1>
+                    <p>Se seleccionarán presentaciones que sustenten en forma integrada los beneficios, costos y balances
+                        financieros, económicos sociales y ambientales de proyectos silvopastoriles de iniciativa privada,
+                        pública, mixta o de cooperación internacional que impacten positivamente en la generación de bienestar,
+                        riqueza con equidad. </p>
+                    <h2>SESION 4:</h2>
+                    <h1>ESCENARIOS PRODUCTIVOS EN SISTEMAS SILVOPASTORILES (testimonios de productores)</h1>
+                    <p>Esta sección mostrará trabajos e iniciativas de educación superior, educación formal e informal para
+                        productores y técnicos en sistemas silvopastoriles, así como proyectos de escala y redes de intercambio
+                        silvopastoril.</p>
+                    <p>Tendrá un panel especial con presentación de productores de todas las escalas con procesos de ganadería
+                        sustentable silvopastoril en diferentes regiones de Paraguay.</p>
+                </div>
+            </section>
+
+            <section id="comite" class="px-md-4 px-xl-5">
+                <h3 class="titulo_seccion px-md-5">COMITÉ CIENTIFICO</h3>
+
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th style="font-size: 20px;">Especialista</th>
+                            <th style="font-size: 20px;">Institución u organización</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Julian Chará</th>
+                            <th>CIPAV. Cali, Colombia</th>
+                        </tr>
+                        <tr>
+                            <th>Enrique Murgueitio</th>
+                            <th>CIPAV. Cali, Colombia</th>
+                        </tr>
+                        <tr>
+                            <th>Luis Colcombet</th>
+                            <th>Instituto Nacional de Tecnología Agropecuaria, INTA – Montecarlo. Misiones, Argentina.</th>
+                        </tr>
+                        <tr>
+                            <th>Pablo Luis Peri</th>
+                            <th>Instituto Nacional de Tecnología Agropecuaria, INTA – Santa Cruz. Santa Cruz, Argentina.</th>
+                        </tr>
+                        <tr>
+                            <th>Santiago Lacorte</th>
+                            <th>UNNE. Misiones, Argentina</th>
+                        </tr>
+                        <tr>
+                            <th>Hugo Fassola</th>
+                            <th>Instituto Nacional de Tecnología Agropecuaria, INTA – Montecarlo. Misiones, Argentina.</th>
+                        </tr>
+                        <tr>
+                            <th>Rogerio Martins Mauricio</th>
+                            <th>Universidade Federal de São João del-Rei. Minas Gerais, Brasil</th>
+                        </tr>
+                        <tr>
+                            <th>Florencia Montagnini</th>
+                            <th>Universidad de Yale. School of Forestry and Environmental Studies. New Haven. Estados Unidos.
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Maura Díaz</th>
+                            <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. Carrera de Ingeniería Forestal.
+                                San Lorenzo - Paraguay</th>
+                        </tr>
+                        <tr>
+                            <th>Daniel Caballero</th>
+                            <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. San Lorenzo - Paraguay</th>
+                        </tr>
+                        <tr>
+                            <th>Luis Alfonso Griffitt</th>
+                            <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. San Lorenzo - Paraguay</th>
+                        </tr>
+                        <tr>
+                            <th>Laura Quevedo</th>
+                            <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. Carrera de Ingeniería Forestal.
+                                San Lorenzo - Paraguay</th>
+                        </tr>
+                        <tr>
+                            <th>Marta Alvarez</th>
+                            <th>Instituto Forestal Nacional. San Lorenzo - Paraguay</th>
+                        </tr>
+                        <tr>
+                            <th>Rosalia Goerzen</th>
+                            <th>Cooperativa Fernheim Ltda. Chaco - Paraguay</th>
+                        </tr>
+                        <tr>
+                            <th>Karim Mussalem</th>
+                            <th>WWF. Asunción – Paraguay</th>
+                        </tr>
+                        <tr>
+                            <th>Andrea Weiler</th>
+                            <th>Universidad Nacional de Asunción. Facultad de Ciencias Exactas y Naturales. San Lorenzo -
+                                Paraguay</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+            <section id="sede" class="px-md-4 px-xl-5">
+                <h3 class="titulo_seccion px-md-5">SEDE DEL EVENTO</h3>
+                <div class="text-justify text-light px-md-5">
+                    <p>El evento se llevará a cabo en la Ciudad de Mariano Roque Alonso, distante a 18 km. de Asunción, capital
+                        de la república del Paraguay.</p>
+                    <p>La ciudad de Mariano Roque Alonso cuenta con 103.759 habitantes en total, de los cuales 51.569 son
+                        varones y son 52.190 mujeres.</p>
+                    <p>Posee un clima tropical, en la mayoría de los meses del año en Mariano Roque Alonso hay precipitaciones
+                        importantes. La temperatura media anual se encuentra a 23.2°C. Hay alrededor de precipitaciones de 1375
+                        mm.</p>
+                    <p>El X Congreso Internacional en Sistemas Silvopastoriles se llevará a cabo en la sede central de la
+                        Asociación Rural del Paraguay (ARP), ubicada en el municipio de Mariano Roque Alonso sobre un predio de
+                        28 hectáreas (70 acres).</p>
+                    <p>La ARP es una entidad privada sin fines de lucro, que reúne a productores agropecuarios de todo el país.
+                        Fue fundada en 1885 con la denominación de Sociedad Ganadera del Paraguay. En 1938 toma el nombre que
+                        lleva actualmente.</p>
+                    <p>La ARP es la única entidad gremial que ha representado y defendido los intereses del Paraguay y su
+                        ganadería desde hace 133 años. La “Rural”, como normalmente es conocida la ARP, busca hacer de la
+                        producción pecuaria un instrumento de desarrollo del Paraguay, con responsabilidad social y en armonía
+                        con el medio ambiente.</p>
+
+                    <div id="direccion">
+                        <h3>ASOCIACION RURAL DEL PARAGUAY</h3>
+                        <h3>SALON SOCIAL</h3>
+                        <h3>Ruta Troperos del Chaco Km. 14,5</h3>
+                        <h3>Mariano Roque Alonso - Paraguay</h3>
+
+                    </div>
+
+                    <img src="{{url_for('static', filename='img/arp_mra.jpg')}}" id="img">
+
+                    <div class="map-responsive">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.969975296373!2d-57.53575935176504!3d-25.229922082171047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da43461fc60f5%3A0xeb8c778285fe20d3!2sAsociaci%C3%B3n+Rural+del+Paraguay!5e0!3m2!1ses!2spy!4v1552088193264"
+                            width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+{% endblock %}
