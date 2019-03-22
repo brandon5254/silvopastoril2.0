@@ -109,7 +109,7 @@ body {
 }
 
 img#encabezado{
-    max-width: 350px;
+    max-width: 300px;
 }
 
 .buttonContact{
@@ -391,7 +391,6 @@ table{
 
 @media screen and (max-height: 800px){
   img#encabezado{
-    
   
   }
 
