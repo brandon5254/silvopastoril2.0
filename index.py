@@ -13,8 +13,8 @@ def normas():
 def galeria():
    return render_template('galeria.html')
    
-@app.route('/registrarse')
-def registrarse():
+@app.route('/registro')
+def registro():
    return render_template('formulario.html')
 
 @app.route('/homei')
