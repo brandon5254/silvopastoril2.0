@@ -3,4 +3,8 @@ Flask==1.0.2
 itsdangerous==1.1.0
 Jinja2==2.10
 MarkupSafe==1.1.1
+<<<<<<< HEAD
 Werkzeug==0.14.1
+=======
+Werkzeug==0.14.1
+>>>>>>> 90515d1a3d8f536d7eee6c16ae2e1afb52c9397f
