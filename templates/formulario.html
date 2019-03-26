@@ -6,7 +6,7 @@
 
     <h1>Formulario de Registro</h1>
 
-    <form>
+    <form action="mailto:test@silvopastoril2019.org.py" method="POST" enctype="text/plain">
 
         <div class="form-group">
             <label for="exampleFormControlInput1">Nombre Completo*</label>
@@ -20,16 +20,71 @@
             <label for="exampleFormControlInput1">Número de Documento de Identificación*</label>
             <input type="text" class="form-control" id="exampleFormControlInput1">
         </div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email*</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese email">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Pais de Recidencia*</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Ciudad de Residencia*</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Direccion de Residencia*</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Teléfono</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Institución*</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Ocupación*</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Estudiante Nacional</option>
+                <option>Estudiante Extranjero</option>
+                <option>Ganadero</option>
+                <option>Profesional</option>
+                <option>Profesional Extranjero</option>
+                <option>investigador</option>
+                <option>Otro</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Tipo de Participación*</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Asistente</option>
+                <option>Ponente con Póster</option>
+                <option>Ponente Oral</option>
+                <option>Conferencia Magistral</option>
+            </select>
+        </div>
+        <div class="form-check">
+            <label for="exampleFormControlInput1">Area de su Ponencia*</label><br>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Ganaderia</label><br>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Otro</label>
+        </div>
+        <div class="form-check">
+            <label for="exampleFormControlInput1">¿Requiere servicio de traducción para las charlas dictadas en
+                inglés?</label><br>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Si</label><br>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">No</label><br>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comentario: (anote aquí si tiene alguna restricción alimentaria (alergia alimenticia, entre otros) o de movilidad (Dificultad de desplazamiento, entre otros)</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
 
     </form>
 </div>
