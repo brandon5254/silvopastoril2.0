@@ -1,3 +1,20 @@
+.content-form{
+    background-color: rgb(34, 34, 34);
+    width: 90%;
+    margin: 30px;
+}
+
+.content-form h1{
+    color: white;
+}
+
 form{
-    background-color: black;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+form label{
+    color: white;
+    font-size: 15px;
 }
