@@ -1,5 +1,4 @@
 [[source]]
-<<<<<<< HEAD
 name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
@@ -13,15 +12,6 @@ Flask = "==1.0.2"
 Jinja2 = "==2.10"
 MarkupSafe = "==1.1.1"
 Werkzeug = "==0.14.1"
-=======
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
-
-[packages]
-
-[dev-packages]
->>>>>>> 90515d1a3d8f536d7eee6c16ae2e1afb52c9397f
 
 [requires]
 python_version = "3.6"
