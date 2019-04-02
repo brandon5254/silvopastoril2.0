@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/home/crossbuntu/.local/share/virtualenvs/silvopastoril2-4BHMlhbV/bin/python"
+    "python.pythonPath": "/home/cross/.local/share/virtualenvs/silvopastoril2.0-exMnxXEj/bin/python",
+    "emmet.triggerExpansionOnTab": true
+
 }

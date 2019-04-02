@@ -6,7 +6,6 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'correo.silvopastoril2019.org.py'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config.from_pyfile('config.cfg')
 
 @app.route('/')
 def home():
