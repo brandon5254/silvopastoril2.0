@@ -10,6 +10,11 @@
         <h1 style="padding-bottom: 30px;">Registre su Asistencia</h1>
         <p>Utilice el siguiente formulario para solicitar su 
         registro al X Congreso Internacional de Sistemas silvopastoriles</p>
+
+        <p>Una ves completo pulse enviar para que lo redireccione a la pagina web de pago donde debera pagar con
+            una tarjeta de credito de su preferencia.
+        </p><br>
+    
         <b style="font-size: 20px">Valores de la Inscripción:</b><br>
         <br>
         <b style="font-size: 18px">Primera Fecha - Hasta 30/06/2019</b> <br>
@@ -27,6 +32,8 @@
         <b>Profesionales Nacionales:</b> 300 USD <br>
         <br>
         <b>Profesionales Internacionales:</b> 400 USD <br>
+        <br>
+        
 
 
     </div>
@@ -35,90 +42,90 @@
 
         <h1>Formulario de Registro</h1>
 
-        <form action="" method="POST" enctype="text/plain">
+        <form action="/registro" method="POST">
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre Completo*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Tipo de Documento de Identificacion*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="tipo_documento" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Número de Documento de Identificación*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" required >
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email*</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese email">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Pais de Residencia*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="pais" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Ciudad de Residencia*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="ciudad" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Direccion de Residencia*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="direccion" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Teléfono</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="telefono" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Institución*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="institucion" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Ocupación*</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Estudiante Nacional</option>
-                    <option>Estudiante Extranjero</option>
-                    <option>Ganadero</option>
-                    <option>Profesional Nacional</option>
-                    <option>Profesional Extranjero</option>
-                    <option>investigador</option>
-                    <option>Otro</option>
+                <select class="form-control" id="exampleFormControlSelect1" name="ocupacion">
+                    <option value="Estudiante Nacional" selected="selected">Estudiante Nacional</option>
+                    <option value="Estudiante Extranjero">Estudiante Extranjero</option>
+                    <option value="Ganadero">Ganadero</option>
+                    <option value="Profesional Nacional">Profesional Nacional</option>
+                    <option value="Profesional Extranjero">Profesional Extranjero</option>
+                    <option value="Investigador">Investigador</option>
+                    <option value="Otro">Otro</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Tipo de Participación*</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Asistente</option>
-                    <option>Ponente con Póster</option>
-                    <option>Ponente Oral</option>
-                    <option>Conferencia Magistral</option>
+                <select class="form-control" id="exampleFormControlSelect1" name="tipo_participacion">
+                    <option value="Asistente" selected="selected">Asistente</option>
+                    <option value="Ponente con Poster">Ponente con Póster</option>
+                    <option value="Ponente Oral">Ponente Oral</option>
+                    <option value="Conferencia Magistral">Conferencia Magistral</option>
                 </select>
             </div>
             <div class="form-check">
                 <label for="exampleFormControlInput1">Area de su Ponencia*</label><br>
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico" id="defaultCheck1" name="ponencia">
                 <label class="form-check-label" for="defaultCheck1">Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico</label><br>
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="Produccion Simultanea de Bienes Pecuarios Y Forestales" id="defaultCheck1" name="ponencia">
                 <label class="form-check-label" for="defaultCheck1">Produccion Simultanea de Bienes Pecuarios Y Forestales</label><br>
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="Socioeconomia en Sistemas Silvopastoriles" id="defaultCheck1" name="ponencia">
                 <label class="form-check-label" for="defaultCheck1">Socioeconomia en Sistemas Silvopastoriles</label><br>
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="Escenarios Productivos en Sistemas Silvopastoriles (testimonios de productores)" id="defaultCheck1" name="ponencia">
                 <label class="form-check-label" for="defaultCheck1">Escenarios Productivos en Sistemas Silvopastoriles (testimonios de productores)</label><br>
                 
             </div>
             <div class="form-check">
                 <label for="exampleFormControlInput1">¿Requiere servicio de traducción para las charlas dictadas en
                     inglés?</label><br>
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="ingles">
                 <label class="form-check-label" for="defaultCheck1">Si</label><br>
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1" name="ingles">
                 <label class="form-check-label" for="defaultCheck1">No</label><br>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Comentario: (anote aquí si tiene alguna restricción alimentaria
                     (alergia alimenticia, entre otros) o de movilidad (Dificultad de desplazamiento, entre
                     otros)</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
 

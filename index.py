@@ -1,5 +1,6 @@
-from flask import Flask, render_template
-from flask_mail import Mail, Message
+from flask import Flask, render_template, request
+import models as dbHandler
+
 
 app = Flask(__name__)
 
@@ -19,9 +20,32 @@ def normas():
 def galeria():
    return render_template('galeria.html')
    
-@app.route('/registro')
+@app.route('/registro', methods=['POST', 'GET'])
 def registro():
-   return render_template('formulario.html')
+   if request.method=='POST':
+      name = request.form['nombre']
+      document = request.form['tipo_documento']
+      n_document = request.form['numero_documento']
+      mail = request.form['email']
+      country = request.form['pais']
+      city = request.form['ciudad']
+      address = request.form['direccion']
+      phone = request.form['telefono']
+      institute = request.form['institucion']
+      ocupation = request.form['ocupacion']
+      participation = request.form['tipo_participacion']
+      ponencia = request.form['ponencia']
+      english = request.form['ingles']
+      coments = request.form['comentarios']
+      dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments)
+      return render_template('redirect.html')
+   else:
+      return render_template('formulario.html')
+
+@app.route('/redirect')
+def redirect():
+   return render_template('redirect.html')
+
 
 @app.route('/homei')
 def homei():
