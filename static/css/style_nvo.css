@@ -363,11 +363,6 @@ table{
 }
 
 @media screen and (max-height: 768px){
-  
-  img#encabezado{
-    
-  
-  }
 
   footer{
     width: 100%;
@@ -392,9 +387,6 @@ table{
 }
 
 @media screen and (max-height: 800px){
-  img#encabezado{
-  
-  }
 
   footer{
   
@@ -412,14 +404,7 @@ table{
   body{
     width: 100%;
   }
-  
-  img#encabezado{
-  
-  }
-
-
-
-
+ 
 }
 
 

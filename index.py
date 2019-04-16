@@ -37,8 +37,8 @@ def registro():
       ponencia = request.form['ponencia']
       english = request.form['ingles']
       coments = request.form['comentarios']
-      social = request.form['']
-      ruc = request.form['']
+      social = request.form['nombre_razon_social']
+      ruc = request.form['ruc']
       if ponencia == '':
          ponencia = None
       if english == '':
@@ -74,15 +74,15 @@ def register():
       ponencia = request.form['ponencia']
       english = request.form['ingles']
       coments = request.form['comentarios']
-      social = request.form['']
-      ruc = request.form['']
-      if ponencia == '':
+      social = request.form['nombre_razon_social']
+      ruc = request.form['ruc']
+      if request.form['ponencia'] == '':
          ponencia = None
-      if english == '':
+      if request.form['ingles'] == '':
          english = None
-      if social == '':
+      if request.form['nombre_razon_social'] == '':
          social = None
-      if ruc == '':
+      if request.form['ruc'] == '':
          ruc = None
       dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc)
       if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
@@ -111,4 +111,4 @@ def gallery():
    return render_template('galeria-e.html')
 
 if __name__ == '__main__':
-   app.run(host='0.0.0.0')
+   app.run(host='0.0.0.0', debug=True)
