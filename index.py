@@ -37,16 +37,23 @@ def registro():
       ponencia = request.form['ponencia']
       english = request.form['ingles']
       coments = request.form['comentarios']
+      if ponencia == '':
+         ponencia = None
+      if english == '':
+         english = None
       dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments)
-      if request.form['ocupacion'] == 'Estudiante Nacional':
+      if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
+         return render_template('redirect.html')
+      if request.form['ocupacion'] == 'Profesional Nacional':
          return render_template('redirect1.html')
+      else:
+         return render_template('redirect2.html')
    else:
       return render_template('formulario.html')
 
-@app.route('/redirect')
+"""@app.route('/redirect')
 def redirect():
-   return render_template('redirect.html')
-
+   return render_template('redirect.html')"""
 
 @app.route('/homei')
 def homei():

@@ -145,9 +145,11 @@
         var x = document.getElementsByName("tipo_participacion");
         if ( x[0].options.selectedIndex === 0 ){
             document.getElementsByClassName("form-check")[0].hidden = true;
+            document.getElementsByClassName("form-check")[1].hidden = true;
         }
         else{
-            document.getElementsByClassName("form-check")[0].hidden = false; 
+            document.getElementsByClassName("form-check")[0].hidden = false;
+            document.getElementsByClassName("form-check")[1].hidden = false; 
         }
     }
     
