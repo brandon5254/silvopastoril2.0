@@ -37,11 +37,17 @@ def registro():
       ponencia = request.form['ponencia']
       english = request.form['ingles']
       coments = request.form['comentarios']
+      social = request.form['']
+      ruc = request.form['']
       if ponencia == '':
          ponencia = None
       if english == '':
          english = None
-      dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments)
+      if social == '':
+         social = None
+      if ruc == '':
+         ruc = None
+      dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc)
       if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
          return render_template('redirect.html')
       if request.form['ocupacion'] == 'Profesional Nacional':
@@ -50,6 +56,43 @@ def registro():
          return render_template('redirect2.html')
    else:
       return render_template('formulario.html')
+
+@app.route('/form', methods=['POST', 'GET'])
+def register():
+   if request.method=='POST':
+      name = request.form['nombre']
+      document = request.form['tipo_documento']
+      n_document = request.form['numero_documento']
+      mail = request.form['email']
+      country = request.form['pais']
+      city = request.form['ciudad']
+      address = request.form['direccion']
+      phone = request.form['telefono']
+      institute = request.form['institucion']
+      ocupation = request.form['ocupacion']
+      participation = request.form['tipo_participacion']
+      ponencia = request.form['ponencia']
+      english = request.form['ingles']
+      coments = request.form['comentarios']
+      social = request.form['']
+      ruc = request.form['']
+      if ponencia == '':
+         ponencia = None
+      if english == '':
+         english = None
+      if social == '':
+         social = None
+      if ruc == '':
+         ruc = None
+      dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc)
+      if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
+         return render_template('redirect.html')
+      if request.form['ocupacion'] == 'Profesional Nacional':
+         return render_template('redirect1.html')
+      else:
+         return render_template('redirect2.html')
+   else:
+      return render_template('form.html')
 
 """@app.route('/redirect')
 def redirect():

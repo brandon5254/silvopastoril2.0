@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Formulario de Registro{% endblock %}
+{% block title %}Registration Form{% endblock %}
 {% block content %}
 
 <div class="cont-form">
@@ -7,33 +7,33 @@
 
     <div class="comentario">
         
-        <h1 style="padding-bottom: 30px;">Registre su Asistencia</h1>
-        <p>Utilice el siguiente formulario para solicitar su 
-        registro al X Congreso Internacional de Sistemas silvopastoriles</p>
+        <h1 style="padding-bottom: 30px;">Register Your Attendance</h1>
+        <p>Use the following form to request your registration 
+            to the X International Congress of Silvopastoral Systems</p>
 
         <p><span style="font-weight: bold; color: red; background-color: yellow; font-size: 15px;">
-            Una ves completo pulse enviar para que lo redireccione a la pagina web de pago donde debera pagar con
-            una tarjeta de credito de su preferencia.
+                Once complete press send to redirect you to the payment 
+                website where you must pay with a credit card of your choice.
         </span></p><br>
     
-        <b style="font-size: 20px">Valores de la Inscripción:</b><br>
+        <b style="font-size: 20px">Registration Fees:</b><br>
         <br>
-        <b style="font-size: 18px">Primera Fecha - Hasta 30/06/2019</b> <br>
+        <b style="font-size: 18px">First Date - Until 30/06/2019 </b> <br>
         <br>
-        <b>Estudiantes Nacionales e Internacionales:</b> 100 USD <br>
+        <b>National and International Students:</b> 100 USD <br>
+        <p>*scholarships to those who submit papers to the scientific committee, papers should be sent to <span style="font-weight: bold; color: red; background-color: yellow; font-size: 15px;">becas@silvopastoril2019.org.py</span></p><br>
 
-        <p>*becas a los que presenten trabajos al comite cientifico, los trabajos deben remitirse a <span style="font-weight: bold; color: red; background-color: yellow; font-size: 15px;">becas@silvopastoril2019.org.py</span></p><br>
-        <b>Profesionales Nacionales:</b> 150 USD <br>
+        <b>National Professionals:</b> 150 USD <br>
         <br>
-        <b>Profesionales Internacionales:</b> 200 USD <br>
+        <b>International Professionals:</b> 200 USD <br>
         <br>
-        <b style="font-size: 18px">Segunda Fecha - Hasta 31/08/2019</b> <br>
+        <b style="font-size: 18px">Second Date - Until 31/08/2019</b> <br>
         <br>
-        <b>Estudiantes Nacionales e Internacionales:</b> 150 USD <br>
-        <p>*becas a los que presenten trabajos al comite cientifico, los trabajos deben remitirse a <span style="font-weight: bold; color: red; background-color: yellow; font-size: 15px;">becas@silvopastoril2019.org.py</span></p><br>
-        <b>Profesionales Nacionales:</b> 300 USD <br>
+        <b>National and International Students:</b> 150 USD <br>
+        <p>*scholarships to those who submit papers to the scientific committee, papers should be sent to <span style="font-weight: bold; color: red; background-color: yellow; font-size: 15px;">becas@silvopastoril2019.org.py</span></p><br>
+        <b>National Professionals:</b> 300 USD <br>
         <br>
-        <b>Profesionales Internacionales:</b> 400 USD <br>
+        <b>International Professionals:</b> 400 USD <br>
         <br>
         
 
@@ -42,105 +42,103 @@
 
     <div class="content-form">
 
-        <h1>Formulario de Registro</h1>
+        <h1>Registration Form</h1>
 
         <form action="/registro" method="POST">
 
             <div class="form-group">
-                <label for="exampleFormControlInput1">Nombre Completo*</label>
+                <label for="exampleFormControlInput1">Full Name*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">Tipo de Documento de Identificacion*</label>
+                <label for="exampleFormControlInput1">Type of Identification Document*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="tipo_documento" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">Número de Documento de Identificación*</label>
+                <label for="exampleFormControlInput1">Identification Document Number*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" required >
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email*</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese email" name="email" required>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">Pais de Residencia*</label>
+                <label for="exampleFormControlInput1">Country of Residence</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="pais" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">Ciudad de Residencia*</label>
+                <label for="exampleFormControlInput1">City of Residence*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="ciudad" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">Direccion de Residencia*</label>
+                <label for="exampleFormControlInput1">Residence Address*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="direccion" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">Teléfono</label>
+                <label for="exampleFormControlInput1">Telephone/Phone Adress</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="telefono" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">Institución*</label>
+                <label for="exampleFormControlInput1">Institution*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="institucion" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Ocupación*</label>
+                <label for="exampleFormControlSelect1">Occupation*</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="ocupacion" onchange="">
-                    <option value="Estudiante Nacional" selected="selected">Estudiante Nacional</option>
-                    <option value="Estudiante Extranjero">Estudiante Extranjero</option>
-                    <!--<option value="Ganadero">Ganadero</option>-->
-                    <option value="Profesional Nacional">Profesional Nacional</option>
-                    <option value="Profesional Extranjero">Profesional Extranjero</option>
-                    <!--<option value="Investigador">Investigador</option>-->
-                    <!--<option value="Otro">Otro</option>-->
+                    <option value="Estudiante Nacional" selected="selected">National Student</option>
+                    <option value="Estudiante Extranjero">Foreign Student</option>
+                    <!--<option value="Ganadero">Rancher</option>-->
+                    <option value="Profesional Nacional">National Professional</option>
+                    <option value="Profesional Extranjero">Foreign professional</option>
+                    <!--<option value="Investigador">Investigator</option>-->
+                    <!---<option value="Otro">Other</option>-->
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Tipo de Participación*</label>
+                <label for="exampleFormControlSelect1">Type of Participation*</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="tipo_participacion" onchange="HiddenCheck()">
-                    <option value="Asistente" selected="selected">Asistente</option>
-                    <option value="Ponente con Poster">Ponente con Póster</option>
-                    <option value="Ponente Oral">Ponente Oral</option>
-                    <option value="Conferencia Magistral">Conferencia Magistral</option>
+                    <option value="Asistente" selected="selected">Attendee </option>
+                    <option value="Ponente con Poster">Speaker with Poster</option>
+                    <option value="Ponente Oral">Oral Speaker</option>
+                    <option value="Conferencia Magistral">Magisterial Conference</option>
                 </select>
             </div>
             <div class="form-check" hidden>
-                <label for="exampleFormControlInput1">Area de su Ponencia*</label><br>
+                <label for="exampleFormControlInput1">Your Speaker's Area*</label><br>
                 <input class="form-check-input" type="checkbox" value="Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico" id="defaultCheck1" name="ponencia">
-                <label class="form-check-label" for="defaultCheck1">Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico</label><br>
+                <label class="form-check-label" for="defaultCheck1">Sustainable Livestock, Biodiversity, Environment and Climate Change</label><br>
                 <input class="form-check-input" type="checkbox" value="Produccion Simultanea de Bienes Pecuarios Y Forestales" id="defaultCheck1" name="ponencia">
-                <label class="form-check-label" for="defaultCheck1">Produccion Simultanea de Bienes Pecuarios Y Forestales</label><br>
+                <label class="form-check-label" for="defaultCheck1">Simultaneous Production of Livestock and Forest Goods</label><br>
                 <input class="form-check-input" type="checkbox" value="Socioeconomia en Sistemas Silvopastoriles" id="defaultCheck1" name="ponencia">
-                <label class="form-check-label" for="defaultCheck1">Socioeconomia en Sistemas Silvopastoriles</label><br>
+                <label class="form-check-label" for="defaultCheck1">Socioeconomics in Silvopastoral Systems</label><br>
                 <input class="form-check-input" type="checkbox" value="Escenarios Productivos en Sistemas Silvopastoriles (testimonios de productores)" id="defaultCheck1" name="ponencia">
-                <label class="form-check-label" for="defaultCheck1">Escenarios Productivos en Sistemas Silvopastoriles (testimonios de productores)</label><br>
+                <label class="form-check-label" for="defaultCheck1">Productive Scenarios in Silvopastoral Systems (producer testimonies)</label><br>
                 
             </div>
-            <div class="form-check" hidden>
+            <!--<div class="form-check" hidden>
                 <label for="exampleFormControlInput1">¿Requiere servicio de traducción para las charlas dictadas en
                     inglés?</label><br>
                 <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="ingles">
                 <label class="form-check-label" for="defaultCheck1">Si</label><br>
                 <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1" name="ingles">
                 <label class="form-check-label" for="defaultCheck1">No</label><br>
-            </div>
+            </div>-->
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Comentario: (anote aquí si tiene alguna restricción alimentaria
-                    (alergia alimenticia, entre otros) o de movilidad (Dificultad de desplazamiento, entre
-                    otros)</label>
+                <label for="exampleFormControlTextarea1">Comment: (write here if you have any food restriction (food allergy, among others) or mobility restriction (Difficulty of movement, among others).</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
             </div>
 
             <input class="form-check-input" type="checkbox" value="factura_infona" id="defaultCheck1" name="factura" onchange="HiddenFact()">
-            <label class="form-check-label" for="defaultCheck1">Factura Infona</label><br>
+            <label class="form-check-label" for="defaultCheck1">Infona Bill</label><br>
 
             <div class="form-group" id="fact_inf" hidden>
-                <label for="exampleFormControlInput1">Nombre o Razon Social*</label>
+                <label for="exampleFormControlInput1">Name or Social Reason*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre_razon_social" required>
                 <label for="exampleFormControlInput1">RUC*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="ruc" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Send</button>
 
         </form>
     </div>
@@ -152,11 +150,11 @@
         var x = document.getElementsByName("tipo_participacion");
         if ( x[0].options.selectedIndex === 0 ){
             document.getElementsByClassName("form-check")[0].hidden = true;
-            document.getElementsByClassName("form-check")[1].hidden = true;
+            
         }
         else{
             document.getElementsByClassName("form-check")[0].hidden = false;
-            document.getElementsByClassName("form-check")[1].hidden = false; 
+    
         }
     }
 
