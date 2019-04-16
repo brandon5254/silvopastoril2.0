@@ -38,7 +38,8 @@ def registro():
       english = request.form['ingles']
       coments = request.form['comentarios']
       dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments)
-      return render_template('redirect.html')
+      if request.form['ocupacion'] == 'Estudiante Nacional':
+         return render_template('redirect1.html')
    else:
       return render_template('formulario.html')
 
