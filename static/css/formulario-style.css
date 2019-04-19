@@ -31,6 +31,6 @@ form label{
 .cont-form{
     margin: 0 auto;
     display: flex;
-    background: black;
+    background: rgba(2,56,14, 0.71);
     width: 80%;
 }
