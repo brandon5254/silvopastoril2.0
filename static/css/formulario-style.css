@@ -3,6 +3,7 @@
     width: 60%;*/
     margin-top: 60px;
     padding: 30px;
+    
 }
 
 .content-form h1{
@@ -33,4 +34,9 @@ form label{
     display: flex;
     background: rgba(2,56,14, 0.71);
     width: 80%;
+    border: solid;
+    border-color: #013e03e8;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }

@@ -70,6 +70,17 @@
             });
         });
 
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 550) {
+                    $('body').addClass('changeimage')
+                }
+                if ($(this).scrollTop() < 550) {
+                    $('body').removeClass('changeimage')
+                }
+            });
+        });
+
         $(document).ready(function () {
 
             /*********************************************** boton hacia arriba **********************************************/

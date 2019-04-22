@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -61,6 +61,17 @@
             $(document).scroll(function () {
                 var $nav = $(".navbar");
                 $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 550) {
+                    $('body').addClass('changeimage')
+                }
+                if ($(this).scrollTop() < 550) {
+                    $('body').removeClass('changeimage')
+                }
             });
         });
 

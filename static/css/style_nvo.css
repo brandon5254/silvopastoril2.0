@@ -20,6 +20,14 @@ html{
   src: url("../font/TodaySHOP-Ultra.woff") format("woff");
 }
 
+.changeimage{
+  background: url('../img/fondo_desenfocado.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  transition: 1s all;
+}
+
 body {
     font-family: 'DaxlinePro - Bold';
     font-size: 10px;
@@ -89,7 +97,7 @@ body {
     padding-left: 120px;
     font-size: 14px;
     list-style: none;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
 }
 
 #normas ul li{
