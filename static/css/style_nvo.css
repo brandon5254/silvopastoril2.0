@@ -21,7 +21,7 @@ html{
 }
 
 .changeimage{
-  background: url('../img/fondo_desenfocado.png');
+  background: url('../img/FONDO Web Desenfocado oscuro 1.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -323,11 +323,10 @@ footer .logo-icon{
   font-size: 20px;
   text-align: center;
 
-
 }
 
 table{
-  color:white;
+  color:white !important;
   min-height: 100vh;
   padding-top: 200px;
 }
