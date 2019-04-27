@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
+from generador_token import generar
 import models as dbHandler
+import dolarpy
 
 
 app = Flask(__name__)
@@ -24,7 +26,7 @@ def galeria():
 def registro():
    if request.method=='POST':
       name = request.form['nombre']
-      document = request.form['tipo_documento']
+      document = "CI" #solo CI
       n_document = request.form['numero_documento']
       mail = request.form['email']
       country = request.form['pais']
@@ -47,12 +49,23 @@ def registro():
          social = None
       if ruc == '':
          ruc = None
-      dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc)
       if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
+         #precio debe ser 100$
+         precio = 100
+         cotizacion = dolarpy.get_venta()
+         monto_total = cotizacion*100
+         id_pedido = dbHandler.lasID + 1
+         private_key = "1d98c69bb9c71a9529ca1e13e228040a"
+         public_key = "c8928436431b6c6de669edb2ad199b3f"
+         token = generar(private_key, id_pedido, monto_total)
+         #devuelve true+token o false
+         dbHandler.insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto, token_api)
          return render_template('redirect.html')
       if request.form['ocupacion'] == 'Profesional Nacional':
+         #precio debe ser 150$
          return render_template('redirect1.html')
       else:
+         #profesional internacional 200$
          return render_template('redirect2.html')
    else:
       return render_template('formulario.html')
