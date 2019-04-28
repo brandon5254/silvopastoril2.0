@@ -26,7 +26,7 @@ def galeria():
 def registro():
    if request.method=='POST':
       name = request.form['nombre']
-      document = "CI" #solo CI
+      document = "CI" #solo CI es permitido
       n_document = request.form['numero_documento']
       mail = request.form['email']
       country = request.form['pais']
