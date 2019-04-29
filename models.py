@@ -1,26 +1,31 @@
 import sqlite3 as sql
 
-def insertdata(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc):
+def insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto):
     con = sql.connect("datos.db")
     cur = con.cursor()
-    cur.execute("INSERT INTO silvopastoril VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (None, name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto, token_api))
+    cur.execute("INSERT INTO silvopastoril VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (None, name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto, None))
     con.commit()
     con.close()
 
-def listdata():
+def listData():
     con = sql.connect("datos.db")
     cur = con.cursor()
-    cur.execute("SELECT id FROM silvopastoril")
+    cur.execute("SELECT * FROM silvopastoril")
     data = cur.fetchall()
     con.close()
     return data
 
-def lastID():
+def findByID(name, n_document):
     con = sql.connect("datos.db")
     cur = con.cursor()
-    for row in cur.execute("select id from silvopastoril order by id DESC limit 1;"):
+    for row in cur.execute("SELECT id FROM silvopastoril WHERE nombre_completo = ? AND nro_documento = ? ORDER BY id DESC LIMIT 1;", (name, n_document)):
         data = row[0]
-    #cur.execute
-    #data = cur.fetchall()
     con.close()
     return data
+
+def updateByID(token_respuesta, id):
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("UPDATE silvopastoril SET token_api = ? WHERE id = ?;", (token_respuesta, id))
+    con.commit()
+    con.close()
