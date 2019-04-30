@@ -6,31 +6,36 @@
 
 
     <div class="comentario">
-        
+
         <h1 style="padding-bottom: 30px;">Register Your Attendance</h1>
         <p>Use the form below to request your registration to the X International Congress of Silvopastoral Systems</p>
 
-        <p><span style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">
-                Once complete press send to redirect you to the payment 
+        <p><span
+                style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">
+                Once complete press send to redirect you to the payment
                 website where you must pay with a credit card of your choice.
-        </span></p><br>
-    
+            </span></p><br>
+
         <b style="font-size: 20px">Registration Fees:</b><br>
         <br>
         <b style="font-size: 18px">First Date - Until 30/06/2019 </b> <br>
         <br>
         <b>STUDENTS<br>National and International:</b> 100 USD <br>
-        <p>*scholarships to those who submit papers to the scientific committee, papers should be sent to <span style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">becas@silvopastoril2019.org.py</span></p><br>
+        <p>*scholarships to those who submit papers to the scientific committee, papers should be sent to <span
+                style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">becas@silvopastoril2019.org.py</span>
+        </p><br>
 
         <b>PROFESSIONALS<br>National</b> 150 USD | International:</b> 200 USD <br>
         <br>
         <b style="font-size: 18px">Second Date - Until 31/08/2019</b> <br>
         <br>
         <b>STUDENTS<br>National and International:</b> 150 USD <br>
-        <p>*scholarships to those who submit papers to the scientific committee, papers should be sent to <span style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">becas@silvopastoril2019.org.py</span></p><br>
+        <p>*scholarships to those who submit papers to the scientific committee, papers should be sent to <span
+                style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">becas@silvopastoril2019.org.py</span>
+        </p><br>
         <b>PROFESIONALS<br>National:</b> 300 USD | International:</b> 400 USD <br>
         <br>
-        
+
 
 
     </div>
@@ -47,15 +52,17 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Type of Identification Document*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="tipo_documento" required>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="tipo_documento" value="CI"
+                    disabled>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Identification Document Number*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" required >
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" required>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email*</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" required>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email"
+                    required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Country of Residence</label>
@@ -91,7 +98,8 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Type of Participation*</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="tipo_participacion" onchange="HiddenCheck()">
+                <select class="form-control" id="exampleFormControlSelect1" name="tipo_participacion"
+                    onchange="HiddenCheck()">
                     <option value="Asistente" selected="selected">Attendee </option>
                     <option value="Ponente con Poster">Speaker with Poster</option>
                     <option value="Ponente Oral">Oral Speaker</option>
@@ -100,15 +108,24 @@
             </div>
             <div class="form-check" hidden>
                 <label for="exampleFormControlInput1">Your Speaker's Area*</label><br>
-                <input class="form-check-input" type="checkbox" value="Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico" id="defaultCheck1" name="ponencia">
-                <label class="form-check-label" for="defaultCheck1">Sustainable Livestock, Biodiversity, Environment and Climate Change</label><br>
-                <input class="form-check-input" type="checkbox" value="Produccion Simultanea de Bienes Pecuarios Y Forestales" id="defaultCheck1" name="ponencia">
-                <label class="form-check-label" for="defaultCheck1">Simultaneous Production of Livestock and Forest Goods</label><br>
-                <input class="form-check-input" type="checkbox" value="Socioeconomia en Sistemas Silvopastoriles" id="defaultCheck1" name="ponencia">
+                <input class="form-check-input" type="checkbox"
+                    value="Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico" id="defaultCheck1"
+                    name="ponencia">
+                <label class="form-check-label" for="defaultCheck1">Sustainable Livestock, Biodiversity, Environment and
+                    Climate Change</label><br>
+                <input class="form-check-input" type="checkbox"
+                    value="Produccion Simultanea de Bienes Pecuarios Y Forestales" id="defaultCheck1" name="ponencia">
+                <label class="form-check-label" for="defaultCheck1">Simultaneous Production of Livestock and Forest
+                    Goods</label><br>
+                <input class="form-check-input" type="checkbox" value="Socioeconomia en Sistemas Silvopastoriles"
+                    id="defaultCheck1" name="ponencia">
                 <label class="form-check-label" for="defaultCheck1">Socioeconomics in Silvopastoral Systems</label><br>
-                <input class="form-check-input" type="checkbox" value="Escenarios Productivos en Sistemas Silvopastoriles (testimonios de productores)" id="defaultCheck1" name="ponencia">
-                <label class="form-check-label" for="defaultCheck1">Productive Scenarios in Silvopastoral Systems (producer testimonies)</label><br>
-                
+                <input class="form-check-input" type="checkbox"
+                    value="Escenarios Productivos en Sistemas Silvopastoriles (testimonios de productores)"
+                    id="defaultCheck1" name="ponencia">
+                <label class="form-check-label" for="defaultCheck1">Productive Scenarios in Silvopastoral Systems
+                    (producer testimonies)</label><br><br>
+
             </div>
             <!--<div class="form-check" hidden>
                 <label for="exampleFormControlInput1">¿Requiere servicio de traducción para las charlas dictadas en
@@ -119,18 +136,22 @@
                 <label class="form-check-label" for="defaultCheck1">No</label><br>
             </div>-->
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Comment: (write here if you have any food restriction (food allergy, among others) or mobility restriction (Difficulty of movement, among others).</label>
+                <label for="exampleFormControlTextarea1">Comment: (write here if you have any food restriction (food
+                    allergy, among others) or mobility restriction (Difficulty of movement, among others).</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
             </div>
 
-            <input class="form-check-input" type="checkbox" value="factura_infona" id="defaultCheck1" name="factura" onchange="HiddenFact()">
-            <label class="form-check-label" for="defaultCheck1">Legal Invoice Request</label><br>
-
-            <div class="form-group" id="fact_inf" hidden>
+            <!--<input class="form-check-input" type="checkbox" value="factura_infona" id="defaultCheck1" name="factura"
+                onchange="HiddenFact()">
+            <label class="form-check-label" for="defaultCheck1">Legal Invoice Request</label><br>-->
+            <label class="form-check-label" for="defaultCheck1">Complete the following fields only if you want a legal
+                invoice</label><br>
+            <br>
+            <div class="form-group" id="fact_inf">
                 <label for="exampleFormControlInput1">Name or Social Reason*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre_razon_social" required>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre_razon_social"><br>
                 <label for="exampleFormControlInput1">RUC*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="ruc" required>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="ruc">
             </div>
 
             <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Send</button>
@@ -140,29 +161,30 @@
 </div>
 
 <script>
-    
-    function HiddenCheck(){
+
+    function HiddenCheck() {
         var x = document.getElementsByName("tipo_participacion");
-        if ( x[0].options.selectedIndex === 0 ){
+        if (x[0].options.selectedIndex === 0) {
             document.getElementsByClassName("form-check")[0].hidden = true;
-            
+
         }
-        else{
+        else {
             document.getElementsByClassName("form-check")[0].hidden = false;
-    
+
         }
     }
 
-    function HiddenFact(){
+    /*function HiddenFact(){
         var x = document.getElementsByName("factura")[0];
         if (x.checked == true){
             document.getElementById("fact_inf").hidden = false;
         }else{
             document.getElementById("fact_inf").hidden = true;
         }
-    }
+    }*/
 
-    document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
+    document.body.style.backgroundImage = 'url(../static/img/fondo.png)';
+
 
 </script>
 

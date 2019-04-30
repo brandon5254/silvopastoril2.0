@@ -5,7 +5,7 @@ from generador_token import generar
 url = "https://api.pagopar.com/api/comercios/1.1/iniciar-transaccion"
 
 def CrearPedido(token, ruc, email, nombre, telefono, documento, razon_social, public_key1 ,monto_total,
-nombre_ticket, public_key2, descripcion, precio_total, fecha_maxima_pago, id_pedido, descripcion_resumen):
+nombre_item, public_key2, descripcion, precio_total, fecha_maxima_pago, id_pedido, descripcion_resumen):
 
     payload = {
     "token": token,
@@ -23,18 +23,18 @@ nombre_ticket, public_key2, descripcion, precio_total, fecha_maxima_pago, id_ped
     "direccion_referencia": None
     },
     "public_key": public_key1,
-    "monto_total": 10000, #quitar despues poner monto_total
+    "monto_total": monto_total,
     "tipo_pedido": "VENTA-COMERCIO",
     "compras_items": [
     {
     "ciudad": "1",
-    "nombre": nombre_ticket,
+    "nombre": nombre_item,
     "cantidad": 1,
     "categoria": "909",
     "public_key": public_key2,
     "url_imagen": "",
     "descripcion": descripcion,
-    "id_producto": 2, #solo cambiamos si tenemos mas de un producto
+    "id_producto": 1, # 2 cambiar para probar
     "precio_total": precio_total,
     "vendedor_telefono": "",
     "vendedor_direccion": "",
@@ -42,9 +42,9 @@ nombre_ticket, public_key2, descripcion, precio_total, fecha_maxima_pago, id_ped
     "vendedor_direccion_coordenadas": ""
     }
     ],
-    "fecha_maxima_pago": "2019-04-24 13:10:00",#fecha_maxima_pago
+    "fecha_maxima_pago": fecha_maxima_pago,
     "id_pedido_comercio": id_pedido,
-    "descripcion_resumen": "pedido de prueba" #descripcion_resumen
+    "descripcion_resumen": descripcion_resumen
     }
 
     #print(json.dumps(payload))
