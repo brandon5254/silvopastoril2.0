@@ -58,7 +58,7 @@ def registro():
          #precio debe ser 100$
          precio = 100#precio de la inscripcion es n/e
          cotizacion = dolarpy.get_venta()#obtiene la cotizacion del dia
-         monto_total = cotizacion*precio#el monto total de la inscripcion en guaranies
+         monto_total = int(cotizacion)*precio#el monto total de la inscripcion en guaranies
          #inserta los datos en la BD
          dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
          id_pedido = dbHandler.findByID(name, n_document)#obtiene el id en base al ultimo pedido del nombre la persona
@@ -69,8 +69,8 @@ def registro():
          max = dates+timedelta(days=1)#le sumo 1 dia=24hrs
          fecha_maxima_pago = max.strftime("%Y-%m-%d %H:%M:%S")#la fecha maxima de pago
          #devuelve true+token o false
-         res = CrearPedido(token, ruc, mail, name, phone, n_document, social, public_key ,monto_total, "Inscripción X CONGRESO SILVOPASTORIL", public_key, 
-         "Inscripción Estudiante Nacional/Internacional, el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total de 100 USD (Tipo de cambio del día)", 
+         res = CrearPedido(token, ruc, mail, name, phone, n_document, social, public_key ,monto_total,
+         "Inscripción X CONGRESO SILVOPASTORIL", public_key, "Inscripción Estudiante Nacional/Internacional, el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total de 100 USD (Tipo de cambio del día)", 
          monto_total, fecha_maxima_pago, id_pedido, "Inscripción Estudiante Nacional/Internacional")#crea el pedido
          all = json.loads(res)
          if all['respuesta'] == True or all['respuesta'] == "true":
@@ -87,7 +87,7 @@ def registro():
          #precio debe ser 150$
          precio = 150
          cotizacion = dolarpy.get_venta()
-         monto_total = cotizacion*precio
+         monto_total = int(cotizacion)*precio
          dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
          id_pedido = dbHandler.findByID(name, n_document)
          private_key = "1d98c69bb9c71a9529ca1e13e228040a"
@@ -114,7 +114,7 @@ def registro():
          #profesional internacional 200$
          precio = 200
          cotizacion = dolarpy.get_venta()
-         monto_total = cotizacion*precio
+         monto_total = int(cotizacion)*precio
          dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
          id_pedido = dbHandler.findByID(name, n_document)
          private_key = "1d98c69bb9c71a9529ca1e13e228040a"
@@ -171,7 +171,7 @@ def register():
       if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
          precio = 100
          cotizacion = dolarpy.get_venta()
-         monto_total = cotizacion*precio
+         monto_total = int(cotizacion)*precio
          dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
          id_pedido = dbHandler.findByID(name, n_document)
          private_key = "1d98c69bb9c71a9529ca1e13e228040a"
@@ -196,7 +196,7 @@ def register():
       if request.form['ocupacion'] == 'Profesional Nacional':
          precio = 150
          cotizacion = dolarpy.get_venta()
-         monto_total = cotizacion*precio
+         monto_total = int(cotizacion)*precio
          dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
          id_pedido = dbHandler.findByID(name, n_document)
          private_key = "1d98c69bb9c71a9529ca1e13e228040a"
@@ -221,7 +221,7 @@ def register():
       else:
          precio = 200
          cotizacion = dolarpy.get_venta()
-         monto_total = cotizacion*precio
+         monto_total = int(cotizacion)*precio
          dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
          id_pedido = dbHandler.findByID(name, n_document)
          private_key = "1d98c69bb9c71a9529ca1e13e228040a"
