@@ -346,6 +346,31 @@ table{
   position:absolute;
 }
 
+#sede .auspices img{
+  width: 15%;
+  height: 15%;
+}
+
+#sede .organize img{
+  width: 15%;
+  height: 15%;
+}
+
+#sede .auspices .ot{
+  width:100%;
+  background:linear-gradient(to top, #97bf72,#97bf72) no-repeat 40px bottom;
+  background-size: 100% 3px;
+   
+}
+
+#sede .organize .ot{
+  width:100%;
+  background:linear-gradient(to top, #97bf72,#97bf72) no-repeat 30px bottom;
+  background-size: 100% 3px;
+   
+}
+
+
 /*Flecha para hacer la pagina hacia arriba*/
 .ir-arriba {
   display:none;
