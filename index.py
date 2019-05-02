@@ -251,6 +251,11 @@ def register():
 def reject():
    return render_template('redirect.html')"""
 
+@app.route('/board')
+def board():
+   data = dbHandler.listData()
+   return render_template('board.html', data=data)
+
 @app.route('/homei')
 def homei():
    return render_template('index-e.html')
