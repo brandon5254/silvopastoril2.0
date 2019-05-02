@@ -34,7 +34,7 @@ nombre_item, public_key2, descripcion, precio_total, fecha_maxima_pago, id_pedid
     "public_key": public_key2,
     "url_imagen": "",
     "descripcion": descripcion,
-    "id_producto": 1, # 2 cambiar para probar
+    "id_producto": 2, # 2 cambiar para probar
     "precio_total": precio_total,
     "vendedor_telefono": "",
     "vendedor_direccion": "",

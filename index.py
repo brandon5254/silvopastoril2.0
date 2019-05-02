@@ -80,6 +80,7 @@ def registro():
             return render_template("redirect.html", token_recibed=token_recibed)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
+            print(all['respuesta'])
             flash(mensaje)
             return render_template('formulario.html')
 
