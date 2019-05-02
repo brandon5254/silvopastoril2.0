@@ -79,7 +79,7 @@ def registro():
             dbHandler.updateByID(token_recibed, id_pedido)
             return render_template("redirect.html", token_recibed=token_recibed)
          else:# de ser falso me recarga la pagina y me salta un mensaje
-            mensaje = all['resultado']
+            mensaje = "No se realizo el registro. Vuelva a intentarlo."
             flash(mensaje)
             return render_template('formulario.html')
 
@@ -106,7 +106,7 @@ def registro():
             dbHandler.updateByID(token_recibed, id_pedido)
             return render_template("redirect.html", token_recibed=token_recibed)
          else:
-            mensaje = all['resultado']
+            mensaje = "No se realizo el registro. Vuelva a intentarlo."
             flash(mensaje)
             return render_template('formulario.html')
 
@@ -133,7 +133,7 @@ def registro():
             dbHandler.updateByID(token_recibed, id_pedido)
             return render_template("redirect.html", token_recibed=token_recibed)
          else:
-            mensaje = all['resultado']
+            mensaje = "No se realizo el registro. Vuelva a intentarlo."
             flash(mensaje)
             return render_template('formulario.html')
 
@@ -189,7 +189,7 @@ def register():
             dbHandler.updateByID(token_recibed, id_pedido)
             return render_template("redirect.html", token_recibed=token_recibed)
          else:
-            mensaje = all['resultado']
+            mensaje = "Registration was not performed. Try again."
             flash(mensaje)
             return render_template('form.html')
 
@@ -214,7 +214,7 @@ def register():
             dbHandler.updateByID(token_recibed, id_pedido)
             return render_template("redirect.html", token_recibed=token_recibed)
          else:
-            mensaje = all['resultado']
+            mensaje = "Registration was not performed. Try again."
             flash(mensaje)
             return render_template('form.html')
 
@@ -239,7 +239,7 @@ def register():
             dbHandler.updateByID(token_recibed, id_pedido)
             return render_template("redirect.html", token_recibed=token_recibed)
          else:
-            mensaje = all['resultado']
+            mensaje = "Registration was not performed. Try again."
             flash(mensaje)
             return render_template('form.html')
 
