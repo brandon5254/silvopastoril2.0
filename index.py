@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
+from pago_servicio import procesar
 
 app = Flask(__name__)
 
@@ -49,15 +50,15 @@ def registro():
       if ruc == '':
          ruc = None
       
-      if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
+      if request.form['ocupacion'] == 'Estudiante Nacional' or 'Estudiante Extranjero':
          precio = 100#precio incripcion e n/e
-         res = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
+         #descripcion
+         res, f_pago = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
          all = json.loads(res)
          if all['respuesta'] == True or all['respuesta'] == "true":
             #si la respuesta es true me redirecciona a la pagina de pago
             token_recibed = all['resultado'][0]['data']
-            dbHandler.updateByID(token_recibed, id_pedido)
-            return render_template("redirect.html", token_recibed=token_recibed)
+            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
             print(all['respuesta'])
@@ -67,28 +68,30 @@ def registro():
       if request.form['ocupacion'] == 'Profesional Nacional':
          #precio debe ser 150$
          precio = 150
-         res = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
+         res, f_pago = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
          all = json.loads(res)
          if all['respuesta'] == True or all['respuesta'] == "true":
+            #si la respuesta es true me redirecciona a la pagina de pago
             token_recibed = all['resultado'][0]['data']
-            dbHandler.updateByID(token_recibed, id_pedido)
-            return render_template("redirect.html", token_recibed=token_recibed)
-         else:
+            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
+         else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
+            print(all['respuesta'])
             flash(mensaje)
             return render_template('formulario.html')
 
       else:
          #profesional internacional 200$
          precio = 200
-         res = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
+         res, f_pago = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
          all = json.loads(res)
          if all['respuesta'] == True or all['respuesta'] == "true":
+            #si la respuesta es true me redirecciona a la pagina de pago
             token_recibed = all['resultado'][0]['data']
-            dbHandler.updateByID(token_recibed, id_pedido)
-            return render_template("redirect.html", token_recibed=token_recibed)
-         else:
+            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
+         else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
+            print(all['respuesta'])
             flash(mensaje)
             return render_template('formulario.html')
 
