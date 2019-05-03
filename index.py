@@ -1,10 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from generador_token import generar
-from pagopar import CrearPedido
-from datetime import datetime, time, timedelta
-import models as dbHandler
-import dolarpy
-import json
 
 app = Flask(__name__)
 
@@ -39,6 +33,7 @@ def registro():
       phone = request.form['telefono']
       institute = request.form['institucion']
       ocupation = request.form['ocupacion']
+      f_pago = request.form['for_pago']
       participation = request.form['tipo_participacion']
       ponencia = request.form.get('ponencia')
       english = request.form.get('ingles')
@@ -55,23 +50,8 @@ def registro():
          ruc = None
       
       if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
-         #precio debe ser 100$
-         precio = 100#precio de la inscripcion es n/e
-         cotizacion = dolarpy.get_venta()#obtiene la cotizacion del dia
-         monto_total = int(cotizacion)*precio#el monto total de la inscripcion en guaranies
-         #inserta los datos en la BD
-         dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
-         id_pedido = dbHandler.findByID(name, n_document)#obtiene el id en base al ultimo pedido del nombre la persona
-         private_key = "1d98c69bb9c71a9529ca1e13e228040a"
-         public_key = "c8928436431b6c6de669edb2ad199b3f"
-         token = generar(private_key, id_pedido, monto_total)#genera el token para pagopar
-         dates = datetime.today()#obtengo la fecha de hoy
-         max = dates+timedelta(days=1)#le sumo 1 dia=24hrs
-         fecha_maxima_pago = max.strftime("%Y-%m-%d %H:%M:%S")#la fecha maxima de pago
-         #devuelve true+token o false
-         res = CrearPedido(token, ruc, mail, name, phone, n_document, social, public_key ,monto_total,
-         "Inscripción X CONGRESO SILVOPASTORIL", public_key, "Inscripción Estudiante Nacional/Internacional, el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total de 100 USD (Tipo de cambio del día)", 
-         monto_total, fecha_maxima_pago, id_pedido, "Inscripción Estudiante Nacional/Internacional")#crea el pedido
+         precio = 100#precio incripcion e n/e
+         res = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
          all = json.loads(res)
          if all['respuesta'] == True or all['respuesta'] == "true":
             #si la respuesta es true me redirecciona a la pagina de pago
@@ -87,20 +67,7 @@ def registro():
       if request.form['ocupacion'] == 'Profesional Nacional':
          #precio debe ser 150$
          precio = 150
-         cotizacion = dolarpy.get_venta()
-         monto_total = int(cotizacion)*precio
-         dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
-         id_pedido = dbHandler.findByID(name, n_document)
-         private_key = "1d98c69bb9c71a9529ca1e13e228040a"
-         public_key = "c8928436431b6c6de669edb2ad199b3f"
-         token = generar(private_key, id_pedido, monto_total)
-         dates = datetime.today()#obtengo la fecha de hoy
-         max = dates+timedelta(days=1)#le sumo 1 dia=24hrs
-         fecha_maxima_pago = max.strftime("%Y-%m-%d %H:%M:%S")
-         #devuelve true+token o false
-         res = CrearPedido(token, ruc, mail, name, phone, n_document, social, public_key ,monto_total, "Inscripción X CONGRESO SILVOPASTORIL", public_key, 
-         "Inscripción Profesional Nacional, el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total de 150 USD (Tipo de cambio del día)", 
-         monto_total, fecha_maxima_pago, id_pedido, "Inscripción Profesional Nacional")
+         res = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
          all = json.loads(res)
          if all['respuesta'] == True or all['respuesta'] == "true":
             token_recibed = all['resultado'][0]['data']
@@ -114,20 +81,7 @@ def registro():
       else:
          #profesional internacional 200$
          precio = 200
-         cotizacion = dolarpy.get_venta()
-         monto_total = int(cotizacion)*precio
-         dbHandler.insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto_total)
-         id_pedido = dbHandler.findByID(name, n_document)
-         private_key = "1d98c69bb9c71a9529ca1e13e228040a"
-         public_key = "c8928436431b6c6de669edb2ad199b3f"
-         token = generar(private_key, id_pedido, monto_total)
-         dates = datetime.today()#obtengo la fecha de hoy
-         max = dates+timedelta(days=1)#le sumo 1 dia=24hrs
-         fecha_maxima_pago = max.strftime("%Y-%m-%d %H:%M:%S")
-         #devuelve true+token o false
-         res = CrearPedido(token, ruc, mail, name, phone, n_document, social, public_key ,monto_total, "Inscripción X CONGRESO SILVOPASTORIL", public_key, 
-         "Inscripción Profesional Internacional, el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total de 200 USD (Tipo de cambio del día)", 
-         monto_total, fecha_maxima_pago, id_pedido, "Inscripción Profesional Internacional")
+         res = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
          all = json.loads(res)
          if all['respuesta'] == True or all['respuesta'] == "true":
             token_recibed = all['resultado'][0]['data']
