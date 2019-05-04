@@ -4,8 +4,7 @@ from generador_token import generar
 
 url = "https://api.pagopar.com/api/comercios/1.1/iniciar-transaccion"
 
-def CrearPedido(token, ruc, email, nombre, telefono, documento, razon_social, public_key1 ,monto_total,
-nombre_item, public_key2, descripcion, precio_total, fecha_maxima_pago, id_pedido, descripcion_resumen):
+def CrearPedido(token, ruc, email, nombre, telefono, documento, razon_social, public_key1 ,monto_total, nombre_item, public_key2, descripcion, precio_total, fecha_maxima_pago, id_pedido, descripcion_resumen):
 
     payload = {
     "token": token,
