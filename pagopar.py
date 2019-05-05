@@ -1,6 +1,5 @@
 import json
 import requests
-from generador_token import generar
 
 url = "https://api.pagopar.com/api/comercios/1.1/iniciar-transaccion"
 
@@ -27,12 +26,12 @@ def CrearPedido(token, ruc, email, nombre, telefono, documento, razon_social, pu
     "compras_items": [
     {
     "ciudad": "1",
-    "nombre": nombre_item,
+    "nombre": nombre_item,#descripcion
     "cantidad": 1,
     "categoria": "909",
     "public_key": public_key2,
     "url_imagen": "",
-    "descripcion": descripcion,
+    "descripcion": descripcion,#nombre_item
     "id_producto": 2, # 2 cambiar para probar
     "precio_total": precio_total,
     "vendedor_telefono": "",
@@ -45,6 +44,8 @@ def CrearPedido(token, ruc, email, nombre, telefono, documento, razon_social, pu
     "id_pedido_comercio": id_pedido,
     "descripcion_resumen": descripcion_resumen
     }
+
+    #print(payload)
 
     #print(json.dumps(payload))
 
