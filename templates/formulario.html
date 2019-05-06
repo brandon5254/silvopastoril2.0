@@ -83,7 +83,7 @@
 
         <h1>Formulario de Registro de Inscripción</h1>
 
-        <form action="/registro" method="POST">
+        <form action="/registro" method="POST" class="needs-validation" novalidate>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre Completo*</label>
@@ -135,24 +135,25 @@
                     <!--<option value="Otro">Otro</option>-->
                 </select>
             </div>
-            <div class="form-check" required>
-                    <label for="exampleFormControlInput1">Seleccione la Forma de Pago*</label><br>
-                    <input class="form-check-input" type="checkbox" value="bancard" id="defaultCheck1" name="for_pago">
-                    <label class="form-check-label" for="defaultCheck1">Bancard - Tarjetas de crédito/débito (Acepta Visa, Mastercard, American Express, Discover, Diners Club y Credifielco.)</label><br>
-                    <input class="form-check-input" type="checkbox" value="procard" id="defaultCheck1" name="for_pago">
-                    <label class="form-check-label" for="defaultCheck1">Procard - Tarjetas de crédito/débito (Acepta Visa, Mastercard, Credicard y Unica)</label><br>
-                    <input class="form-check-input" type="checkbox" value="aqui_pago" id="defaultCheck1" name="for_pago">
-                    <label class="form-check-label" for="defaultCheck1">Aqui Pago</label><br>
-                    <input class="form-check-input" type="checkbox" value="pago_exp" id="defaultCheck1" name="for_pago">
-                    <label class="form-check-label" for="defaultCheck1">Pago Express</label><br>
-                    <input class="form-check-input" type="checkbox" value="pract_pag" id="defaultCheck1" name="for_pago">
-                    <label class="form-check-label" for="defaultCheck1">Practipago</label><br>
-                    <input class="form-check-input" type="checkbox" value="cuent_ban" id="defaultCheck1" name="for_pago">
-                    <label class="form-check-label" for="defaultCheck1">Cuenta Bancaria</label><br>
-                    <input class="form-check-input" type="checkbox" value="tigo" id="defaultCheck1" name="for_pago">
-                    <label class="form-check-label" for="defaultCheck1">Tigo Money</label><br>
-                    <br><br>
-            </div>
+            <div class="form-checkbox" required>
+                <label for="exampleFormControlInput1">Seleccione la Forma de Pago*</label><br>
+                <input class="form-check-input" type="checkbox" value="bancard" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Bancard - Tarjetas de crédito/débito (Acepta Visa, Mastercard, American Express, Discover, Diners Club y Credifielco.)</label><br>
+                <input class="form-check-input" type="checkbox" value="procard" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Procard - Tarjetas de crédito/débito (Acepta Visa, Mastercard, Credicard y Unica)</label><br>
+                <input class="form-check-input" type="checkbox" value="aqui_pago" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Aqui Pago</label><br>
+                <input class="form-check-input" type="checkbox" value="pago_exp" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Pago Express</label><br>
+                <input class="form-check-input" type="checkbox" value="pract_pag" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Practipago</label><br>
+                <input class="form-check-input" type="checkbox" value="cuent_ban" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Cuenta Bancaria</label><br>
+                <input class="form-check-input" type="checkbox" value="tigo" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Tigo Money</label><br>
+                <br><br>
+        </div>
+
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Tipo de Participación*</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="tipo_participacion"
@@ -163,7 +164,7 @@
                     <option value="Conferencia Magistral">Conferencia Magistral</option>
                 </select>
             </div>
-            <div class="form-check" hidden>
+            <div class="form-check1" hidden>
                 <label for="exampleFormControlInput1">Area de su Ponencia*</label><br>
                 <input class="form-check-input" type="checkbox"
                     value="Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico" id="defaultCheck1"
@@ -184,7 +185,7 @@
                 <label class="form-check-label" for="defaultCheck1">Escenarios Productivos en Sistemas Silvopastoriles
                     (testimonios de productores)</label><br><br>
             </div>
-            <div class="form-check" hidden>
+            <div class="form-check2" hidden>
                 <label for="exampleFormControlInput1">¿Requiere servicio de traducción para las charlas dictadas en
                     inglés?</label><br>
                 <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="ingles">
@@ -224,26 +225,16 @@
     function HiddenCheck() {
         var x = document.getElementsByName("tipo_participacion");
         if (x[0].options.selectedIndex === 0) {
-            document.getElementsByClassName("form-check")[0].hidden = true;
-            document.getElementsByClassName("form-check")[1].hidden = true;
+            document.getElementsByClassName("form-check1")[0].hidden = true;
+            document.getElementsByClassName("form-check2")[0].hidden = true;
         }
         else {
-            document.getElementsByClassName("form-check")[0].hidden = false;
-            document.getElementsByClassName("form-check")[1].hidden = false;
+            document.getElementsByClassName("form-check1")[0].hidden = false;
+            document.getElementsByClassName("form-check2")[0].hidden = false;
         }
     }
 
-    /*function HiddenFact(){
-        var x = document.getElementsByName("factura")[0];
-        if (x.checked == true){
-            document.getElementById("fact_inf").hidden = false;
-        }else{
-            document.getElementById("fact_inf").hidden = true;
-        }
-    }*/
-
     document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
-
 </script>
 
 {% endblock %}

@@ -108,6 +108,17 @@
         });
     </script>
     <script>
+        $('.form-checkbox>input[type="checkbox"]').on('change', function() {
+            $('.form-checkbox>input[type="checkbox"]').not(this).prop('checked', false);
+        });
+        $('.form-check1>input[type="checkbox"]').on('change', function() {
+            $('.form-check1>input[type="checkbox"]').not(this).prop('checked', false);
+        });
+        $('.form-check2>input[type="checkbox"]').on('change', function() {
+            $('.form-check2>input[type="checkbox"]').not(this).prop('checked', false);
+        });
+    </script>
+    <script>
         $('.navbar-nav>li>a').on('click', function () {
             $('.navbar-collapse').collapse('hide');
         });
