@@ -96,6 +96,28 @@
                     <!---<option value="Otro">Other</option>-->
                 </select>
             </div>
+
+            <div class="form-checkbox" required>
+                <label for="exampleFormControlInput1">Select Payment Method*</label><br>
+                <input class="form-check-input" type="checkbox" value="bancard" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Bancard - credit/debit cards (Accepts Visa,
+                    Mastercard, American Express, Discover, Diners Club and Credifielco.)</label><br>
+                <input class="form-check-input" type="checkbox" value="procard" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Procard - credit/debit cards (Accepts Visa,
+                    Mastercard, Credicard and Unica)</label><br>
+                <input class="form-check-input" type="checkbox" value="aqui_pago" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Aqui Pago</label><br>
+                <input class="form-check-input" type="checkbox" value="pago_exp" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Pago Express</label><br>
+                <input class="form-check-input" type="checkbox" value="pract_pag" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Practipago</label><br>
+                <input class="form-check-input" type="checkbox" value="cuent_ban" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Cuenta Bancaria</label><br>
+                <input class="form-check-input" type="checkbox" value="tigo" id="defaultCheck1" name="for_pago">
+                <label class="form-check-label" for="defaultCheck1">Tigo Money</label><br>
+                <br><br>
+            </div>
+
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Type of Participation*</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="tipo_participacion"
@@ -106,7 +128,7 @@
                     <option value="Conferencia Magistral">Magisterial Conference</option>
                 </select>
             </div>
-            <div class="form-check" hidden>
+            <div class="form-check1" hidden>
                 <label for="exampleFormControlInput1">Your Speaker's Area*</label><br>
                 <input class="form-check-input" type="checkbox"
                     value="Ganaderia Sostenible, Biodiversidad, Ambiente Y Cambio Climatico" id="defaultCheck1"
@@ -127,23 +149,13 @@
                     (producer testimonies)</label><br><br>
 
             </div>
-            <!--<div class="form-check" hidden>
-                <label for="exampleFormControlInput1">¿Requiere servicio de traducción para las charlas dictadas en
-                    inglés?</label><br>
-                <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="ingles">
-                <label class="form-check-label" for="defaultCheck1">Si</label><br>
-                <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1" name="ingles">
-                <label class="form-check-label" for="defaultCheck1">No</label><br>
-            </div>-->
+            
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Comment: (write here if you have any food restriction (food
                     allergy, among others) or mobility restriction (Difficulty of movement, among others).</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
             </div>
 
-            <!--<input class="form-check-input" type="checkbox" value="factura_infona" id="defaultCheck1" name="factura"
-                onchange="HiddenFact()">
-            <label class="form-check-label" for="defaultCheck1">Legal Invoice Request</label><br>-->
             <label class="form-check-label" for="defaultCheck1">Complete the following fields only if you want a legal
                 invoice</label><br>
             <br>
@@ -165,23 +177,14 @@
     function HiddenCheck() {
         var x = document.getElementsByName("tipo_participacion");
         if (x[0].options.selectedIndex === 0) {
-            document.getElementsByClassName("form-check")[0].hidden = true;
+            document.getElementsByClassName("form-check1")[0].hidden = true;
 
         }
         else {
-            document.getElementsByClassName("form-check")[0].hidden = false;
+            document.getElementsByClassName("form-check1")[0].hidden = false;
 
         }
     }
-
-    /*function HiddenFact(){
-        var x = document.getElementsByName("factura")[0];
-        if (x.checked == true){
-            document.getElementById("fact_inf").hidden = false;
-        }else{
-            document.getElementById("fact_inf").hidden = true;
-        }
-    }*/
 
     document.body.style.backgroundImage = 'url(/static/img/fondo.png)';
 

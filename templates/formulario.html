@@ -136,10 +136,6 @@
                 </select>
             </div>
 
-            {% if error %}
-                <p><strong>Error:</strong> {{ error }}
-            {% endif %}
-
             <div class="form-checkbox" required>
                 <label for="exampleFormControlInput1">Seleccione la Forma de Pago*</label><br>
                 <input class="form-check-input" type="checkbox" value="bancard" id="defaultCheck1" name="for_pago">
@@ -206,9 +202,6 @@
                     otros)</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
             </div>
-
-            <!--<input class="form-check-input" type="checkbox" value="factura_infona" id="defaultCheck1" name="factura" onchange="HiddenFact()">
-            <label class="form-check-label" for="defaultCheck1">Desea Factura Legal</label><br>-->
 
             <label class="form-check-label" for="defaultCheck1">Complete los siguientes campos sólo si desea Factura
                 Legal</label><br>
