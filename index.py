@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from pago_servicio import procesar
-from models import listData
+from models import listData, insertData1, sortData
 import json
 import requests
 
@@ -184,25 +184,32 @@ def register():
    else:
       return render_template('form.html')
 
-"""@app.route('/reject')
-def reject():
-   return render_template('redirect.html')"""
+@app.route('/resultado/<string:hash>')
+def result(hash):
+   datos = sortData(hash)
+   if datos[0][1] == 0:
+      mensaje = "¡Todavia no se ha pagado!"
+      return render_template('resultado.html', mensaje=mensaje)
+   else:
+      mensaje = "¡Su Inscripcion ha sido pagada con exito!!!"
+      return render_template('resultado.html', mensaje=mensaje)
 
-@app.route('/pagopar/resultado', methods=['GET', 'POST'])
-def result():
-   return render_template('resultado.html')
-
-@app.route('/pagopar/respuesta', methods=['GET', 'POST'])
+@app.route('/respuesta', methods=['GET', 'POST'])
 def reply():
-   if request.headers['Content-Type'] == 'application/json':
-         return "JSON Message: " + json.dumps(request.json)
-         
-   """data = request.get_json()
-   all = data['resultado']
-   if data['resultado'][0]['pagado'] == True:
-      return "<h2>¡Gracias por su compra!</h2>"""
-   #return jsonify(data['resultado'])
-   
+   data = request.get_json()
+   pagado = data['resultado'][0]['pagado']
+   forma_pago = data['resultado'][0]['forma_pago']
+   fecha_pago = data['resultado'][0]['fecha_pago']
+   monto = data['resultado'][0]['monto']
+   fecha_maxima_pago = data['resultado'][0]['fecha_maxima_pago']
+   hash_pedido = data['resultado'][0]['hash_pedido']
+   numero_pedido = data['resultado'][0]['numero_pedido']
+   cancelado = data['resultado'][0]['cancelado']
+   forma_pago_identificador = data['resultado'][0]['forma_pago_identificador']
+   token = data['resultado'][0]['token']
+   insertData1(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token)
+   return json.dumps(data['resultado'])
+
 @app.route('/board')
 def board():
    data = listData()

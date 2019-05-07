@@ -29,3 +29,18 @@ def updateByID(token_respuesta, id):
     cur.execute("UPDATE silvopastoril SET token_api = ? WHERE id = ?;", (token_respuesta, id))
     con.commit()
     con.close()
+
+def insertData1(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token):
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("INSERT INTO transactions_pagopar VALUES (?,?,?,?,?,?,?,?,?,?,?)", (None, pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token))
+    con.commit()
+    con.close()
+
+def sortData(hash_pedido):
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM transactions_pagopar where hash_pedido = ?",(hash_pedido, ))
+    data = cur.fetchall()
+    con.close()
+    return data
