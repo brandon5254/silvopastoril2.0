@@ -1,7 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="mensaje" style="width: 50%; height: 330px; margin-top: 10%;">
+    <h3 style="color:white">{{ mensaje }}</h3>
 
-    <h1 style="color:white">{{ mensaje }}</h1>
+    <ul style="color:white; font-size: 20px;">
+        {% for data in datos %}
+        <h3>Resumen</h3> 
+        <li>Número de pedido de pago: {{ data[7] }}</li>
+        <li>Forma de pago: {% if data[9] == '9' %} Bancard {% elif data[9] == '1' %} Procard {% elif data[9] == '2' %} Aqui Pago {% elif data[9] == '3' %} Pago Express {% elif data[9] == '4' %} Practipago {% elif data[9] == '7' %} Cuenta Bancaria {% else %} Tigo Money {% endif %}</li>
+        <li>Estado del pago: {% if data[1] == 1 %} Pagado {% else %} No pagado {% endif %}</li>
+        <li>Fecha de pago: {{ data[3] }}</li>
+        <li>Monto: {{ data[4] }}</li>
+        <li>Fecha máxima de pago: {{ data[5] }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="billetera" hidden>
+    <ul><strong>¿Porqué no se realizó el pago? Algunos de los errores más comunes son:</strong>
+        <li>No tiene fondos suficientes en su billetera</li>
+        <li>Se ingresó incorrectamente el PIN de transacción de su billetera</li>
+    </ul>
+    <p>Para saber más detalle sobre porqué no pudo realizarse el pago puede comunicarse con su empresa de telefonía proveedora de su billetera.<p>
+</div>
+
+<div class="bancario" hidden>
+    <p>Debe ingresar a su Homebanking, y buscar en el apartado 'Pago de Servicios' el comercio <strong>PAGOPAR</strong>, ingresando su cédula o número de pedido </strong></p>
+
+    <ul><strong>Las entidades financieras habilitadas para el pago desde el Homebanking son:</strong>";
+    <li><a target='_blank' href='https://www.visionbanco.com/' class='btn-link'>Visión Banco</a></li>";
+    <li><a target='_blank' href='https://www.bancoatlas.com.py' class='btn-link'>Banco Atlas</a></li>";
+    <li><a target='_blank' href='https://www.bancognb.com.py/' class='btn-link'>Banco GNB</a></li>";
+    <li><a target='_blank' href='https://www.interfisa.com.py/' class='btn-link'>Banco Interfisa</a></li>";
+    <li><a target='_blank' href='https://www.bancoitapua.com.py/' class='btn-link'>Banco Itapúa</a></li>";
+    <li><a target='_blank' href='https://www.regional.com.py/' class='btn-link'>Banco Regional</a></li>";
+    <li><a target='_blank' href='http://www.bancop.com.py/' class='btn-link'>Banco Bancop</a></li>";
+    <li><a target='_blank' href='https://www.bancobasa.com.py/' class='btn-link'>Banco BASA</a></li>";
+    <li><a target='_blank' href='http://www.cu.coop.py/' class='btn-link'>Cooperativa 
+</div>
+
 
 {% endblock %}

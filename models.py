@@ -40,7 +40,7 @@ def insertData1(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_p
 def sortData(hash_pedido):
     con = sql.connect("datos.db")
     cur = con.cursor()
-    cur.execute("SELECT * FROM transactions_pagopar where hash_pedido = ?",(hash_pedido, ))
+    cur.execute("SELECT * FROM transactions_pagopar where hash_pedido = ? ORDER BY id DESC LIMIT 1",(hash_pedido, ))
     data = cur.fetchall()
     con.close()
     return data

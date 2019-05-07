@@ -187,12 +187,27 @@ def register():
 @app.route('/resultado/<string:hash>')
 def result(hash):
    datos = sortData(hash)
-   if datos[0][1] == 0:
-      mensaje = "¡Todavia no se ha pagado!"
-      return render_template('resultado.html', mensaje=mensaje)
-   else:
+   if datos[0][1] == 1: # devuelve este mensaje si esta pagado
       mensaje = "¡Su Inscripcion ha sido pagada con exito!!!"
+      return render_template('resultado.html', mensaje=mensaje, datos=datos)
+      
+   else: # si no se encuentra pagado devuelve los sgtes mensajes
+         
+      if datos[0][9] == '1' or datos[0][9] == '9':#credito/debito bancard, procard
+         mensaje = 'No se realizo correctamente el pago, La tarjeta no tiene fondos suficientes o no esta habilitada para compras en Internet. Para saber más detalle sobre porqué no pudo realizarse el pago puede comunicarse con la entidad financiera emisora de su tarjeta'
+         return render_template('resultado.html', mensaje=mensaje)
+      
+      elif datos[0][9] == '10' or datos[0][9] == '12':#billetera personal, tigo money 
+         return render_template('resultado.html', forma_pago = datos[0][9])
+      
+   if datos[0][9] == '7': #cuenta bancaria
+      mensaje = 'Debe ingresar a su Homebanking, y buscar en el apartado Pago de Servicios'
       return render_template('resultado.html', mensaje=mensaje)
+      
+   if datos[0][9] == '2' or datos[0][9] == '3' or datos[0][9] == '4':
+      mensaje = 'Debe ir a la boca de cobranza mas cercana!!'
+      return render_template('resultado.html', mensaje=mensaje)
+
 
 @app.route('/respuesta', methods=['GET', 'POST'])
 def reply():
