@@ -194,8 +194,14 @@ def result():
 
 @app.route('/pagopar/respuesta', methods=['GET', 'POST'])
 def reply():
-   data = request.get_json()
-   return jsonify(data['resultado'])
+   if request.headers['Content-Type'] == 'application/json':
+         return "JSON Message: " + json.dumps(request.json)
+         
+   """data = request.get_json()
+   all = data['resultado']
+   if data['resultado'][0]['pagado'] == True:
+      return "<h2>¡Gracias por su compra!</h2>"""
+   #return jsonify(data['resultado'])
    
 @app.route('/board')
 def board():
