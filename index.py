@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from pago_servicio import procesar
 from models import listData
 import json
+import requests
 
 app = Flask(__name__)
-
+app.config['JSON_SORT_KEYS'] = False
 app.secret_key = "SECRET"
 
 app.config['MAIL_SERVER'] = 'correo.silvopastoril2019.org.py'
@@ -187,6 +188,15 @@ def register():
 def reject():
    return render_template('redirect.html')"""
 
+@app.route('/pagopar/resultado', methods=['GET', 'POST'])
+def result():
+   return render_template('resultado.html')
+
+@app.route('/pagopar/respuesta', methods=['GET', 'POST'])
+def reply():
+   data = request.get_json()
+   return jsonify(data['resultado'])
+   
 @app.route('/board')
 def board():
    data = listData()
