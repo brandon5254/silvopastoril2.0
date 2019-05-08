@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from pago_servicio import procesar
-from models import listData, insertData1, sortData
+from generador_token import generarToken
+from pagopar_traer import TraerPedido
+from models import listData, insertData1, sortData, insertData2
 import json
 import requests
 
@@ -222,6 +224,15 @@ def reply():
    forma_pago_identificador = data['resultado'][0]['forma_pago_identificador']
    token = data['resultado'][0]['token']
    insertData1(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token)
+   if data['resultado'][0]['forma_pago_identificador'] == '9' and data['resultado'][0]['forma_pago_identificador'] == '1':
+      private_key = "520281c5bbc1e8910ab1a9c5c840512c"
+      public_key = "1b85c4c48b70160f3b0ec66e46f4ade2"
+   else:
+      private_key = "1d98c69bb9c71a9529ca1e13e228040a"
+      public_key = "c8928436431b6c6de669edb2ad199b3f"
+   token = generarToken(private_key)
+   res = TraerPedido(token, public_key)
+   insertData2(res)
    return json.dumps(data['resultado'])
 
 @app.route('/board')

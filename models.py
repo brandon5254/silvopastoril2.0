@@ -44,3 +44,10 @@ def sortData(hash_pedido):
     data = cur.fetchall()
     con.close()
     return data
+
+def insertData2(res)
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("INSERT INTO pedido_traer VALUES (?)", (res))
+    con.commit()
+    con.close()

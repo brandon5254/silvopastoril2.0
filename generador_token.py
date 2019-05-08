@@ -6,3 +6,8 @@ def generar(private_key, id_pedido, monto_total):
     result = m.hexdigest()
     return result
 
+def generarToken(private_key):
+    concat = private_key+"FORMA-PAGO"
+    m = hashlib.sha1(concat.encode())
+    result = m.hexdigest()
+    return result
