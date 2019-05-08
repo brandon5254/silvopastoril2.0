@@ -226,7 +226,6 @@ def result(hash):
       return render_template('resultado_bancario.html', datos=datos[0][7])
       
    if datos[0][9] == '2' or datos[0][9] == '3' or datos[0][9] == '4':
-      mensaje = ''
       return render_template('resultado_ventanilla.html', datos=datos ) 
 
 @app.route('/respuesta', methods=['GET', 'POST'])
