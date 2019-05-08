@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mensaje" style="width: 50%; height: 330px; margin-top: 10%;">
+    <h3 style="color:white">{{ mensaje }}</h3>
+
+    <ul style="color:white; font-size: 20px;"><strong>¿Porqué no se realizó el pago? Algunos de los errores más comunes son:</strong>
+        <li>No tiene fondos suficientes en su billetera</li>
+        <li>Se ingresó incorrectamente el PIN de transacción de su billetera</li>
+    </ul>
+    <p style="color:white; font-size: 20px;">Para saber más detalle sobre porqué no pudo realizarse el pago puede comunicarse con su empresa de telefonía
+        proveedora de su billetera.<p>
+
+</div>
+
+{% endblock %}

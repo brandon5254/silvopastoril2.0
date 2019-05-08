@@ -194,20 +194,19 @@ def result(hash):
    else: # si no se encuentra pagado devuelve los sgtes mensajes
          
       if datos[0][9] == '1' or datos[0][9] == '9':#credito/debito bancard, procard
-         mensaje = 'No se realizo correctamente el pago, La tarjeta no tiene fondos suficientes o no esta habilitada para compras en Internet. Para saber más detalle sobre porqué no pudo realizarse el pago puede comunicarse con la entidad financiera emisora de su tarjeta'
-         return render_template('resultado.html', mensaje=mensaje)
+         mensaje = 'No se realizo correctamente el pago'
+         return render_template('resultado_tarjeta.html', mensaje=mensaje)
       
       elif datos[0][9] == '10' or datos[0][9] == '12':#billetera personal, tigo money 
-         return render_template('resultado.html', forma_pago = datos[0][9])
+         mensaje = 'No se realizo correctamente el pago'
+         return render_template('resultado_billetera.html', mensaje=mensaje)
       
    if datos[0][9] == '7': #cuenta bancaria
-      mensaje = 'Debe ingresar a su Homebanking, y buscar en el apartado Pago de Servicios'
-      return render_template('resultado.html', mensaje=mensaje)
+      return render_template('resultado_bancario.html', datos=datos[0][7])
       
    if datos[0][9] == '2' or datos[0][9] == '3' or datos[0][9] == '4':
-      mensaje = 'Debe ir a la boca de cobranza mas cercana!!'
-      return render_template('resultado.html', mensaje=mensaje)
-
+      mensaje = ''
+      return render_template('resultado_ventanilla.html', datos=datos ) 
 
 @app.route('/respuesta', methods=['GET', 'POST'])
 def reply():

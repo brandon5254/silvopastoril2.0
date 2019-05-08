@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mensaje" style="width: 50%; height: 550px; margin-top: 10%;">
+    <h3 style="color:white">{{ mensaje }}</h3>
+
+        <p style="color:white; font-size: 20px;">Debe ingresar a su Homebanking, y buscar en el apartado 'Pago de Servicios' el comercio
+            <strong>PAGOPAR</strong>,
+            ingresando su cédula o número de pedido: {{ datos }} </strong></p>
+
+        <ul style="color:white; font-size: 20px;"><strong>Las entidades financieras habilitadas para el pago desde el Homebanking son:</strong><br>
+            <br>
+            <li><a target='_blank' style="color: white;" href='https://www.visionbanco.com/' class='btn-link'>Visión Banco</a></li>
+            <li><a target='_blank' style="color: white;" href='https://www.bancoatlas.com.py' class='btn-link'>Banco Atlas</a></li>
+            <li><a target='_blank' style="color: white;" href='https://www.bancognb.com.py/' class='btn-link'>Banco GNB</a></li>
+            <li><a target='_blank' style="color: white;" href='https://www.interfisa.com.py/' class='btn-link'>Banco Interfisa</a></li>
+            <li><a target='_blank' style="color: white;" href='https://www.bancoitapua.com.py/' class='btn-link'>Banco Itapúa</a></li>
+            <li><a target='_blank' style="color: white;" href='https://www.regional.com.py/' class='btn-link'>Banco Regional</a></li>
+            <li><a target='_blank' style="color: white;" href='http://www.bancop.com.py/' class='btn-link'>Banco Bancop</a></li>
+            <li><a target='_blank' style="color: white;" href='https://www.bancobasa.com.py/' class='btn-link'>Banco BASA</a></li>
+            <li><a target='_blank' style="color: white;" href='http://www.cu.coop.py/' class='btn-link'>Cooperativa</a></li>
+        </ul>
+</div>
+
+{% endblock %}
