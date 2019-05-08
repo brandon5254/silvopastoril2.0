@@ -188,7 +188,26 @@ def register():
 
 @app.route('/resultado/<string:hash>')
 def result(hash):
+
    datos = sortData(hash)
+   
+   if datos[0][9] == '9' or datos[0][9] == '1':
+      
+      private_key = "520281c5bbc1e8910ab1a9c5c840512c"
+      public_key = "1b85c4c48b70160f3b0ec66e46f4ade2"
+   
+   else:
+      
+      private_key = "1d98c69bb9c71a9529ca1e13e228040a"
+      public_key = "c8928436431b6c6de669edb2ad199b3f"
+   
+   print(private_key, public_key)
+   token = generarToken(private_key)
+   print(token)
+   res = TraerPedido(hash, token, public_key)
+   print(res)
+   insertData2(res)
+
    if datos[0][1] == 1: # devuelve este mensaje si esta pagado
       mensaje = "¡Su Inscripcion ha sido pagada con exito!!!"
       return render_template('resultado.html', mensaje=mensaje, datos=datos)
@@ -224,15 +243,6 @@ def reply():
    forma_pago_identificador = data['resultado'][0]['forma_pago_identificador']
    token = data['resultado'][0]['token']
    insertData1(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token)
-   if data['resultado'][0]['forma_pago_identificador'] == '9' and data['resultado'][0]['forma_pago_identificador'] == '1':
-      private_key = "520281c5bbc1e8910ab1a9c5c840512c"
-      public_key = "1b85c4c48b70160f3b0ec66e46f4ade2"
-   else:
-      private_key = "1d98c69bb9c71a9529ca1e13e228040a"
-      public_key = "c8928436431b6c6de669edb2ad199b3f"
-   token = generarToken(private_key)
-   res = TraerPedido(token, public_key)
-   insertData2(res)
    return json.dumps(data['resultado'])
 
 @app.route('/board')
