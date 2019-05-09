@@ -69,7 +69,6 @@ def registro():
             return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
-            print(all['respuesta'])
             flash(mensaje)
             return render_template('formulario.html')
 
@@ -84,7 +83,6 @@ def registro():
             return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
-            print(all['respuesta'])
             flash(mensaje)
             return render_template('formulario.html')
 
@@ -99,7 +97,6 @@ def registro():
             return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
-            print(all['respuesta'])
             flash(mensaje)
             return render_template('formulario.html')
 
