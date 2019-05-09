@@ -32,7 +32,7 @@ def CrearPedido(token, ruc, email, nombre, telefono, documento, razon_social, pu
     "public_key": public_key2,
     "url_imagen": "",
     "descripcion": descripcion,#nombre_item
-    "id_producto": 2, # 2 cambiar para probar
+    "id_producto": 3, # 2 cambiar para probar
     "precio_total": precio_total,
     "vendedor_telefono": "",
     "vendedor_direccion": "",
