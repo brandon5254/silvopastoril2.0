@@ -185,10 +185,10 @@ def register():
 
 @app.route('/resultado/<string:hash>')
 def result(hash):
-
+   
    datos = sortData(hash)
    
-   if datos[0][9] == '9' or datos[0][9] == '1':
+   if datos[0][19] == '9' or datos[0][19] == '1':
       
       private_key = "520281c5bbc1e8910ab1a9c5c840512c"
       public_key = "1b85c4c48b70160f3b0ec66e46f4ade2"
@@ -198,36 +198,47 @@ def result(hash):
       private_key = "1d98c69bb9c71a9529ca1e13e228040a"
       public_key = "c8928436431b6c6de669edb2ad199b3f"
    
-   print(private_key, public_key)
    token = generarToken(private_key)
-   print(token)
+   #recibo los estados de los pedidos
    res = TraerPedido(hash, token, public_key)
-   print(res)
-   insertData2(res)
+   ped = json.loads(res)
+   #guardo la cadena en mi bd
+   pagado = ped['resultado'][0]['pagado']
+   forma_pago = ped['resultado'][0]['forma_pago']
+   fecha_pago = ped['resultado'][0]['fecha_pago']
+   monto = ped['resultado'][0]['monto']
+   fecha_maxima_pago = ped['resultado'][0]['fecha_maxima_pago']
+   hash_pedido = ped['resultado'][0]['hash_pedido']
+   numero_pedido = ped['resultado'][0]['numero_pedido']
+   cancelado = ped['resultado'][0]['cancelado']
+   forma_pago_identificador = ped['resultado'][0]['forma_pago_identificador']
+   token = ped['resultado'][0]['token']
+   insertData2(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token)
 
-   if datos[0][1] == 1: # devuelve este mensaje si esta pagado
+   if pagado == True: # devuelve este mensaje si esta pagado
       mensaje = "¡Su Inscripcion ha sido pagada con exito!!!"
-      return render_template('resultado.html', mensaje=mensaje, datos=datos)
+      return render_template('resultado.html', mensaje=mensaje, ped=ped)
       
    else: # si no se encuentra pagado devuelve los sgtes mensajes
          
-      if datos[0][9] == '1' or datos[0][9] == '9':#credito/debito bancard, procard
+      if forma_pago == '1' or forma_pago == '9':#credito/debito bancard, procard
          mensaje = 'No se realizo correctamente el pago'
          return render_template('resultado_tarjeta.html', mensaje=mensaje)
       
-      elif datos[0][9] == '10' or datos[0][9] == '12':#billetera personal, tigo money 
+      elif forma_pago == '10' or forma_pago == '12':#billetera personal, tigo money 
          mensaje = 'No se realizo correctamente el pago'
          return render_template('resultado_billetera.html', mensaje=mensaje)
       
-   if datos[0][9] == '7': #cuenta bancaria
-      return render_template('resultado_bancario.html', datos=datos[0][7])
+   if forma_pago == '7': #cuenta bancaria
+      return render_template('resultado_bancario.html', datos=numero_pedido)
       
-   if datos[0][9] == '2' or datos[0][9] == '3' or datos[0][9] == '4':
-      return render_template('resultado_ventanilla.html', datos=datos ) 
+   if forma_pago == '2' or forma_pago == '3' or forma_pago == '4':
+      return render_template('resultado_ventanilla.html', ped=ped ) 
 
 @app.route('/respuesta', methods=['GET', 'POST'])
 def reply():
    data = request.get_json()
+   #recibo los pedidos pagados
    pagado = data['resultado'][0]['pagado']
    forma_pago = data['resultado'][0]['forma_pago']
    fecha_pago = data['resultado'][0]['fecha_pago']

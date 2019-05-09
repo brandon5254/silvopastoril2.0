@@ -5,17 +5,17 @@
     <h3 style="color:white">{{ mensaje }}</h3>
 
     <ul style="color:white; font-size: 20px;">
-        {% for data in datos %}
+        
         <h3>Resumen</h3>
-        <li>Número de pedido de pago: {{ data[7] }}</li>
-        <li>Forma de pago: {% if data[9] == '9' %} Bancard {% elif data[9] == '1' %} Procard {% elif data[9] == '2' %}
+        <li>Número de pedido de pago: {{ ped['resultado'][0]['numero_pedido'] }}</li>
+        <li>Forma de pago: {% ped['resultado'][0]['forma_pago'] == '9' %} Bancard {% elif ped['resultado'][0]['forma_pago'] == '1' %} Procard {% elif ped['resultado'][0]['forma_pago'] == '2' %}
             Aqui Pago {% elif data[9] == '3' %} Pago Express {% elif data[9] == '4' %} Practipago
-            {% elif data[9] == '7' %} Cuenta Bancaria {% else %} Tigo Money {% endif %}</li>
-        <li>Estado del pago: {% if data[1] == 1 %} Pagado {% else %} No pagado {% endif %}</li>
-        <li>Fecha de pago: {{ data[3] }}</li>
-        <li>Monto: {{ data[4] }}</li>
-        <li>Fecha máxima de pago: {{ data[5] }}</li>
-        {% endfor %}
+            {% elif ped['resultado'][0]['forma_pago'] == '7' %} Cuenta Bancaria {% else %} Tigo Money {% endif %}</li>
+        <li>Estado del pago: {% if ped['resultado'][0]['pagado'] == 1 %} Pagado {% else %} No pagado {% endif %}</li>
+        <li>Fecha de pago: {{ ped['resultado'][0]['fecha_pago'] }}</li>
+        <li>Monto: {{ ped['resultado'][0]['monto'] }}</li>
+        <li>Fecha máxima de pago: {{ ped['resultado'][0]['fecha_maxima_pago'] }}</li>
+        
     </ul>
 </div>
 

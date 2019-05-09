@@ -6,25 +6,25 @@
     <h3 style="color:white">{{ mensaje }}</h3>
 
     <ul style="color:white; font-size: 20px;">
-        {% for data in datos %}
-        <li>Eligió pagar con {% if data[9] == '2' %} Aqui Pago {% elif data[9] == '3' %} Pago Express {% else %}
+        
+        <li>Eligió pagar con {% if ped['resultado'][0]['forma_pago_identificador'] == '2' %} Aqui Pago {% elif ped['resultado'][0]['forma_pago_identificador'] == '3' %} Pago Express {% else %}
             Practipago {% endif %},
-            recuerde que tiene hasta las {{ data[5] }} para pagar.</li>
+            recuerde que tiene hasta las {{ ped['resultado'][0]['fecha_maxima_pago'] }} para pagar.</li>
 
-        <li>Debe ir a boca de cobranza de {% if data[9] == '2' %} Aqui Pago {% elif data[9] == '3' %} Pago Express
-            {% else %} Practipago {% endif %},
+        <li>Debe ir a boca de cobranza de {% if ped['resultado'][0]['forma_pago_identificador'] == '2' %} Aqui Pago {% elif ped['resultado'][0]['forma_pago_identificador'] == '3' %} Pago Express {% else %}
+            Practipago {% endif %},
             decir que quiere pagar el comercio <strong style="font-size:20px;color:#0f68a8">Pagopar</strong>,
             mencionando su cédula <strong></strong>
-            o número de pedido <strong>{{ data[7] }}</strong>.</li>
-        {% endfor %}
+            o número de pedido <strong>{{ ped['resultado'][0]['numero_pedido'] }}</strong>.</li>
+
     </ul>
 </div>
 
-{% if datos[0][9] == '2' %}
+{% if ped['resultado'][0]['forma_pago_identificador'] == '2' %}
 <div style="float:right;font-size:20px;">
     <a target="_blank" href="http://www.pronet.com.py/quepago/" class="btn-link">Ver bocas de cobranzas</a>
 </div>
-{% elif datos[0][9] == '3' %}
+{% elif dped['resultado'][0]['forma_pago_identificador'] == '3' %}
 
 <div style="float:right;font-size:20px;">
     <a target="_blank" href="http://www.pagoexpress.com.py:81/v4/bocas.php" class="btn-link">Ver bocas de cobranzas</a>
