@@ -58,7 +58,7 @@ def registro():
          mensaje = "Por favor ingrese un metodo de pago!!"
          flash(mensaje)
          return render_template('formulario.html')
-      if request.form['ocupacion'] == 'Estudiante Nacional' or 'Estudiante Extranjero':
+      if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
          precio = 100#precio incripcion e n/e
          #descripcion
          res, f_pago = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
@@ -135,7 +135,7 @@ def register():
          mensaje = "Por favor ingrese un metodo de pago!!"
          flash(mensaje)
          return render_template('form.html')
-      if request.form['ocupacion'] == 'Estudiante Nacional' or 'Estudiante Extranjero':
+      if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
          precio = 100#precio incripcion e n/e
          #descripcion
          res, f_pago = procesar(name, document, n_document, mail, country, city, address, phone, institute, ocupation, f_pago, participation, ponencia, english, coments, social, ruc, precio)
