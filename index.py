@@ -221,18 +221,18 @@ def result(hash):
       
    else: # si no se encuentra pagado devuelve los sgtes mensajes
          
-      if forma_pago == '1' or forma_pago == '9':#credito/debito bancard, procard
+      if forma_pago_identificador == '1' or forma_pago_identificador == '9':#credito/debito bancard, procard
          mensaje = 'No se realizo correctamente el pago'
          return render_template('resultado_tarjeta.html', mensaje=mensaje)
       
-      elif forma_pago == '10' or forma_pago == '12':#billetera personal, tigo money 
+      elif forma_pago_identificador == '10' or forma_pago_identificador == '12':#billetera personal, tigo money 
          mensaje = 'No se realizo correctamente el pago'
          return render_template('resultado_billetera.html', mensaje=mensaje)
       
-   if forma_pago == '7': #cuenta bancaria
+   if forma_pago_identificador == '7': #cuenta bancaria
       return render_template('resultado_bancario.html', datos=numero_pedido)
       
-   if forma_pago == '2' or forma_pago == '3' or forma_pago == '4':
+   if forma_pago_identificador == '2' or forma_pago_identificador == '3' or forma_pago == '4':
       return render_template('resultado_ventanilla.html', ped=ped ) 
 
 @app.route('/respuesta', methods=['GET', 'POST'])
