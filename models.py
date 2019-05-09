@@ -3,7 +3,7 @@ import sqlite3 as sql
 def insertData(name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto):
     con = sql.connect("datos.db")
     cur = con.cursor()
-    cur.execute("INSERT INTO silvopastoril VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (None, name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto, None))
+    cur.execute("INSERT INTO silvopastoril VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (None, name, document, n_document, mail, country, city, address, phone, institute, ocupation, participation, ponencia, english, coments, social, ruc, monto, None, None))
     con.commit()
     con.close()
 
@@ -23,10 +23,10 @@ def findByID(name, n_document):
     con.close()
     return data
 
-def updateByID(token_respuesta, id):
+def updateByID(token_respuesta, id, num):
     con = sql.connect("datos.db")
     cur = con.cursor()
-    cur.execute("UPDATE silvopastoril SET token_api = ? WHERE id = ?;", (token_respuesta, id))
+    cur.execute("UPDATE silvopastoril SET token_api = ?, forma_pago = ? WHERE id = ?;", (token_respuesta, num, id))
     con.commit()
     con.close()
 

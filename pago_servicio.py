@@ -34,6 +34,7 @@ def procesar(name, document, n_document, mail, country, city, address, phone, in
         fecha_maxima_pago = max.strftime("%Y-%m-%d %H:%M:%S")#la fecha maxima de pago
         #devuelve true+token o false
         response = CrearPedido(token, ruc, mail, name, phone, n_document, social, public_key, monto_total, "Inscripción X CONGRESO SILVOPASTORIL", public_key, descripcion, monto_total, fecha_maxima_pago, id_pedido, descripcion_resumen)#crea el pedido
+        num = dict.get(f_pago)
         all = json.loads(response)
         
         if all['respuesta'] == False:
@@ -42,9 +43,8 @@ def procesar(name, document, n_document, mail, country, city, address, phone, in
         else:
 
             token_recibed = all['resultado'][0]['data']
-            dbHandler.updateByID(token_recibed, id_pedido)
+            dbHandler.updateByID(token_recibed, id_pedido, num)
 
-        num = dict.get(f_pago)
 
     else:
 
@@ -73,6 +73,7 @@ def procesar(name, document, n_document, mail, country, city, address, phone, in
         fecha_maxima_pago = max.strftime("%Y-%m-%d %H:%M:%S")#la fecha maxima de pago
         #devuelve true+token o false
         response = CrearPedido(token1, ruc, mail, name, phone, n_document, social, public_key1, monto_total, "Inscripción X CONGRESO SILVOPASTORIL", public_key1, descripcion, monto_total, fecha_maxima_pago, id_pedido, descripcion_resumen)#crea el pedido
+        num = dict.get(f_pago)
         all = json.loads(response)
         
         if all['respuesta'] == False:
@@ -81,8 +82,8 @@ def procesar(name, document, n_document, mail, country, city, address, phone, in
         else:
 
             token_recibed = all['resultado'][0]['data']
-            dbHandler.updateByID(token_recibed, id_pedido)
+            dbHandler.updateByID(token_recibed, id_pedido, num)
 
-        num = dict.get(f_pago)
+        
 
     return response, num
