@@ -1,88 +1,121 @@
 {% extends 'basei.html' %}
 
 {% block content %}
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril -  MRA 2.png')}}" id="encabezado">
-                </a>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril -  MRA 2.png')}}"
+                id="encabezado">
+        </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav ml-auto p-1">
-                        <li class="nav-item">
-                            <a class="nav-link" href="html" data-toggle="collapse" data-target=".navbar-collapse.show"><span style="color: #97bf72;">|</span> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#presentacion"><span style="color: #97bf72;">|</span> Presentation</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                <span style="color: #97bf72;">|</span> Congress
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#evento"><span style="color: #97bf72;">|</span> The Event</a>
-                                <a class="dropdown-item" href="{{url_for('norms')}}"><span style="color: #97bf72;">|</span> Norms</a>
-                                <!--<a class="dropdown-item" href="#sede"><span style="color: #97bf72;">|</span> Event Venue</a>-->
-                                <a class="dropdown-item" href="#comite"><span style="color: #97bf72;">|</span> Scientific Committee</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a style="font-size: 12px;" class="nav-link" href="#parte"><span style="color: #97bf72;">|</span> Why be Part of it?</a>
-                        </li>
-                        <li class="nav-item">
-                            <!--<a class="nav-link" href="#realizar"><span style="color: #97bf72;">|</span> Where will it take place?</a>-->
-                            <a class="nav-link" href="#sede"><span style="color: #97bf72;">|</span> Event Venue</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#seccion"><span style="color: #97bf72;">|</span> Sessions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('gallery')}}"><span style="color: #97bf72;">|</span> Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('register')}}"><span style="color: #97bf72;">|</span> Registration</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="/"><span style="color: #97bf72;">|</span> Spanish</a>
-                            </li>
-                        <!--<li class="nav-item">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto p-1">
+                <li class="nav-item">
+                    <a class="nav-link" href="html" data-toggle="collapse" data-target=".navbar-collapse.show"><span
+                            style="color: #97bf72;">|</span> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#presentacion"><span style="color: #97bf72;">|</span> Presentation</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <span style="color: #97bf72;">|</span> Congress
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#evento"><span style="color: #97bf72;">|</span> The Event</a>
+                        <a class="dropdown-item" href="{{url_for('norms')}}"><span style="color: #97bf72;">|</span>
+                            Norms</a>
+                        <!--<a class="dropdown-item" href="#sede"><span style="color: #97bf72;">|</span> Event Venue</a>-->
+                        <a class="dropdown-item" href="#comite"><span style="color: #97bf72;">|</span> Scientific
+                            Committee</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a style="font-size: 12px;" class="nav-link" href="#parte"><span style="color: #97bf72;">|</span>
+                        Why be Part of it?</a>
+                </li>
+                <li class="nav-item">
+                    <!--<a class="nav-link" href="#realizar"><span style="color: #97bf72;">|</span> Where will it take place?</a>-->
+                    <a class="nav-link" href="#sede"><span style="color: #97bf72;">|</span> Event Venue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#seccion"><span style="color: #97bf72;">|</span> Sessions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('gallery')}}"><span style="color: #97bf72;">|</span> Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('register')}}"><span style="color: #97bf72;">|</span>
+                        Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><span style="color: #97bf72;">|</span> Spanish</a>
+                </li>
+                <!--<li class="nav-item">
                                 <a class="nav-link" href="#comite">SCIENTIFIC COMMITTEE</a>
                         </li>-->
-                    </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <!--<div id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/QX4bt_8bslE',containment:'body',autoPlay:true, showControls:false, mute:true, startAt:10, stopAt:68, opacity:0.5}">My video</div>-->
+    <section class="titulo">
+        <div class="row align-items-center h-100">
+            <div class="col-12">
+                <h1>X INTERNATIONAL CONGRESS<br><span class="underline">ON SILVOPASTORAL SYSTEMS</span></h1>
+                <h2>24 to 26 September / 2019</h2>
+                <a href="mailto:info@silvopastoril2019.org.py" class="buttonContact">Contact us</a>
+                <div id="logos">
+                    <a href="https://visitparaguay.travel/" target="_blank"><img class="img-fluid"
+                            src="{{url_for('static', filename='img/senatur.png')}}"></a>
+                    <a href="https://www.registur.gov.py/registur/" target="_blank"><img class="img-fluid"
+                            src="{{url_for('static', filename='img/registur.png')}}"></a>
                 </div>
             </div>
-        </nav>
-        <div class="container">
-            <!--<div id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/QX4bt_8bslE',containment:'body',autoPlay:true, showControls:false, mute:true, startAt:10, stopAt:68, opacity:0.5}">My video</div>-->
-            <section class="titulo">
-                <div class="row align-items-center h-100">
-                    <div class="col-12">
-                        <h1>X INTERNATIONAL CONGRESS<br><span class="underline">ON SILVOPASTORAL SYSTEMS</span></h1>
-                        <h2>24 to 26 September / 2019</h2>
-                        <a href="mailto:info@silvopastoril2019.org.py" class="buttonContact">Contact us</a>
-                        <div id="logos">
-                                <a href="https://visitparaguay.travel/" target="_blank"><img class="img-fluid" src="{{url_for('static', filename='img/senatur.png')}}"></a>
-                                <a href="https://www.registur.gov.py/registur/" target="_blank"><img class="img-fluid" src="{{url_for('static', filename='img/registur.png')}}"></a>
-                            </div>
-                    </div>
-                </div>
-            </section>
+        </div>
+    </section>
 
-            <section id="presentacion" class="px-md-4 px-xl-5">
-                <h3 class="titulo_seccion px-md-5">PRESENTATION</h3>
-                <div class="text-justify text-light px-md-5">
-                    <p>Throughout the world, at one time or another in history, agroforestry has been the common practice of using trees with agricultural crops in an intimate combination (King, 1987). Forty-six per cent of the world's agricultural land has more than 10 per cent tree cover and is concentrated in tropical and subtropical regions. Seventeen percent (one-sixth) of the world's agricultural area has more than 30 percent tree cover. Silvopastoral systems represent a land use modality where ecological and/or economic interactions coexist, both positive and negative, between tree, forage and livestock components, under sustainable management.</p>
-                    <p>Silvopastoral systems require the management of their components in such a way that the trees, shrubs, fodder species, soil, as well as their use by the animals, last over time. The importance of fodder trees and shrubs is that in addition to producing tangible material goods (wood, fodder, ...) also, through the maintenance of a continuous vegetation cover, they contribute to animal welfare, bring verifiable benefits in animal production, the maintenance of fertility and biodiversity and sustainability over time. These systems are also an option for reversing grassland degradation processes by increasing physical soil protection and contributing to fertility recovery through the inclusion of nitrogen-fixing leguminous species and pivoting root trees that recycle nutrients through the depth they reach. </p>
-                    <p>In order to share this knowledge and bring together actors from different parts of Latin America, the First Congress on Livestock Agroforestry was held in Cali (Colombia) in 1999. The event was convened by the CIPAV Foundation and FAO, and a network of experts in the field has emerged and continued to evolve. CATIE, as well as universities and research centres from several countries in the region, subsequently joined this initiative. The process since then has been continuous and successful; touring several Latin American countries: The second congress in San José (Costa Rica) in 2001; the third in Mérida (Mexico) in 2004; the fourth in Varadero (Cuba) in 2006; the fifth in Maracay (Venezuela) in 2008; the sixth in Panama City (Panama) in 2010; the seventh in Belén de Para (Brazil) in 2012, the eighth in Iguazú (Argentina) in 2015 and in its ninth edition, the International Congress Silvopastoril in Manizales (Colombia) in 2017.</p>
-                    <p>In this opportunity, Paraguay will host the X International Congress of Silvopastoral Systems. It will be the second time that our latitudes have been reached and on the occasion of celebrating 20 years of continuous progress and tangible results for those who practice them and society as a whole.</p>
-                </div>
-            </section>
+    <section id="presentacion" class="px-md-4 px-xl-5">
+        <h3 class="titulo_seccion px-md-5">PRESENTATION</h3>
+        <div class="text-justify text-light px-md-5">
+            <p>Throughout the world, at one time or another in history, agroforestry has been the common practice of
+                using trees with agricultural crops in an intimate combination (King, 1987). Forty-six per cent of the
+                world's agricultural land has more than 10 per cent tree cover and is concentrated in tropical and
+                subtropical regions. Seventeen percent (one-sixth) of the world's agricultural area has more than 30
+                percent tree cover. Silvopastoral systems represent a land use modality where ecological and/or economic
+                interactions coexist, both positive and negative, between tree, forage and livestock components, under
+                sustainable management.</p>
+            <p>Silvopastoral systems require the management of their components in such a way that the trees, shrubs,
+                fodder species, soil, as well as their use by the animals, last over time. The importance of fodder
+                trees and shrubs is that in addition to producing tangible material goods (wood, fodder, ...) also,
+                through the maintenance of a continuous vegetation cover, they contribute to animal welfare, bring
+                verifiable benefits in animal production, the maintenance of fertility and biodiversity and
+                sustainability over time. These systems are also an option for reversing grassland degradation processes
+                by increasing physical soil protection and contributing to fertility recovery through the inclusion of
+                nitrogen-fixing leguminous species and pivoting root trees that recycle nutrients through the depth they
+                reach. </p>
+            <p>In order to share this knowledge and bring together actors from different parts of Latin America, the
+                First Congress on Livestock Agroforestry was held in Cali (Colombia) in 1999. The event was convened by
+                the CIPAV Foundation and FAO, and a network of experts in the field has emerged and continued to evolve.
+                CATIE, as well as universities and research centres from several countries in the region, subsequently
+                joined this initiative. The process since then has been continuous and successful; touring several Latin
+                American countries: The second congress in San José (Costa Rica) in 2001; the third in Mérida (Mexico)
+                in 2004; the fourth in Varadero (Cuba) in 2006; the fifth in Maracay (Venezuela) in 2008; the sixth in
+                Panama City (Panama) in 2010; the seventh in Belén de Para (Brazil) in 2012, the eighth in Iguazú
+                (Argentina) in 2015 and in its ninth edition, the International Congress Silvopastoril in Manizales
+                (Colombia) in 2017.</p>
+            <p>In this opportunity, Paraguay will host the X International Congress of Silvopastoral Systems. It will be
+                the second time that our latitudes have been reached and on the occasion of celebrating 20 years of
+                continuous progress and tangible results for those who practice them and society as a whole.</p>
+        </div>
+    </section>
 
-            <!--<section id="evento" class="px-md-4 px-xl-5">
+    <!--<section id="evento" class="px-md-4 px-xl-5">
                 <h3 class="titulo_seccion px-md-5">THE EVENT</h3>
                 <div class="text-justify text-light px-md-5">
                     <p>The International Congress of Silvopastoral Systems is the main meeting of Silvopasturas worldwide. Due to the relevance of the topic, the event gathers opinion formers. It promotes technical and scientific exchange among professionals and institutions working in the forest area.</p>
@@ -92,178 +125,389 @@
                 </div>
             </section>-->
 
-            <section id="parte" class="px-md-4 px-xl-5">
-                <h3 class="titulo_seccion px-md-5">WHY BE PART OF IT?</h3>
-                <div class="text-justify text-light px-md-5">
-                    <p>The Congress aims to create a space through which new solutions can be debated for the challenges in the sustainable management of silvopastoral systems in implanted forests and in the management of forests with integrated livestock.</p>
-                    <p>Here you will learn what strategies other countries use, what technological advances are being developed and implemented in the silvopastoral sector.</p>
-                </div>
-            </section>
+    <section id="parte" class="px-md-4 px-xl-5">
+        <h3 class="titulo_seccion px-md-5">WHY BE PART OF IT?</h3>
+        <div class="text-justify text-light px-md-5">
+            <p>The Congress aims to create a space through which new solutions can be debated for the challenges in the
+                sustainable management of silvopastoral systems in implanted forests and in the management of forests
+                with integrated livestock.</p>
+            <p>Here you will learn what strategies other countries use, what technological advances are being developed
+                and implemented in the silvopastoral sector.</p>
+        </div>
+    </section>
 
-            <section id="realizar" class="px-md-4 px-xl-5">
-                <h3 class="titulo_seccion px-md-5">WHERE WILL IT TAKE PLACE?</h3>
-                <div class="text-justify text-light px-md-5">
-                    <p>The event will be held at the Rural Association of Paraguay, the (ARP) is a private non-profit entity, which brings together agricultural producers from across the country. Its headquarters is located in the municipality of Mariano Roque Alonso on a 28-hectare site.</p>
-                    <p>For more information about the congress, please contact info@silvopastoril2019.org.py</p>
-                </div>
-            </section>
+    <section id="realizar" class="px-md-4 px-xl-5">
+        <h3 class="titulo_seccion px-md-5">WHERE WILL IT TAKE PLACE?</h3>
+        <div class="text-justify text-light px-md-5">
+            <p>The event will be held at the Rural Association of Paraguay, the (ARP) is a private non-profit entity,
+                which brings together agricultural producers from across the country. Its headquarters is located in the
+                municipality of Mariano Roque Alonso on a 28-hectare site.</p>
+            <p>For more information about the congress, please contact info@silvopastoril2019.org.py</p>
+        </div>
+    </section>
 
-            <section id="seccion" class="px-md-4 px-xl-5">
-                <h3 class="titulo_seccion px-md-5">MAIN SECTIONS</h3>
-                <div class="text-justify text-light px-md-5">
-                    <h2>SECTION 1:</h2>
-                    <h1>SUSTAINABLE LIVESTOCK, BIODIVERSITY, ENVIRONMENT AND CLIMATE CHANGE</h1>
-                    <p>Research and project results will be presented highlighting the positive contributions of sustainable livestock production with animal welfare (all domestic production species) to nature conservation, ecosystem services at global, regional or national scales, as well as ecological restoration.</p>
-                    <h2>SECTION 2:</h2>
-                    <h1>SIMULTANEOUS PRODUCTION OF LIVESTOCK AND FOREST GOODS</h1>
-                    <p>This section will present a broad view of the different goods derived from the integration between livestock and forests such as meat, milk, wool, skins, wood, firewood, charcoal, fruits, fibers and non-timber forest products. Improvements in the quality that differentiates these products in international, national and local markets will be highlighted.</p>
-                    <p>In addition to keynote presentations, there will be three symposia on specific topics of interest and important developments in current research.</p>
-                    <h2>SECTION 3:</h2>
-                    <h1>SOCIOECONOMICS IN SILVOPASTORAL SYSTEMS</h1>
-                    <p>Presentations will be selected that support in an integrated manner the benefits, costs and financial, economic, social and environmental balances of silvopastoral projects of private, public, mixed or international cooperation initiative that positively impact on the generation of welfare, wealth with equity.</p>
-                    <h2>SECTION 4:</h2>
-                    <h1>PRODUCTIVE SCENARIOS IN SILVOPASTORILE SYSTEMS (testimonies from producers)</h1>
-                    <p>This section will showcase works and initiatives in higher education, formal and informal education for producers and technicians in silvopastoral systems, as well as scale projects and silvopastoral exchange networks.</p>
-                    <p>It will have a special panel with presentation of producers of all scales with sustainable silvopastoral livestock processes in different regions of Paraguay.</p>
-                </div>
-            </section>
+    <section id="seccion" class="px-md-4 px-xl-5">
+        <h3 class="titulo_seccion px-md-5">MAIN SECTIONS</h3>
+        <div class="text-justify text-light px-md-5">
+            <h2>SECTION 1:</h2>
+            <h1>SUSTAINABLE LIVESTOCK, BIODIVERSITY, ENVIRONMENT AND CLIMATE CHANGE</h1>
+            <p>Research and project results will be presented highlighting the positive contributions of sustainable
+                livestock production with animal welfare (all domestic production species) to nature conservation,
+                ecosystem services at global, regional or national scales, as well as ecological restoration.</p>
+            <h2>SECTION 2:</h2>
+            <h1>SIMULTANEOUS PRODUCTION OF LIVESTOCK AND FOREST GOODS</h1>
+            <p>This section will present a broad view of the different goods derived from the integration between
+                livestock and forests such as meat, milk, wool, skins, wood, firewood, charcoal, fruits, fibers and
+                non-timber forest products. Improvements in the quality that differentiates these products in
+                international, national and local markets will be highlighted.</p>
+            <p>In addition to keynote presentations, there will be three symposia on specific topics of interest and
+                important developments in current research.</p>
+            <h2>SECTION 3:</h2>
+            <h1>SOCIOECONOMICS IN SILVOPASTORAL SYSTEMS</h1>
+            <p>Presentations will be selected that support in an integrated manner the benefits, costs and financial,
+                economic, social and environmental balances of silvopastoral projects of private, public, mixed or
+                international cooperation initiative that positively impact on the generation of welfare, wealth with
+                equity.</p>
+            <h2>SECTION 4:</h2>
+            <h1>PRODUCTIVE SCENARIOS IN SILVOPASTORILE SYSTEMS (testimonies from producers)</h1>
+            <p>This section will showcase works and initiatives in higher education, formal and informal education for
+                producers and technicians in silvopastoral systems, as well as scale projects and silvopastoral exchange
+                networks.</p>
+            <p>It will have a special panel with presentation of producers of all scales with sustainable silvopastoral
+                livestock processes in different regions of Paraguay.</p>
+        </div>
+    </section>
 
-            <section id="comite" class="px-md-4 px-xl-5">
-                <h3 class="titulo_seccion px-md-5">SCIENTIFIC COMMITTEE</h3>
+    <section id="comite" class="px-md-4 px-xl-5">
+        <h3 class="titulo_seccion px-md-5">SCIENTIFIC COMMITTEE</h3>
 
-                    <table class="table table-dark table-hover">
-                        <thead>
-                            <tr>
-                                <th style="font-size: 20px;">Specialist</th>
-                                <th style="font-size: 20px;">Institution or organization</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Julian Chará</th>
-                                <th>CIPAV. Cali, Colombia</th>
-                            </tr>
-                            <tr>
-                                <th>Enrique Murgueitio</th>
-                                <th>CIPAV. Cali, Colombia</th>
-                            </tr>
-                            <tr>
-                                <th>Luis Colcombet</th>
-                                <th>Instituto Nacional de Tecnología Agropecuaria, INTA – Montecarlo. Misiones, Argentina.</th>
-                            </tr>
-                            <tr>
-                                <th>Pablo Luis Peri</th>
-                                <th>Instituto Nacional de Tecnología Agropecuaria, INTA – Santa Cruz. Santa Cruz, Argentina.</th>
-                            </tr>
-                            <tr>
-                                <th>Santiago Lacorte</th>
-                                <th>UNNE. Misiones, Argentina</th>
-                            </tr>
-                            <tr>
-                                <th>Hugo Fassola</th>
-                                <th>Instituto Nacional de Tecnología Agropecuaria, INTA – Montecarlo. Misiones, Argentina.</th>
-                            </tr>
-                            <tr>
-                                <th>Rogerio Martins Mauricio</th>
-                                <th>Universidade Federal de São João del-Rei. Minas Gerais, Brasil</th>
-                            </tr>
-                            <tr>
-                                <th>Florencia Montagnini</th>
-                                <th>Universidad de Yale. School of Forestry and Environmental Studies. New Haven. Estados Unidos.</th>
-                            </tr>
-                            <tr>
-                                <th>Maura Díaz</th>
-                                <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. Carrera de Ingeniería Forestal. San Lorenzo - Paraguay</th>
-                            </tr>
-                            <tr>
-                                <th>Daniel Caballero</th>
-                                <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. San Lorenzo - Paraguay</th>
-                            </tr>
-                            <tr>
-                                <th>Luis Alfonso Griffitt</th>
-                                <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. San Lorenzo - Paraguay</th>
-                            </tr>
-                            <tr>
-                                <th>Laura Quevedo</th>
-                                <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. Carrera de Ingeniería Forestal. San Lorenzo - Paraguay</th>
-                            </tr>
-                            <tr>
-                                <th>Marta Alvarez</th>
-                                <th>Instituto Forestal Nacional. San Lorenzo - Paraguay</th>
-                            </tr>
-                            <tr>
-                                <th>Rosalia Goerzen</th>
-                                <th>Cooperativa Fernheim Ltda. Chaco - Paraguay</th>
-                            </tr>
-                            <tr>
+        <table style="font-size: 12px;" bgcolor="#182e08" class="table">
+            <thead>
+                <tr>
+                    <th style="font-size: 20px;">Investigator</th>
+                    <th style="font-size: 20px;">Institution or organization</th>
+                    <th style="font-size: 20px;">City</th>
+                    <th style="font-size: 20px;">Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Jorge Esquivel</th>
+                    <th>CREA "Tierra Colorada" - AACREA</th>
+                    <th>Posadas, Misiones</th>
+                    <th>Argentina</th>
+                </tr>
+                <tr>
+                    <th>Belén Rossner</th>
+                    <th>Instituto Nacional de Tecnología Agropecuaria, INTA</th>
+                    <th>Cerro Azul, Misiones</th>
+                    <th>Argentina</th>
+                </tr>
+                <tr>
+                    <th>Hugo Fassola</th>
+                    <th>Instituto Nacional de Tecnología Agropecuaria, INTA</th>
+                    <th>Montecarlo, Misiones</th>
+                    <th>Argentina</th>
+                </tr>
+                <tr>
+                    <th>Luis Colcombet</th>
+                    <th>Instituto Nacional de Tecnología Agropecuaria, INTA</th>
+                    <th>Montecarlo, Misiones</th>
+                    <th>Argentina</th>
+                </tr>
+                <tr>
+                    <th>Pablo Luis Peri</th>
+                    <th>Instituto Nacional de Tecnología Agropecuaria, INTA</th>
+                    <th>Río Gallegos, Santa Cruz</th>
+                    <th>Argentina</th>
+                </tr>
+                <tr>
+                    <th>Santiago Lacorte</th>
+                    <th>UNaM / F. C. Forestales, Carrera de Agronomía</th>
+                    <th>Posadas, Misiones</th>
+                    <th>Argentina</th>
+                </tr>
+                <tr>
+                    <th>Aníbal Nahuel Pachas</th>
+                    <th>Universidad de Queensland</th>
+                    <th>Brisbane, Queensland</th>
+                    <th>Australia</th>
+                </tr>
+                <tr>
+                    <th>Fabiana Villa Alvess</th>
+                    <th>EMBRAPA Ganado de Carne</th>
+                    <th>Campo Grande do Sul, Mato Groso</th>
+                    <th>Brasil</th>
+                </tr>
+                <tr>
+                    <th>Rogerio Martins Mauricio</th>
+                    <th>Universidade Federal de São João do Rei.</th>
+                    <th>São João do Rei. Minas Gerais</th>
+                    <th>Brasil</th>
+                </tr>
+                <tr>
+                    <th>Antonio Solarte</th>
+                    <th>Fundación CIPAV</th>
+                    <th>Cali</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>Carolina Giraldo</th>
+                    <th>Fundación CIPAV</th>
+                    <th>Medellín</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>Enrique Murgueitio</th>
+                    <th>Fundación CIPAV</th>
+                    <th>Cali</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>Fernando Uribe</th>
+                    <th>Fundación CIPAV</th>
+                    <th>Manizales</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>John Jairo Lopera</th>
+                    <th>Fundación CIPAV</th>
+                    <th>Medellín</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>Julián Chará</th>
+                    <th>Fundación CIPAV</th>
+                    <th>Cali</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>Zoraida Calle </th>
+                    <th>Fundación CIPAV</th>
+                    <th>Cali</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>Liliana Mahecha </th>
+                    <th>Universidad de Antioquía</th>
+                    <th>Medellín</th>
+                    <th>Colombia</th>
+                </tr>
+                <tr>
+                    <th>Eduardo Somarriba </th>
+                    <th>Centro Agronómico de Investigación y Enseñanza -CATIE</th>
+                    <th>Turrialba</th>
+                    <th>Costa Rica</th>
+                </tr>
+                <tr>
+                    <th>Giraldo Martin</th>
+                    <th>Estación de Pastos y Forrajes Indio Hatuey</th>
+                    <th>Matanzas</th>
+                    <th>Cuba</th>
+                </tr>
+                <tr>
+                    <th>Tomás Ruiz</th>
+                    <th>Instituto de Ciencia Animal - ICA</th>
+                    <th>La Habana</th>
+                    <th>Cuba</th>
+                </tr>
+                <tr>
+                    <th>Ernesto Reyes </th>
+                    <th>Agribenchmark</th>
+                    <th></th>
+                    <th>España/Alemania</th>
+                </tr>
+                <tr>
+                    <th>Martha Xóchitl Flores</th>
+                    <th>Fundación PRODUCE Michoacán</th>
+                    <th>Morelia</th>
+                    <th>México</th>
+                </tr>
+                <tr>
+                    <th>Rocío Santos Gally</th>
+                    <th>Instituto de Ecología UNAM</th>
+                    <th>Ciudad de México</th>
+                    <th>México</th>
+                </tr>
+                <tr>
+                    <th>Manuel Sánchez Hermosillo</th>
+                    <th>Consultor Ganadería Sostenible</th>
+                    <th>Jalisco</th>
+                    <th>México</th>
+                </tr>
+                <tr>
+                    <th>Rosalía Goerzen</th>
+                    <th>Federación de Cooperativas de producción Ltda. FECOPROD</th>
+                    <th>Filadelfia</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Norbert Weichselberger</th>
+                    <th>Cooperativa de producción, consumo y servicios Volendam Ltda.</th>
+                    <th>Villa del Rosario - San Pedro</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Marta Álvarez</th>
+                    <th>Instituto Forestal Nacional (INFONA)</th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Julio Britos</th>
+                    <th>Instituto Forestal Nacional (INFONA)</th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Mariza Toffoletti</th>
+                    <th>Instituto Forestal Nacional (INFONA)</th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Wilson Jara</th>
+                    <th>Instituto Forestal Nacional (INFONA)</th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Maura Díaz</th>
+                    <th>Universidad Nacional de Asunción, Facultad de Ciencias Agrarias, Carrera de Ingeniería Forestal.
+                    </th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Cynthia Gamarra</th>
+                    <th>Universidad Nacional de Asunción(UNA).</th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Daniel Caballero</th>
+                    <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias.</th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Luis Alfonso Griffitt</th>
+                    <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. </th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Laura Quevedo</th>
+                    <th>Universidad Nacional de Asunción. Facultad de Ciencias Agrarias. Carrera de Ingeniería Forestal.
+                    </th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <tr>
+                    <th>Andrea Weiler</th>
+                    <th>Universidad Nacional de Asunción. Facultad de Ciencias Exactas y Naturales. </th>
+                    <th>San Lorenzo, Asunción.</th>
+                    <th>Paraguay</th>
+                </tr>
+                <!--<tr>
                                 <th>Karim Mussalem</th>
-                                <th>WWF. Asunción – Paraguay</th>
-                            </tr>
-                            <tr>
-                                <th>Andrea Weiler</th>
-                                <th>Universidad Nacional de Asunción. Facultad de Ciencias Exactas y Naturales. San Lorenzo - Paraguay</th>
-                            </tr>
-                        </tbody>
-                    </table>
+                                <th>WWF - Paraguay</th>
+                                <th>Asunción</th>
+                                <th>Paraguay</th>
+                            </tr>-->
+                <tr>
+                    <th>Stella Maris Huertas</th>
+                    <th>Universidad de la República</th>
+                    <th>Montevideo</th>
+                    <th>Uruguay</th>
+                </tr>
+                <tr>
+                    <th>Florencia Montagnini</th>
+                    <th>Universidad de Yale. School of Forestry and Environmental Studies.</th>
+                    <th>New Haven, Connecticut</th>
+                    <th>Estados Unidos</th>
+                </tr>
+                <tr>
+                    <th>Adolfo Cardozo</th>
+                    <th>CENDIGRANJA - Universiad de los Llanos Occidentales UNELLEZ</th>
+                    <th>Guanare, Portuguesa</th>
+                    <th>Venezuela</th>
+                </tr>
+            </tbody>
+        </table>
 
-            </section>
+    </section>
 
-            <section id="sede" class="px-md-4 px-xl-5">
-                <h3 class="titulo_seccion px-md-5">EVENT VENUE</h3>
-                <div class="text-justify text-light px-md-5">
-                        <p>The event will take place in the city of Mariano Roque Alonso, 18 km from Asunción, capital of the Republic of Paraguay.</p>
-                        <p>The city of Mariano Roque Alonso has a total of 103,759 inhabitants, of whom 51,569 are men and 52,190 are women.</p>
-                        <p>It has a tropical climate, in most of the months of the year in Mariano Roque Alonso there are important precipitations. The average annual temperature is 23.2°C. There's about 1375 mm rainfall.</p>
-                        <p>The X International Congress on Silvopastoral Systems will be held at the headquarters of the Rural Association of Paraguay (ARP), located in the municipality of Mariano Roque Alonso on a plot of land of 28 hectares (70 acres).</p>
-                        <p>The ARP is a private, non-profit entity that brings together agricultural producers from all over the country. It was founded in 1885 with the name of Sociedad Ganadera del Paraguay. In 1938 it took the name it bears today.</p>
-                        <p>The ARP is the only trade union that has represented and defended the interests of Paraguay and its livestock for 133 years. The "Rural", as the ARP is commonly known, seeks to make livestock production an instrument of Paraguayan development, with social responsibility and in harmony with the environment.</p>
-                        
-                        <div id="direccion">
-                        <h3>RURAL ASSOCIATION OF PARAGUAY</h3>
-                        <h3>Social Living Room Dr. Germán Ruíz Aveiro</h3>
-                        <h3>Ruta Troperos del Chaco Km. 14,5</h3>
-                        <h3>Mariano Roque Alonso - Paraguay</h3>
-                        
-                        </div>
+    <section id="sede" class="px-md-4 px-xl-5">
+        <h3 class="titulo_seccion px-md-5">EVENT VENUE</h3>
+        <div class="text-justify text-light px-md-5">
+            <p>The event will take place in the city of Mariano Roque Alonso, 18 km from Asunción, capital of the
+                Republic of Paraguay.</p>
+            <p>The city of Mariano Roque Alonso has a total of 103,759 inhabitants, of whom 51,569 are men and 52,190
+                are women.</p>
+            <p>It has a tropical climate, in most of the months of the year in Mariano Roque Alonso there are important
+                precipitations. The average annual temperature is 23.2°C. There's about 1375 mm rainfall.</p>
+            <p>The X International Congress on Silvopastoral Systems will be held at the headquarters of the Rural
+                Association of Paraguay (ARP), located in the municipality of Mariano Roque Alonso on a plot of land of
+                28 hectares (70 acres).</p>
+            <p>The ARP is a private, non-profit entity that brings together agricultural producers from all over the
+                country. It was founded in 1885 with the name of Sociedad Ganadera del Paraguay. In 1938 it took the
+                name it bears today.</p>
+            <p>The ARP is the only trade union that has represented and defended the interests of Paraguay and its
+                livestock for 133 years. The "Rural", as the ARP is commonly known, seeks to make livestock production
+                an instrument of Paraguayan development, with social responsibility and in harmony with the environment.
+            </p>
 
-                        <img src="{{url_for('static', filename='img/arp_mra.jpg')}}" id="img">
+            <div id="direccion">
+                <h3>RURAL ASSOCIATION OF PARAGUAY</h3>
+                <h3>Social Living Room Dr. Germán Ruíz Aveiro</h3>
+                <h3>Ruta Troperos del Chaco Km. 14,5</h3>
+                <h3>Mariano Roque Alonso - Paraguay</h3>
 
-                        <div class="map-responsive">
+            </div>
 
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.969975296373!2d-57.53575935176504!3d-25.229922082171047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da43461fc60f5%3A0xeb8c778285fe20d3!2sAsociaci%C3%B3n+Rural+del+Paraguay!5e0!3m2!1ses!2spy!4v1552088193264" width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <img src="{{url_for('static', filename='img/arp_mra.jpg')}}" id="img">
 
-                        </div>
-                        <br>
-                        <div class="auspices">
-                            <div class="ot">
-                                <h1>Auspician</h1>
-                            </div>
-                            <img src="{{url_for('static', filename='img/auspices/FECOPROD II.png')}}" alt="">
-                            <img src="{{url_for('static', filename='img/auspices/Pomera_logo-01.png')}}" style="width: 20%;" alt="">
-                            <img src="{{url_for('static', filename='img/auspices/Volendam blanco-01.png')}}" alt="">
-                            <img src="{{url_for('static', filename='img/auspices/WWF III.png')}}" style="width: 13%;" alt="">
-                            
-                        </div><br>
-                        <div class="organize">
-                            <div class="ot">
-                                <h1>Organizan</h1>
-                            </div>
-                            <img src="{{url_for('static', filename='img/organize/Logo INFONA 2018 Blanco.png')}}" style="width: 20%;" alt="">
-                            <img src="{{url_for('static', filename='img/organize/ARP.png')}}" style="width: 17%;" alt="">
-                            <img src="{{url_for('static', filename='img/organize/facultad de ciencias agrarias una.png')}}"
-                                style="width: 35%;" alt="">
-                            <img src="{{url_for('static', filename='img/organize/FECOPROD II.png')}}" alt="">
-                            <img src="{{url_for('static', filename='img/organize/INTA_2-01.png')}}" style="width: 20%;" alt="">
-                            <img src="{{url_for('static', filename='img/organize/Logo CIPAV.png')}}" alt="">
-                            <img src="{{url_for('static', filename='img/organize/logo forestal sylvis-01.png')}}" style="width: 20%;" alt="">
-                            
-                            <img src="{{url_for('static', filename='img/organize/MAG 2-01.png')}}" style="width: 20%;" alt="">
-                            <img src="{{url_for('static', filename='img/organize/WWF III.png')}}" style="width: 13%;" alt="">
-                        </div>
-                        
+            <div class="map-responsive">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.969975296373!2d-57.53575935176504!3d-25.229922082171047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da43461fc60f5%3A0xeb8c778285fe20d3!2sAsociaci%C3%B3n+Rural+del+Paraguay!5e0!3m2!1ses!2spy!4v1552088193264"
+                    width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            </div>
+            <br>
+            <div class="auspices">
+                <div class="ot">
+                    <h1>Auspician</h1>
                 </div>
-            </section>
+                <img src="{{url_for('static', filename='img/auspices/FECOPROD II.png')}}" alt="">
+                <img src="{{url_for('static', filename='img/auspices/Pomera_logo-01.png')}}" style="width: 20%;" alt="">
+                <img src="{{url_for('static', filename='img/auspices/Volendam blanco-01.png')}}" alt="">
+                <img src="{{url_for('static', filename='img/auspices/WWF III.png')}}" style="width: 13%;" alt="">
+
+            </div><br>
+            <div class="organize">
+                <div class="ot">
+                    <h1>Organizan</h1>
+                </div>
+                <img src="{{url_for('static', filename='img/organize/Logo INFONA 2018 Blanco.png')}}"
+                    style="width: 20%;" alt="">
+                <img src="{{url_for('static', filename='img/organize/ARP.png')}}" style="width: 17%;" alt="">
+                <img src="{{url_for('static', filename='img/organize/facultad de ciencias agrarias una.png')}}"
+                    style="width: 35%;" alt="">
+                <img src="{{url_for('static', filename='img/organize/FECOPROD II.png')}}" alt="">
+                <img src="{{url_for('static', filename='img/organize/INTA_2-01.png')}}" style="width: 20%;" alt="">
+                <img src="{{url_for('static', filename='img/organize/Logo CIPAV.png')}}" alt="">
+                <img src="{{url_for('static', filename='img/organize/logo forestal sylvis-01.png')}}"
+                    style="width: 20%;" alt="">
+
+                <img src="{{url_for('static', filename='img/organize/MAG 2-01.png')}}" style="width: 20%;" alt="">
+                <img src="{{url_for('static', filename='img/organize/WWF III.png')}}" style="width: 13%;" alt="">
+            </div>
 
         </div>
+    </section>
+
+</div>
 
 {% endblock %}
