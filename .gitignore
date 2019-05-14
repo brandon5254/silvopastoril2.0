@@ -18,3 +18,4 @@ __pycache__/
 *.mdb
 *.pdb
 *.sqlite3
+datos.db
