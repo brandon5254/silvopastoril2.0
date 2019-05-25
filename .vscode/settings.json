@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "silvopastoril2env/bin/python3",
+    "python.pythonPath": "/home/cross/.local/share/virtualenvs/silvopastoril2.0-S8UPgl6w/bin/python",
     "emmet.triggerExpansionOnTab": true,
     "sqltools.connections": [],
     "terminal.integrated.setLocaleVariables": false

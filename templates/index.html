@@ -1,19 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril -  MRA 2.png')}}"
-                id="encabezado">
-        </a>
+<nav class="navbar navbar-expand-md navbar-dark fixed-rigth">
+    <!--<div class="container">-->
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button>-->
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto p-1">
+            <ul class="navbar-nav p-1 justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link" href="html" data-toggle="collapse" data-target=".navbar-collapse.show"><span
                             style="color: #97bf72;">|</span> Inicio</a>
@@ -54,28 +50,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/homei"><span style="color: #97bf72;">|</span> English</a>
                 </li>
-                <!--<li class="nav-item">
-                                        <a class="nav-link" href="#comite">COMITE CIENTIFICO</a>
-                                </li>-->
             </ul>
+
+            <a href="mailto:info@silvopastoril2019.org.py" class="buttonContact">Contactanos</a>
+
         </div>
-    </div>
+    <!--</div>-->
 </nav>
 <div class="container">
     <!--<div id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/QX4bt_8bslE',containment:'body',autoPlay:true, showControls:false, mute:true, startAt:10, stopAt:68, opacity:0.5}">My video</div>-->
     <section class="titulo">
-        <div class="row align-items-center h-100">
-            <div class="col-12">
-                <h1>X CONGRESO INTERNACIONAL<br><span class="underline">DE SISTEMAS SILVOPASTORILES</span></h1>
-                <h2>24 AL 26 DE SEPTIEMBRE / 2019</h2>
-                <a href="mailto:info@silvopastoril2019.org.py" class="buttonContact">Contactanos</a>
-                <div id="logos">
-                    <a href="https://visitparaguay.travel/" target="_blank"><img class="img-fluid"
-                            src="{{url_for('static', filename='img/senatur.png')}}"></a>
-                    <a href="https://www.registur.gov.py/registur/" target="_blank"><img class="img-fluid"
-                            src="{{url_for('static', filename='img/registur.png')}}"></a>
-                </div>
-            </div>
+        <div class="row align-items-center h-100 w-100">
+                
+                <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril -  MRA 2.png')}}" style="margin: 0 auto;">
+            
         </div>
     </section>
 
@@ -481,6 +469,14 @@
 
             </div>
             <br>
+
+            <div id="logos">
+                <a href="https://visitparaguay.travel/" target="_blank"><img class="img-fluid"
+                        src="{{url_for('static', filename='img/senatur.png')}}"></a>
+                <a href="https://www.registur.gov.py/registur/" target="_blank"><img class="img-fluid"
+                        src="{{url_for('static', filename='img/registur.png')}}"></a>
+            </div>
+
             <div class="auspices">
                 <div class="ot">
                     <h1>Auspician</h1>
