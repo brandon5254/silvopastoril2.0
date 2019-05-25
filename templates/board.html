@@ -15,6 +15,7 @@
         <ol class="breadcrumb my-4">
             <li class="breadcrumb-item active">Tabla de datos</li>
         </ol>
+        <h3 style="margin-left:20px;">Inscripciones</h3><br>
         <table class="table table-bordered">
             <thead class="thead-inverse">
                 <tr>
@@ -44,9 +45,9 @@
                 {% for row in data %}
                 <tr>
                     <td>{{ row[0] }}</td>
-                    <td>{{ row[1] }}</td>
+                    <td class="text-center">{{ row[1] }}</td>
                     <td class="text-center">{{ row[2] }}</td>
-                    <td>{{ row[3] }}</td>
+                    <td class="text-center">{{ row[3] }}</td>
                     <td>{{ row[4] }}</td>
                     <td>{{ row[5] }}</td>
                     <td>{{ row[6] }}</td>
@@ -63,6 +64,77 @@
                     <td>{{ row[17] }}</td>
                     <td>{{ row[18] }}</td>
                     <td>{{ row[19] }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        <h3 style="margin-left:20px;">Estado Pedidos</h3><br>
+        <table class="table table-bordered">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Id</th>
+                    <th>Pagado</th>
+                    <th>Forma de Pago</th>
+                    <th>Fecha Pago</th>
+                    <th>Monto</th>
+                    <th>Fecha Maximo Pago</th>
+                    <th>Hash</th>
+                    <th>Numero Pedido</th>
+                    <th>Cancelado</th>
+                    <th>Forma Pago Identificador</th>
+                    <th>Token</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data1 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td class="text-center">{{ row[1] }}</td>
+                    <td class="text-center">{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    <td>{{ row[9] }}</td>
+                    <td>{{ row[10] }}</td>
+                    
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        <h3 style="margin-left:20px;">Pagados</h3><br>
+        <table class="table table-bordered">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Id</th>
+                    <th>Pagado</th>
+                    <th>Forma de Pago</th>
+                    <th>Fecha Pago</th>
+                    <th>Monto</th>
+                    <th>Fecha Maximo Pago</th>
+                    <th>Hash</th>
+                    <th>Numero Pedido</th>
+                    <th>Cancelado</th>
+                    <th>Forma Pago Identificador</th>
+                    <th>Token</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data2 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    <td>{{ row[9] }}</td>
+                    <td>{{ row[10] }}</td>
                 </tr>
             </tbody>
             {% endfor %}

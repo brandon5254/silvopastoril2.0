@@ -51,3 +51,19 @@ def insertData2(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_p
     cur.execute("INSERT INTO pedido_traer VALUES (?,?,?,?,?,?,?,?,?,?,?)", (None, pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token))
     con.commit()
     con.close()
+
+def listData1():
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM pedido_traer")
+    data = cur.fetchall()
+    con.close()
+    return data
+
+def listData2():
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM transactions_pagopar")
+    data = cur.fetchall()
+    con.close()
+    return data

@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, jso
 from pago_servicio import procesar
 from generador_token import generarToken
 from pagopar_traer import TraerPedido
-from models import listData, insertData1, sortData, insertData2
+from models import listData, insertData1, sortData, insertData2, listData1, listData2
 import json
 import requests
 
@@ -255,7 +255,9 @@ def reply():
 @app.route('/board')
 def board():
    data = listData()
-   return render_template('board.html', data=data)
+   data1 = listData1()
+   data2 = listData2()
+   return render_template('board.html', data=data, data1=data1, data2=data2)
 
 @app.route('/homei')
 def homei():
