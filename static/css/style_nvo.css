@@ -373,6 +373,15 @@ table{
    
 }
 
+#logos{
+  display: ruby;
+  padding: 25%;
+}
+
+#logos img:hover{
+  background: yellow;
+}
+
 .modal-header{
   padding: 0px;
 }
