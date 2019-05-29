@@ -22,6 +22,10 @@ def home():
 def normas():
    return render_template('normas.html')
 
+@app.route('/becas')
+def becas():
+   return render_template('becas.html')
+
 @app.route('/galeria')
 def galeria():
    return render_template('galeria.html')
