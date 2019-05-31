@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril -  MRA 2.png')}}"
-                id="encabezado">
-        </a>
+<nav class="navbar navbar-expand-md navbar-dark fixed-rigth">
+    <!--<div class="container">-->
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
+<<<<<<< HEAD
         </button>
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -63,23 +60,73 @@
                                 </li>-->
             </ul>
         </div>
+=======
+        </button>-->
+
+    <a class="navbar-brand" href="/" hidden>
+        <img class="img-fluid" src="/static/img/Logo%20Congreso%20Silvopastoril%20-%20%20MRA%202.png" id="encabezado">
+    </a>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav p-1 justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="html" data-toggle="collapse" data-target=".navbar-collapse.show"><span
+                        style="color: #97bf72;">|</span> Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#presentacion"><span style="color: #97bf72;">|</span> Presentación</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <span style="color: #97bf72;">|</span> Congreso
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#evento"><span style="color: #97bf72;">|</span> El Evento</a>
+                    <a class="dropdown-item" href="{{url_for('normas')}}"><span style="color: #97bf72;">|</span>
+                        Normas</a>
+                    <!--<a class="dropdown-item" href="#sede"><span style="color: #97bf72;">|</span> Sede</a>-->
+                    <a class="dropdown-item" href="#comite"><span style="color: #97bf72;">|</span> Comite
+                        Cientifico</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#parte"><span style="color: #97bf72;">|</span> ¿Por qué ser parte?</a>
+            </li>
+            <li class="nav-item">
+                <!--<a class="nav-link" href="#realizar"><span style="color: #97bf72;">|</span> ¿Dónde se realizará?</a>-->
+                <a class="nav-link" href="#sede"><span style="color: #97bf72;">|</span> Sede</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#seccion"><span style="color: #97bf72;">|</span> Sesiones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('galeria')}}"><span style="color: #97bf72;">|</span> Galeria</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('registro')}}"><span style="color: #97bf72;">|</span>
+                    Inscripción</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('becas')}}"><span style="color: #97bf72;">|</span>
+                    Becas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/homei"><span style="color: #97bf72;">|</span> English</a>
+            </li>
+        </ul>
+
+>>>>>>> 3d654c87a63bb92b550293142a1f76f9fd5f90e4
     </div>
+    <!--</div>-->
 </nav>
 <div class="container">
     <!--<div id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/QX4bt_8bslE',containment:'body',autoPlay:true, showControls:false, mute:true, startAt:10, stopAt:68, opacity:0.5}">My video</div>-->
     <section class="titulo">
-        <div class="row align-items-center h-100">
-            <div class="col-12">
-                <h1>X CONGRESO INTERNACIONAL<br><span class="underline">DE SISTEMAS SILVOPASTORILES</span></h1>
-                <h2>24 AL 26 DE SEPTIEMBRE / 2019</h2>
-                <a href="mailto:info@silvopastoril2019.org.py" class="buttonContact">Contactanos</a>
-                <div id="logos">
-                    <a href="https://visitparaguay.travel/" target="_blank"><img class="img-fluid"
-                            src="{{url_for('static', filename='img/senatur.png')}}"></a>
-                    <a href="https://www.registur.gov.py/registur/" target="_blank"><img class="img-fluid"
-                            src="{{url_for('static', filename='img/registur.png')}}"></a>
-                </div>
-            </div>
+        <div class="row align-items-center h-100 w-100">
+
+            <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril -  MRA 2.png')}}"
+                style="margin: 0 auto;">
+
         </div>
     </section>
 
@@ -468,12 +515,12 @@
                 con el medio ambiente.</p>
 
             <div id="direccion">
-                <h3>ASOCIACION RURAL DEL PARAGUAY</h3>
-                <h3>Salon Social Dr. Germán Ruíz Aveiro</h3>
-                <h3 style="position: absolute;">Ruta Troperos del Chaco Km. 14,5</h3>
-                <h3 style="position: absolute; right: 0; left: 33em;">Mariano Roque Alonso - Paraguay</h3>
+                <h3>ASOCIACION RURAL DEL PARAGUAY</h3><br>
+                <h3>Salon Social Dr. Germán Ruíz Aveiro</h3><br>
+                <h3 style="float: left;">Ruta Troperos del Chaco Km. 14,5</h3>
+                <h3 style="float: right;">Mariano Roque Alonso - Paraguay</h3>
 
-            </div><br>
+            </div>
 
             <img src="{{url_for('static', filename='img/arp_mra.jpg')}}" id="img">
 
@@ -485,6 +532,58 @@
 
             </div>
             <br>
+
+            <!--<div id="logos">
+                <div class="log1" style="display: contents;">
+                    <a href="https://visitparaguay.travel/" target="_blank"><img class="img-fluid img1"
+                            src="{{url_for('static', filename='img/senatur.png')}}"
+                            style="width: 25%; border-style:solid;border-color: #97bf72; padding: 1% 4% 1% 4%;"></a>
+                        
+                </div>
+
+                <div class="log2" style="display: inherit;">
+                    <a href="https://www.registur.gov.py/registur/" target="_blank"><img class="img-fluid img2"
+                            src="{{url_for('static', filename='img/registur.png')}}"
+                            style="width: 28%; padding:5%; border-style:solid;border-color: #97bf72; margin: 3%;"></a>
+
+                </div>
+            </div>-->
+            <div id="logos">
+                <div class="conter">
+                    <a href="https://visitparaguay.travel/" target="_blank">
+                        <img class="img-fluid image" src="{{url_for('static', filename='img/senatur.png')}}"
+                            style="width: 25%; border-style:solid;border-color: #97bf72; padding: 1% 4% 1% 4%;">
+                        <div class="overlay">
+                            <div class="text"><ul style="font-size: 16px;
+
+                                margin: 5px;
+                                
+                                    margin-left: 5px;
+                                
+                                margin-left: -80px;
+                                
+                                text-align: initial;
+                                
+                                color: #113c09;">
+                                <li>Alojamiento<br></li>
+                                <li>Transporte<br></li>
+                                <li>Gastronomia<br></li>
+                                <li>Turismo de naturaleza<br></li>
+                            </ul></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="conter">
+                    <a href="https://www.registur.gov.py/registur/" target="_blank">
+                        <img class="img-fluid image" src="{{url_for('static', filename='img/registur.png')}}"
+                            style="width: 25%; border-style:solid;border-color: #97bf72; padding: 1% 4% 1% 4%;">
+                        <div class="overlay">
+                            <div class="text"><p style="color: #113c09;">Descubre el Paraguay<br>INGRESA AQUI</p></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <div class="auspices">
                 <div class="ot">
                     <h1>Auspician</h1>
@@ -493,8 +592,10 @@
                 <img src="{{url_for('static', filename='img/auspices/Pomera_logo-01.png')}}" style="width: 20%;" alt="">
                 <img src="{{url_for('static', filename='img/auspices/Volendam blanco-01.png')}}" alt="">
                 <img src="{{url_for('static', filename='img/auspices/WWF III.png')}}" style="width: 13%;" alt="">
-                <img src="{{url_for('static', filename='img/auspices/Genefor Logo Final blanco.png')}}" style="width: 30%;" alt="">
+                <img src="{{url_for('static', filename='img/auspices/Genefor Logo Final blanco.png')}}"
+                    style="width: 30%;" alt="">
                 <img src="{{url_for('static', filename='img/auspices/logo nelore-01.png')}}" style="width: 18%;" alt="">
+                <img src="{{url_for('static', filename='img/red_global.png')}}" style="width: 18%;" alt="">
 
             </div><br>
             <div class="organize">
@@ -521,27 +622,29 @@
 
 
     <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        
-    <!-- Modal content-->
-      <div class="modal-content">  
-        <div class="modal-header">
-            <button type="button" class="close" id="cerrar-modal" data-dismiss="modal" title="Cerrar ventana" aria-hidden="true">×</button>
-            <h4 class="modal-title" id="noAnimModalLabel"></h4>
-        </div>
-        <div class="modal-body">
-          <!--<p style="text-align:center"><img alt="" src="denuncias_web.jpg" width="500"></p>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" id="cerrar-modal" data-dismiss="modal" title="Cerrar ventana"
+                        aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="noAnimModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <!--<p style="text-align:center"><img alt="" src="denuncias_web.jpg" width="500"></p>
           <p style="text-align: right;">Para mas información clic <a href="#">AQUI</a></p>-->
-          <a href="{{url_for('registro')}}" target="_blank"><img src="{{url_for('static', filename='img/ventana_modal.png')}}" width="100%"></a>
-        </div>
-        <!--<div class="modal-footer">
+                    <a href="{{url_for('registro')}}" target="_blank"><img
+                            src="{{url_for('static', filename='img/ventana_modal.png')}}" width="100%"></a>
+                </div>
+                <!--<div class="modal-footer">
           
         </div>-->
-      </div>
-          
+            </div>
+
+        </div>
     </div>
-  </div>
 
 </div>
 
