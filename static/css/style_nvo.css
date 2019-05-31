@@ -43,8 +43,12 @@ body {
     
 }
 
+.navbar{
+  padding: .5rem 7rem;
+}
+
 nav.navbar.navbar-expand-md.navbar-dark.fixed-rigth{
-  top: 4em;
+  top: 5em;
   position: fixed;
 }
 
@@ -57,6 +61,9 @@ nav.navbar.navbar-expand-md.navbar-dark.fixed-rigth{
 .navbar.scrolled{
   background-color: #182e08;
   transition: background-color 200ms linear;
+  width: 100%;
+  top: 0 !important;
+  height: 150px;
 }
 
 .navbar-nav, .dropdown-item, .dropdown-menu, .dropdown-menu a{
@@ -159,7 +166,7 @@ img#encabezado{
 
 .titulo{
     font-family: 'TodaySHOP-Regular';
-    height: 90vh;
+    height: 110vh;
     color: white;
 }
 
@@ -376,7 +383,46 @@ table{
 
 #logos{
   display: ruby;
-  padding: 25%;
+}
+
+.conter {
+  position: relative;
+  display: list-item;
+  padding: 12%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 20%;
+  right: 0;
+  width: 59%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #51BA08;
+}
+
+.conter:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .modal-header{

@@ -67,6 +67,15 @@
             $(document).scroll(function () {
                 var $nav = $(".navbar");
                 $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                if ($(this).scrollTop() > $nav.height()) {
+                    var $logo = $(".navbar-brand");
+                    $logo.attr("hidden",false);
+                } else {
+                    var $logo = $(".navbar-brand");
+                    $logo.attr("hidden",true);
+                }
+                
+
             });
         });
 

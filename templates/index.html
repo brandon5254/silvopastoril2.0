@@ -2,11 +2,15 @@
 
 {% block content %}
 <nav class="navbar navbar-expand-md navbar-dark fixed-rigth">
-    <div class="container">
+    <!--<div class="container">-->
 
     <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>-->
+
+    <a class="navbar-brand" href="/" hidden>
+        <img class="img-fluid" src="/static/img/Logo%20Congreso%20Silvopastoril%20-%20%20MRA%202.png" id="encabezado">
+    </a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav p-1 justify-content-center">
@@ -52,8 +56,8 @@
             </li>
         </ul>
 
-        </div>
     </div>
+    <!--</div>-->
 </nav>
 <div class="container">
     <!--<div id="bgndVideo" class="player" data-property="{videoURL:'http://youtu.be/QX4bt_8bslE',containment:'body',autoPlay:true, showControls:false, mute:true, startAt:10, stopAt:68, opacity:0.5}">My video</div>-->
@@ -469,16 +473,54 @@
             </div>
             <br>
 
-            <div id="logos">
+            <!--<div id="logos">
                 <div class="log1" style="display: contents;">
                     <a href="https://visitparaguay.travel/" target="_blank"><img class="img-fluid img1"
                             src="{{url_for('static', filename='img/senatur.png')}}"
                             style="width: 25%; border-style:solid;border-color: #97bf72; padding: 1% 4% 1% 4%;"></a>
+                        
                 </div>
-                <div class="log2">
+
+                <div class="log2" style="display: inherit;">
                     <a href="https://www.registur.gov.py/registur/" target="_blank"><img class="img-fluid img2"
                             src="{{url_for('static', filename='img/registur.png')}}"
                             style="width: 28%; padding:5%; border-style:solid;border-color: #97bf72; margin: 3%;"></a>
+
+                </div>
+            </div>-->
+            <div id="logos">
+                <div class="conter">
+                    <a href="https://visitparaguay.travel/" target="_blank">
+                        <img class="img-fluid image" src="{{url_for('static', filename='img/senatur.png')}}"
+                            style="width: 25%; border-style:solid;border-color: #97bf72; padding: 1% 4% 1% 4%;">
+                        <div class="overlay">
+                            <div class="text"><ul style="font-size: 16px;
+
+                                margin: 5px;
+                                
+                                    margin-left: 5px;
+                                
+                                margin-left: -80px;
+                                
+                                text-align: initial;
+                                
+                                color: #113c09;">
+                                <li>Alojamiento<br></li>
+                                <li>Transporte<br></li>
+                                <li>Gastronomia<br></li>
+                                <li>Turismo de naturaleza<br></li>
+                            </ul></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="conter">
+                    <a href="https://www.registur.gov.py/registur/" target="_blank">
+                        <img class="img-fluid image" src="{{url_for('static', filename='img/registur.png')}}"
+                            style="width: 25%; border-style:solid;border-color: #97bf72; padding: 1% 4% 1% 4%;">
+                        <div class="overlay">
+                            <div class="text"><p style="color: #113c09;">Descubre el Paraguay<br>INGRESA AQUI</p></div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
