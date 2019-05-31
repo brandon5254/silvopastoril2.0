@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/crossbuntu/.local/share/virtualenvs/silvopastoril2.0-vJSqseEp/bin/python",
+    "python.pythonPath": "silvopastoril2env/bin/python",
     "emmet.triggerExpansionOnTab": true,
     "sqltools.connections": [],
     "terminal.integrated.setLocaleVariables": false
