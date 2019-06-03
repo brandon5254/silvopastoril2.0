@@ -387,40 +387,52 @@ table{
    
 }
 
-#logos{
+.cont{
   display: ruby;
+  justify-content: space-between;
+  padding: 15%;
 }
 
-.conter {
+.logo {
   position: relative;
-  display: list-item;
-  padding: 12%;
+  width: 25%;
+  border-style:solid;
+  border-color: #76ad25; 
+  padding: 0 4% 0 4%;
 }
 
-.image {
+.image1 {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.overlay {
-  position: absolute;
-  top: 20%;
-  bottom: 20%;
-  left: 20%;
-  right: 0;
-  width: 59%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #51BA08;
+.image2 {
+  display: block;
+  width: 100%;
+  padding-bottom: 25%;
+  padding-top: 25%;
 }
 
-.conter:hover .overlay {
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #76ad25;
+}
+
+.logo:hover .overlay {
   opacity: 1;
 }
 
 .text {
-  color: white;
+  color: #113c09;
   font-size: 20px;
   position: absolute;
   top: 50%;
@@ -429,6 +441,18 @@ table{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.text ul{
+  font-size: 18px;
+  text-align: initial; 
+  color: #113c09;
+}
+
+.text ul li {
+
+  margin-left: -50%;
+  margin-right: -50%;
 }
 
 .modal-header{
