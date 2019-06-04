@@ -362,15 +362,11 @@ table{
 }
 
 #sede .auspices img{
-  width: 15%;
-  height: 15%;
-  padding-left: 30px;
+  margin: 2%;
 }
 
 #sede .organize img{
-  width: 15%;
-  height: 15%;
-  padding-left: 30px;
+  margin: 2.4%;
 }
 
 #sede .auspices .ot{
