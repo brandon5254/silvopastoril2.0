@@ -49,7 +49,7 @@ body {
 
 nav.navbar.navbar-expand-md.navbar-dark.fixed-rigth{
   top: 5em;
-  position: fixed;
+  /*position: fixed;*/
   z-index: 2;
 }
 
