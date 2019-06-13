@@ -68,6 +68,66 @@
             {% endfor %}
         </table>
     </div>
+<br><br>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>tipo Identificación</th>
+                    <th>Nro Documento</th>
+                    <th>Email</th>
+                    <th>Pais</th>
+                    <th>Ciudad</th>
+                    <th>Telefono</th>
+                    <th>Institucion</th>
+                    <th>Ocupacion</th>
+                    <th>Area Ponencia</th>
+                    <th>Ingles</th>
+                    <th>Comentarios</th>
+                    <th>Razon Social</th>
+                    <th>RUC</th>
+                    <th>Monto</th>
+                    <th>Forma de Pago</th>
+                    <th>Interes</th>
+                    <th>Fecha de Pago</th>
+                    <th>Numero de pedido</th>
+                    <th>Monto sin interes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data1 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    <td>{{ row[9] }}</td>
+                    <td>{{ row[10] }}</td>
+                    <td>{{ row[11] }}</td>
+                    <td>{{ row[12] }}</td>
+                    <td>{{ row[13] }}</td>
+                    <td>{{ row[14] }}</td>
+                    <td>{{ row[15] }}</td>
+                    <td>{% if row[16] == 'Bancard' and row[16] == 'procard' %} 6.2% {% else %} 4.9% {% endif %}</td>
+                    <td>{{ row[16] }}</td>
+                    <td>{{ row[17] }}</td>
+                    <td>
+                        {{ (row[14]*94.61)/100 }}
+                        
+                    </td>
+                    
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+
 
 
 
