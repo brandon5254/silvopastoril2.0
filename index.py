@@ -61,6 +61,9 @@ def registro():
       if f_pago == None:
          mensaje = "Por favor ingrese un metodo de pago!!"
          flash(mensaje)
+      if n_document == '':
+         mensaje = "El numero de documento o pasaporte debe estar presente!!"
+         flash(mensaje)
          return render_template('formulario.html')
       if request.form['ocupacion'] == 'Estudiante Nacional' or request.form['ocupacion'] == 'Estudiante Extranjero':
          precio = 100#precio incripcion e n/e
