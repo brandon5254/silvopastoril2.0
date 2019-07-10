@@ -77,7 +77,7 @@ def procesar(name, document, n_document, mail, country, city, address, phone, in
         all = json.loads(response)
         
         if all['respuesta'] == False:
-            print(all['resultado'])
+            print(all['resultado'], token1, ruc, mail, name, n_document, monto_total, id_pedido)
             
         else:
 
