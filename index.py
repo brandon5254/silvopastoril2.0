@@ -239,7 +239,7 @@ def result(hash):
    if forma_pago_identificador == '7': #cuenta bancaria
       return render_template('resultado_bancario.html', datos=numero_pedido)
       
-   if forma_pago_identificador == '2' or forma_pago_identificador == '3' or forma_pago == '4':
+   if forma_pago_identificador == '2' or forma_pago_identificador == '3' or forma_pago_identificador == '4':
       return render_template('resultado_ventanilla.html', ped=ped ) 
 
 @app.route('/respuesta', methods=['GET', 'POST'])
