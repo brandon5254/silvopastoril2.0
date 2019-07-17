@@ -470,6 +470,12 @@ table{
   padding: 0px;
 }
 
+#interes tr td{
+  border: 2px solid white; 
+  border-collapse: collapse;
+  padding: 5px;
+}
+
 
 /*Flecha para hacer la pagina hacia arriba*/
 .ir-arriba {
