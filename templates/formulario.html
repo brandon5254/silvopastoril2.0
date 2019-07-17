@@ -2,43 +2,6 @@
 {% block title %}Formulario de Registro{% endblock %}
 {% block content %}
 
-<div class="alert alert-primary" role="alert" hidden>
-    A simple primary alert—check it out!
-</div>
-<div class="alert alert-secondary" role="alert" hidden>
-    A simple secondary alert—check it out!
-</div>
-<div class="alert alert-success" role="alert" hidden>
-    A simple success alert—check it out!
-</div>
-<div class="alert alert-danger" role="alert" hidden>
-    A simple danger alert—check it out!
-</div>
-<div class="alert alert-warning" role="alert" hidden>
-    El pedido ya fue hecho!!!
-</div>
-<div class="alert alert-info" role="alert" hidden>
-    A simple info alert—check it out!
-</div>
-<div class="alert alert-light" role="alert" hidden>
-    A simple light alert—check it out!
-</div>
-<div class="alert alert-dark" role="alert" hidden>
-    A simple dark alert—check it out!
-</div>
-
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-{% for message in messages %}
-<div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-            aria-hidden="true">×</span></button>
-    {{message}}
-</div>
-{% endfor %}
-{% endif %}
-{% endwith %}
-
 
 <div class="cont-form">
 
@@ -50,7 +13,7 @@
 
         <p><span
                 style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">
-                Una vez completado el formulario de resgitro de inscripción, pulse enviar para realizar el pago por web
+                Una vez completado el formulario de resgistro de inscripción, pulse enviar para realizar el pago por web
             </span></p><br>
 
         <b style="font-size: 20px">Costos de la Inscripción:</b><br>
@@ -74,7 +37,7 @@
         <b>PROFESIONALES<br>Nacionales: <span style="font-size:20px;">300 USD</span> | Profesionales
             Internacionales:</b> <span style="font-size:20px;">400 USD</span> <br>
         <br>
-            <h3>*La inscripción al congreso incluye:</h3>
+        <h3>*La inscripción al congreso incluye:</h3>
         <ul>
             <li>Acceso a conferencias los días 24 al 26 de setiembre, 2019.</li>
             <li>Intercambio técnico y científico entre profesionales nacionales e internacionales.</li>
@@ -82,7 +45,8 @@
             <li>Charlas paralelas.</li>
             <li>Acceso al evento de bienvenida.</li>
             <li>Coffe breaks, desayuno y almuerzo los días 24 al 26 de setiembre, 2019.</li>
-            <li>Acceso al Pos Congreso (Gira tecnica guiada al Departamento de San  Pedro, Region Oriental del Paraguay - Cooperativa de Produccion, Consumo y Servicios Volendam Ltda).</li>
+            <li>Acceso al Pos Congreso (Gira tecnica guiada al Departamento de San Pedro, Region Oriental del Paraguay -
+                Cooperativa de Produccion, Consumo y Servicios Volendam Ltda).</li>
             <li>Certificado de asistencia.</li>
         </ul>
 
@@ -92,7 +56,7 @@
 
         <h1>Formulario de Registro de Inscripción</h1>
 
-        <form action="/registro" method="POST" class="needs-validation" novalidate>
+        <form id="myForm" action="/registro" method="POST" class="needs-validation" novalidate>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre Completo*</label>
@@ -147,13 +111,15 @@
             <div class="form-checkbox" required>
                 <label for="exampleFormControlInput1">Seleccione la Forma de Pago*</label><br>
 
-                <div style="color: white; font-size: 16px; text-decoration: underline;">Para pagos Internacionales</div><br>
+                <div style="color: white; font-size: 16px; text-decoration: underline;">Para pagos Internacionales</div>
+                <br>
 
                 <input class="form-check-input" type="checkbox" value="procard" id="defaultCheck1" name="for_pago">
                 <label class="form-check-label" for="defaultCheck1">Procard - Tarjetas de crédito/débito (Acepta Visa,
                     Mastercard, Credicard y Unica)</label><br><br>
-                
-                <div style="color: white; font-size: 16px; text-decoration: underline;">Para pagos Nacionales, solo Paraguay</div><br>
+
+                <div style="color: white; font-size: 16px; text-decoration: underline;">Para pagos Nacionales, solo
+                    Paraguay</div><br>
 
                 <input class="form-check-input" type="checkbox" value="bancard" id="defaultCheck1" name="for_pago">
                 <label class="form-check-label" for="defaultCheck1">Bancard - Tarjetas de crédito/débito (Acepta Visa,
@@ -225,7 +191,8 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
             </div>
 
-            <label class="form-check-label" for="defaultCheck1">Complete los siguientes campos para la emisión de la Factura
+            <label class="form-check-label" for="defaultCheck1">Complete los siguientes campos para la emisión de la
+                Factura
                 Legal, posteriores cambios de los datos de facturación asignados no podrán ser modificados</label><br>
             <br>
             <div class="form-group" id="fact_inf">
@@ -239,24 +206,99 @@
             <button type="reset" class="btn btn-primary" style="margin-top: 10px;">Limpiar</button>
 
         </form>
+
+        <!-- modal - mensajes al usuario -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 style="padding: 2%;" class="modal-title" id="exampleModalLongTitle">Atención!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin: 0;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            
+                            {% for message in messages %}
+                                <div>{{message}}</div>
+                            {% endfor %}
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endwith %}
+        
+        <!-- modal - mensajes interes -->
+        {% if bandera %}
+        <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            
+                    Tarjetas de credito: bancard - Procard 6.5%<br>
+                    Otros medios de pago: 4.9%<br>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        {% endif %}
+
+
+        </div>
     </div>
-</div>
 
-<script>
+    <script>
 
-    function HiddenCheck() {
-        var x = document.getElementsByName("tipo_participacion");
-        if (x[0].options.selectedIndex === 0) {
-            document.getElementsByClassName("form-check1")[0].hidden = true;
-            document.getElementsByClassName("form-check2")[0].hidden = true;
+        /*$(document).ready(function(){
+            $('#submit-button').on('click',function(e){
+                $('#myModal2').modal('show');
+                e.preventDefault();
+            });
+        });*/
+
+        /*$('#submit-button').on('click',function(e){
+            e.preventDefault();
+            $('#myModal2').modal('show');
+        });*/
+
+    </script>
+
+    <script>
+
+        function HiddenCheck() {
+            var x = document.getElementsByName("tipo_participacion");
+            if (x[0].options.selectedIndex === 0) {
+                document.getElementsByClassName("form-check1")[0].hidden = true;
+                document.getElementsByClassName("form-check2")[0].hidden = true;
+            }
+            else {
+                document.getElementsByClassName("form-check1")[0].hidden = false;
+                document.getElementsByClassName("form-check2")[0].hidden = false;
+            }
         }
-        else {
-            document.getElementsByClassName("form-check1")[0].hidden = false;
-            document.getElementsByClassName("form-check2")[0].hidden = false;
-        }
-    }
 
-    document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
-</script>
+        document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
+    </script>
 
-{% endblock %}
+
+
+    {% endblock %}

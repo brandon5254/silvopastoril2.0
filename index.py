@@ -73,7 +73,7 @@ def registro():
          if all['respuesta'] == True or all['respuesta'] == "true":
             #si la respuesta es true me redirecciona a la pagina de pago
             token_recibed = all['resultado'][0]['data']
-            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
+            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago, bandera=True)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
             flash(mensaje)
@@ -87,7 +87,7 @@ def registro():
          if all['respuesta'] == True or all['respuesta'] == "true":
             #si la respuesta es true me redirecciona a la pagina de pago
             token_recibed = all['resultado'][0]['data']
-            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
+            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago, bandera=True)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
             flash(mensaje)
@@ -101,7 +101,7 @@ def registro():
          if all['respuesta'] == True or all['respuesta'] == "true":
             #si la respuesta es true me redirecciona a la pagina de pago
             token_recibed = all['resultado'][0]['data']
-            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago)
+            return render_template("redirect.html", token_recibed=token_recibed, f_pago=f_pago, bandera=True)
          else:# de ser falso me recarga la pagina y me salta un mensaje
             mensaje = "No se realizo el registro. Vuelva a intentarlo."
             flash(mensaje)
