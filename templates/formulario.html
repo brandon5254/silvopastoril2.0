@@ -13,7 +13,7 @@
 
         <p><span
                 style="font-weight: bold; color: white; background-color: #e47401; font-size: 15px; padding: 0 10px 0 10px;">
-                Una vez completado el formulario de resgistro de inscripción, pulse enviar para realizar el pago por web
+                Una vez completado el formulario de registro de inscripción, pulse enviar para realizar el pago por web
             </span></p><br>
 
         <b style="font-size: 20px">Costos de la Inscripción:</b><br>
@@ -221,11 +221,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                            
-                            {% for message in messages %}
-                                <div>{{message}}</div>
-                            {% endfor %}
-                            
+
+                        {% for message in messages %}
+                        <div>{{message}}</div>
+                        {% endfor %}
+
                     </div>
                     <div class="modal-footer">
                         <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
@@ -235,10 +235,10 @@
         </div>
         {% endif %}
         {% endwith %}
-        
+
         <!-- modal - mensajes interes -->
         {% if bandera %}
-        <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -249,9 +249,35 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                            
-                    Tarjetas de credito: bancard - Procard 6.5%<br>
-                    Otros medios de pago: 4.9%<br>
+                        El inscripto asumira los siguientes un porcentaje de comisión de los siguientes métodos de pago:
+
+                        <style>
+                            table,
+                            td,
+                            tr {
+                                border: 2px solid black;
+                                border-collapse: collapse;
+                                padding: 2%;
+                            }
+                        </style>
+                        <table id="credito">
+                            <tr>
+                                <td>Bancard - Procard</td>
+                                <td>6.2% mas IVA</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul style="list-style:none; padding-left: 0;">
+                                        <li>Aqui Pago</li>
+                                        <li>Pago Express</li>
+                                        <li>Practipago</li>
+                                        <li>Cuenta bancaria</li>
+                                        <li>Tigo Money</li>
+                                    </ul>
+                                </td>
+                                <td>4.9% mas IVA</td>
+                            </tr>
+                        </table>
 
                     </div>
                     <div class="modal-footer">
@@ -259,46 +285,46 @@
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div>
         {% endif %}
 
 
-        </div>
     </div>
+</div>
 
-    <script>
+<script>
 
-        /*$(document).ready(function(){
-            $('#submit-button').on('click',function(e){
-                $('#myModal2').modal('show');
-                e.preventDefault();
-            });
-        });*/
-
-        /*$('#submit-button').on('click',function(e){
-            e.preventDefault();
+    /*$(document).ready(function(){
+        $('#submit-button').on('click',function(e){
             $('#myModal2').modal('show');
-        });*/
+            e.preventDefault();
+        });
+    });*/
 
-    </script>
+    /*$('#submit-button').on('click',function(e){
+        e.preventDefault();
+        $('#myModal2').modal('show');
+    });*/
 
-    <script>
+</script>
 
-        function HiddenCheck() {
-            var x = document.getElementsByName("tipo_participacion");
-            if (x[0].options.selectedIndex === 0) {
-                document.getElementsByClassName("form-check1")[0].hidden = true;
-                document.getElementsByClassName("form-check2")[0].hidden = true;
-            }
-            else {
-                document.getElementsByClassName("form-check1")[0].hidden = false;
-                document.getElementsByClassName("form-check2")[0].hidden = false;
-            }
+<script>
+
+    function HiddenCheck() {
+        var x = document.getElementsByName("tipo_participacion");
+        if (x[0].options.selectedIndex === 0) {
+            document.getElementsByClassName("form-check1")[0].hidden = true;
+            document.getElementsByClassName("form-check2")[0].hidden = true;
         }
+        else {
+            document.getElementsByClassName("form-check1")[0].hidden = false;
+            document.getElementsByClassName("form-check2")[0].hidden = false;
+        }
+    }
 
-        document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
-    </script>
+    document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
+</script>
 
 
 
-    {% endblock %}
+{% endblock %}
