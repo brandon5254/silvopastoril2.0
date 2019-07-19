@@ -92,8 +92,20 @@
         });
 
         $('#myModal').modal('show');
-            setTimeout(function(){ 
-        $('#myModal').modal('hide'); }, 15000);
+        setTimeout(function () {
+            $('#myModal').modal('hide');
+        }, 15000);
+
+        $('#myForm').on('submit', function (ev) {
+            var $form = this;
+            ev.preventDefault();
+            $('#myModal2').modal('show');
+            setTimeout(function () {
+                $('#myModal2').modal('hide');
+            }, 30000);
+            $form.submit();
+        });
+
 
         $(document).ready(function () {
 
@@ -122,13 +134,13 @@
         });
     </script>
     <script>
-        $('.form-checkbox>input[type="checkbox"]').on('change', function() {
+        $('.form-checkbox>input[type="checkbox"]').on('change', function () {
             $('.form-checkbox>input[type="checkbox"]').not(this).prop('checked', false);
         });
-        $('.form-check1>input[type="checkbox"]').on('change', function() {
+        $('.form-check1>input[type="checkbox"]').on('change', function () {
             $('.form-check1>input[type="checkbox"]').not(this).prop('checked', false);
         });
-        $('.form-check2>input[type="checkbox"]').on('change', function() {
+        $('.form-check2>input[type="checkbox"]').on('change', function () {
             $('.form-check2>input[type="checkbox"]').not(this).prop('checked', false);
         });
     </script>
