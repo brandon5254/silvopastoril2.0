@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask_mail import Mail, Message
 from pago_servicio import procesar
 from generador_token import generarToken
 from pagopar_traer import TraerPedido
-from models import listData, insertData1, sortData, insertData2, listjoindata
+from models import listData, insertData1, sortData, insertData2, listjoindata, listData2
+from send_mail import mailer
 import json
 import requests
 
@@ -13,6 +15,9 @@ app.secret_key = "SECRET"
 app.config['MAIL_SERVER'] = 'correo.silvopastoril2019.org.py'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'organizacion@silvopastoril2019.org.py'
+app.config['MAIL_PASSWORD'] = 'organizacion'
+mail = Mail(app)
 
 @app.route('/')
 def home():
@@ -258,6 +263,9 @@ def reply():
    forma_pago_identificador = data['resultado'][0]['forma_pago_identificador']
    token = data['resultado'][0]['token']
    insertData1(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_pedido, numero_pedido, cancelado, forma_pago_identificador, token)
+   email = listData2(hash_pedido)
+   mail = mailer(email)
+   print("Correo enviado a",mail)
    return json.dumps(data['resultado'])
 
 @app.route('/board')

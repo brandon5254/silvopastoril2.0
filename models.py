@@ -60,5 +60,15 @@ def listjoindata():
     con.close()
     return data
 
+def listData2(hasher):
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("select email from silvopastoril where token_api = '%s'" % hasher)
+    data = cur.fetchall()
+    for dato in data:
+        r = ' '.join(dato)
+    con.close()
+    return r
+
 
     
