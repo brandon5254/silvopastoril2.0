@@ -7,9 +7,9 @@
 
     <ul style="color:white; font-size: 20px;">
         
-        <li>Eligió pagar con {% if ped['resultado'][0]['forma_pago_identificador'] == '2' %} Aqui Pago {% elif ped['resultado'][0]['forma_pago_identificador'] == '3' %} Pago Express {% else %}
-            Practipago {% endif %},
-            recuerde que tiene hasta las {{ ped['resultado'][0]['fecha_maxima_pago'] }} para pagar.</li>
+        <li>Eligió pagar con {% if ped['resultado'][0]['forma_pago_identificador'] == '2' %} Aqui Pago 
+            {% elif ped['resultado'][0]['forma_pago_identificador'] == '3' %} Pago Express 
+            {% else %} Practipago {% endif %}, recuerde que tiene hasta las {{ ped['resultado'][0]['fecha_maxima_pago'] }} para pagar.</li>
 
         <li>Debe ir a boca de cobranza de {% if ped['resultado'][0]['forma_pago_identificador'] == '2' %} Aqui Pago {% elif ped['resultado'][0]['forma_pago_identificador'] == '3' %} Pago Express {% else %}
             Practipago {% endif %},

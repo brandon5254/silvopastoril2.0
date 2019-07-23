@@ -4,14 +4,19 @@
 <div class="mensaje" style="width: 50%; height: 330px; margin-top: 10%;">
     <h3 style="color:white">{{ mensaje }}</h3>
 
-    <ul style="color:white; font-size: 20px;">
+    <ul style="color:white; font-size: 25px;">
         
         <h3>Resumen</h3>
         <li>Número de pedido de pago: {{ ped['resultado'][0]['numero_pedido'] }}</li>
-        <li>Forma de pago: {% ped['resultado'][0]['forma_pago'] == '9' %} Bancard {% elif ped['resultado'][0]['forma_pago'] == '1' %} Procard {% elif ped['resultado'][0]['forma_pago'] == '2' %}
-            Aqui Pago {% elif data[9] == '3' %} Pago Express {% elif data[9] == '4' %} Practipago
-            {% elif ped['resultado'][0]['forma_pago'] == '7' %} Cuenta Bancaria {% else %} Tigo Money {% endif %}</li>
-        <li>Estado del pago: {% if ped['resultado'][0]['pagado'] == 1 %} Pagado {% else %} No pagado {% endif %}</li>
+        <li>Forma de pago: {% if ped['resultado'][0]['forma_pago_identificador'] == '9' %} Bancard 
+            {% elif ped['resultado'][0]['forma_pago_identificador'] == '1' %} Procard 
+            {% elif ped['resultado'][0]['forma_pago_identificador'] == '2' %} Aqui Pago 
+            {% elif ped['resultado'][0]['forma_pago_identificador'] == '3' %} Pago Express 
+            {% elif ped['resultado'][0]['forma_pago_identificador'] == '4' %} Practipago
+            {% elif ped['resultado'][0]['forma_pago_identificador'] == '7' %} Cuenta Bancaria 
+            {% else %} Tigo Money {% endif %}</li>
+        <li>Estado del pago: {% if ped['resultado'][0]['pagado'] == 1 %} Pagado 
+            {% else %} No pagado {% endif %}</li>
         <li>Fecha de pago: {{ ped['resultado'][0]['fecha_pago'] }}</li>
         <li>Monto: {{ ped['resultado'][0]['monto'] }}</li>
         <li>Fecha máxima de pago: {{ ped['resultado'][0]['fecha_maxima_pago'] }}</li>
