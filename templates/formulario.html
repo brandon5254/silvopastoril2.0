@@ -71,7 +71,8 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Número de Documento de Identificación*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" required>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" placeholder="Ingrese solo caracteres númericos" required>
+                <span style="color: white; font-size: 12px;">*En caso de que posea pasaporte favor ingresar solo los caracteres númericos</span>    
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email*</label>
@@ -191,16 +192,16 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios"></textarea>
             </div>
 
-            <label class="form-check-label" for="defaultCheck1">Complete los siguientes campos para la emisión de la
-                Factura
-                Legal, posteriores cambios de los datos de facturación asignados no podrán ser modificados</label><br>
+            <label class="form-check-label" for="defaultCheck1">Complete los siguientes campos para la emisión de la Factura Legal:</label>
+            <br>
             <br>
             <div class="form-group" id="fact_inf">
-                <label for="exampleFormControlInput1"><span>Nombre o Razón Social</span></label>
+                <label for="exampleFormControlInput1"><span>Nombre o Razón Social (Persona Física o Jurídica)</span></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre_razon_social"><br>
-                <label for="exampleFormControlInput1"><span>RUC(Registro Único del Contribuyente)</span></label>
+                <label for="exampleFormControlInput1"><span>Identificador Tributario (RUC/CUIT/CPF/CNPJ/CUIL/NIT/RUT,etc)</span></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="ruc">
             </div>
+            <span style="color: white; font-size: 13px;">*Posteriores Cambios de los datos de facturación asigandos no podrán ser modificados</span>
 
             <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Enviar</button>
             <button type="reset" class="btn btn-primary" style="margin-top: 10px;">Limpiar</button>
