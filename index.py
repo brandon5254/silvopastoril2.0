@@ -54,7 +54,7 @@ def registro():
       english = request.form.get('ingles')
       coments = request.form.get('comentarios')
       social = request.form.get('nombre_razon_social')
-      ruc = request.form.get('ruc')
+      ruc = request.form['identificador_tributario'] +": "+ request.form['name_identifi']
       if ponencia == '':
          ponencia = None
       if english == '':
@@ -63,6 +63,8 @@ def registro():
          social = None
       if ruc == '':
          ruc = None
+      if request.form['identificador_tributario'] == 'otro':
+         ruc = request.form['otro'] +": "+ request.form['name_identifi']
       if f_pago == None:
          mensaje = "Por favor ingrese un metodo de pago!!"
          flash(mensaje)

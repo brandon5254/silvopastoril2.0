@@ -198,11 +198,25 @@
             <div class="form-group" id="fact_inf">
                 <label for="exampleFormControlInput1"><span>Nombre o Razón Social (Persona Física o Jurídica)</span></label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre_razon_social"><br>
-                <label for="exampleFormControlInput1"><span>Identificador Tributario (RUC/CUIT/CPF/CNPJ/CUIL/NIT/RUT,etc)</span></label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="ruc">
+                <label for="exampleFormControlInput1"><span>Identificador Tributario</span></label>
+                <select class="form-control" id="exampleFormControlSelect1" name="identificador_tributario" onchange="HiddenCheck1()">
+                    <option value="RUC" selected="selected">RUC</option>
+                    <option value="CUIT">CUIT</option>
+                    <option value="CPF">CPF</option>
+                    <option value="CNPJ">CNPJ</option>
+                    <option value="CUIL">CUIL</option>
+                    <option value="NIT">NIT</option>
+                    <option value="RUT">RUT</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <br>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="otro" placeholder="Aqui especifique su Identificador Tributario" hidden>
+                <br>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Numero" name="name_identifi">
+
             </div>
             <span style="color: white; font-size: 13px;">*Posteriores Cambios de los datos de facturación asigandos no podrán ser modificados</span>
-
+            <br><br>
             <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Enviar</button>
             <button type="reset" class="btn btn-primary" style="margin-top: 10px;">Limpiar</button>
 
@@ -292,6 +306,7 @@
 <script>
 
     function HiddenCheck() {
+
         var x = document.getElementsByName("tipo_participacion");
         if (x[0].options.selectedIndex === 0) {
             document.getElementsByClassName("form-check1")[0].hidden = true;
@@ -300,6 +315,17 @@
         else {
             document.getElementsByClassName("form-check1")[0].hidden = false;
             document.getElementsByClassName("form-check2")[0].hidden = false;
+        }
+
+    }
+
+    function HiddenCheck1(){
+        var selection = document.getElementsByName("identificador_tributario");
+        if (selection[0].options.selectedIndex === 7){ 
+            document.getElementsByName("otro")[0].hidden = false;
+            } 
+        else { 
+            document.getElementsByName("otro")[0].hidden = true; 
         }
     }
 
