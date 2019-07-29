@@ -70,5 +70,18 @@ def listData2(hasher):
     con.close()
     return r
 
+def insertData3(nombre, identificacion, nro_documento, email, pais, ciudad, direccion, telefono, institucion, ocupacion):
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("INSERT INTO visita VALUES (?,?,?,?,?,?,?,?,?,?,?)", (None, nombre, identificacion, nro_documento, email, pais, ciudad, direccion, telefono, institucion, ocupacion))
+    con.commit()
+    con.close()
 
+def listData3():
+    con = sql.connect("datos.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM visita")
+    data = cur.fetchall()
+    con.close()
+    return data
     

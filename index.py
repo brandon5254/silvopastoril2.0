@@ -3,7 +3,7 @@ from flask_mail import Mail, Message
 from pago_servicio import procesar
 from generador_token import generarToken
 from pagopar_traer import TraerPedido
-from models import listData, insertData1, sortData, insertData2, listjoindata, listData2
+from models import listData, insertData1, sortData, insertData2, listjoindata, listData2, insertData3, listData3
 from send_mail import mailer
 import json
 import requests
@@ -53,8 +53,11 @@ def registro():
       ponencia = request.form.get('ponencia')
       english = request.form.get('ingles')
       coments = request.form.get('comentarios')
+      visita = request.form.get('visita')
       social = request.form.get('nombre_razon_social')
       ruc = request.form['identificador_tributario'] +": "+ request.form['name_identifi']
+      if visita == '1':
+         insertData3(name, document, n_document, mail, country, city, address, phone, institute, ocupation)
       if ponencia == '':
          ponencia = None
       if english == '':
@@ -274,7 +277,8 @@ def reply():
 def board():
    data = listData()
    data1 = listjoindata()
-   return render_template('board.html', data=data, data1=data1)
+   data2 = listData3()
+   return render_template('board.html', data=data, data1=data1, data2=data2)
 
 @app.route('/homei')
 def homei():
