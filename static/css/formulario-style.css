@@ -10,6 +10,16 @@
     color: white;
 }
 
+.content-form-2{
+    margin: 0 auto;
+    padding: 100px;
+    
+}
+
+.content-form-2 h1{
+    color: white;
+}
+
 form{
     width: 100%;
     margin: 0 auto;

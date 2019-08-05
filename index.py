@@ -3,7 +3,7 @@ from flask_mail import Mail, Message
 from pago_servicio import procesar
 from generador_token import generarToken
 from pagopar_traer import TraerPedido
-from models import listData, insertData1, sortData, insertData2, listjoindata, listData2
+from models import listData, insertData1, sortData, insertData2, listjoindata, listData2, insertData3
 from send_mail import mailer
 import json
 import requests
@@ -275,6 +275,45 @@ def board():
    data = listData()
    data1 = listjoindata()
    return render_template('board.html', data=data, data1=data1)
+
+@app.route('/visita-registro', methods=['POST', 'GET'])
+def visit():
+   if request.method=='POST':
+      name = request.form['nombre']
+      document = request.form['tipo_documento']
+      n_document = request.form['numero_documento']
+      mail = request.form['email']
+      country = request.form['pais']
+     
+      if name == None or name == '' or name == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario2.html')
+
+      if n_document == None or n_document == '' or n_document == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario2.html')
+
+      if mail == None or mail == '' or mail == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario2.html')
+
+      if country == None or country == '' or country == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario2.html')
+
+      band = insertData3(name, document, n_document, mail, country)
+      if band == False:
+         mensaje = "Lo siento ya se ha registrado!!"
+      else:
+         mensaje = "Registro Exitoso!!!"
+      flash(mensaje)
+      return render_template('formulario2.html')
+
+   return render_template('formulario2.html')
 
 @app.route('/homei')
 def homei():
