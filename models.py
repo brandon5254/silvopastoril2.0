@@ -70,5 +70,20 @@ def listData2(hasher):
     con.close()
     return r
 
+def insertData3(name, type_document, document, mail, country):
+    try:
+        con = sql.connect("datos2.db")
+        cur = con.cursor()
+        cur.execute("INSERT INTO visita VALUES (?,?,?,?,?,?)", (None, name, type_document, document, mail, country))
 
+        con.commit()
+        band = True
+
+    except sql.Error as e:
+        con.rollback()
+        band = False
+        
+    finally:
+        con.close()
+    return band
     
