@@ -87,3 +87,36 @@ def insertData3(name, type_document, document, mail, country):
         con.close()
     return band
     
+
+def insertData4(name, document, n_document, mail, country, city, address, phone, institute, ocupation):
+    try:
+        con = sql.connect("datos3.db")
+        cur = con.cursor()
+        cur.execute("INSERT INTO empresas VALUES (?,?,?,?,?,?,?,?,?,?,?)", (None, name, document, n_document, mail, country, city, address, phone, institute, ocupation))
+
+        con.commit()
+        band = True
+
+    except sql.Error as e:
+        con.rollback()
+        band = False
+        
+    finally:
+        con.close()
+    return band
+
+def listData3():
+    con = sql.connect("datos2.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM visita;")
+    data = cur.fetchall()
+    con.close()
+    return data
+
+def listData4():
+    con = sql.connect("datos3.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM empresas;")
+    data = cur.fetchall()
+    con.close()
+    return data

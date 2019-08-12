@@ -3,7 +3,7 @@ from flask_mail import Mail, Message
 from pago_servicio import procesar
 from generador_token import generarToken
 from pagopar_traer import TraerPedido
-from models import listData, insertData1, sortData, insertData2, listjoindata, listData2, insertData3
+from models import listData, insertData1, sortData, insertData2, listjoindata, listData2, insertData3, insertData4, listData3, listData4
 from send_mail import mailer
 import json
 import requests
@@ -274,7 +274,9 @@ def reply():
 def board():
    data = listData()
    data1 = listjoindata()
-   return render_template('board.html', data=data, data1=data1)
+   data2 = listData3()
+   data3 = listData4()
+   return render_template('board.html', data=data, len=len(data1), data1=data1, data2=data2, data3=data3)
 
 @app.route('/visita-registro', methods=['POST', 'GET'])
 def visit():
@@ -314,6 +316,70 @@ def visit():
       return render_template('formulario2.html')
 
    return render_template('formulario2.html')
+
+@app.route('/registro-empresa', methods=['POST', 'GET'])
+def empresa():
+   if request.method=='POST':
+      name = request.form['nombre']
+      document = request.form['tipo_documento']
+      n_document = request.form['numero_documento']
+      mail = request.form['email']
+      country = request.form['pais']
+      city = request.form['ciudad']
+      address = request.form['direccion']
+      phone = request.form['telefono']
+      institute = request.form['institucion']
+      ocupation = request.form['ocupacion']
+     
+      if name == None or name == '' or name == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      if n_document == None or n_document == '' or n_document == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      if mail == None or mail == '' or mail == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      if country == None or country == '' or country == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      if city == None or city == '' or city == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      if address == None or address == '' or address == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      if phone == None or phone == '' or phone == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      if institute == None or institute == '' or institute == ' ':
+         mensaje = "No se aceptan campos vacios!!"
+         flash(mensaje)
+         return render_template('formulario3.html')
+
+      band = insertData4(name, document, n_document, mail, country, city, address, phone, institute, ocupation)
+      if band == False:
+         mensaje = "Lo siento ya se ha registrado!!"
+      else:
+         mensaje = "Registro Exitoso!!!"
+      flash(mensaje)
+      return render_template('formulario3.html')
+
+   return render_template('formulario3.html')
 
 @app.route('/homei')
 def homei():
