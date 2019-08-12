@@ -2,139 +2,173 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Datos</title>
+        <head>
+            <title>Bootstrap Example</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        </head>
 </head>
 
 <body>
-    <div class="table-responsive">
-        <ol class="breadcrumb my-4">
-            <li class="breadcrumb-item active">Tabla de datos</li>
-        </ol>
-        <table class="table table-bordered">
-            <thead class="thead-inverse">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre Completo</th>
-                    <th>Tipo Identificación</th>
-                    <th>Nro</th>
-                    <th>Email</th>
-                    <th>Pais</th>
-                    <th>Ciudad</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
-                    <th>Institucion</th>
-                    <th>Ocupacion</th>
-                    <th>Tipo Participación</th>
-                    <th>Area Ponencia</th>
-                    <th>Ingles</th>
-                    <th>Comentarios</th>
-                    <th>Razon Social</th>
-                    <th>RUC</th>
-                    <th>Monto</th>
-                    <th>Token API</th>
-                    <th>Forma de Pago</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in data %}
-                <tr>
-                    <td>{{ row[0] }}</td>
-                    <td>{{ row[1] }}</td>
-                    <td class="text-center">{{ row[2] }}</td>
-                    <td>{{ row[3] }}</td>
-                    <td>{{ row[4] }}</td>
-                    <td>{{ row[5] }}</td>
-                    <td>{{ row[6] }}</td>
-                    <td>{{ row[7] }}</td>
-                    <td>{{ row[8] }}</td>
-                    <td>{{ row[9] }}</td>
-                    <td>{{ row[10] }}</td>
-                    <td>{{ row[11] }}</td>
-                    <td>{{ row[12] }}</td>
-                    <td>{{ row[13] }}</td>
-                    <td>{{ row[14] }}</td>
-                    <td>{{ row[15] }}</td>
-                    <td>{{ row[16] }}</td>
-                    <td>{{ row[17] }}</td>
-                    <td>{{ row[18] }}</td>
-                    <td>{{ row[19] }}</td>
-                </tr>
-            </tbody>
-            {% endfor %}
-        </table>
-    </div>
+
+        <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Captura formulario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Pagados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu2">Visita San Pedro</a>
+        </li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane container active" id="home">
+
+                <div class="table-responsive">
+                        <ol class="breadcrumb my-4">
+                            <li class="breadcrumb-item active">Tabla de datos</li>
+                        </ol>
+                        <table class="table table-bordered">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Tipo Identificación</th>
+                                    <th>Nro</th>
+                                    <th>Email</th>
+                                    <th>Pais</th>
+                                    <th>Ciudad</th>
+                                    <th>Direccion</th>
+                                    <th>Telefono</th>
+                                    <th>Institucion</th>
+                                    <th>Ocupacion</th>
+                                    <th>Tipo Participación</th>
+                                    <th>Area Ponencia</th>
+                                    <th>Ingles</th>
+                                    <th>Comentarios</th>
+                                    <th>Razon Social</th>
+                                    <th>RUC</th>
+                                    <th>Monto</th>
+                                    <th>Token API</th>
+                                    <th>Forma de Pago</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in data %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                    <td class="text-center">{{ row[2] }}</td>
+                                    <td>{{ row[3] }}</td>
+                                    <td>{{ row[4] }}</td>
+                                    <td>{{ row[5] }}</td>
+                                    <td>{{ row[6] }}</td>
+                                    <td>{{ row[7] }}</td>
+                                    <td>{{ row[8] }}</td>
+                                    <td>{{ row[9] }}</td>
+                                    <td>{{ row[10] }}</td>
+                                    <td>{{ row[11] }}</td>
+                                    <td>{{ row[12] }}</td>
+                                    <td>{{ row[13] }}</td>
+                                    <td>{{ row[14] }}</td>
+                                    <td>{{ row[15] }}</td>
+                                    <td>{{ row[16] }}</td>
+                                    <td>{{ row[17] }}</td>
+                                    <td>{{ row[18] }}</td>
+                                    <td>{{ row[19] }}</td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+
+        </div>
+        <div class="tab-pane container fade" id="menu1">
+
+                <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    
+                                    <th>Nombre Completo</th>
+                                    <th>tipo Identificación</th>
+                                    <th>Nro Documento</th>
+                                    <th>Email</th>
+                                    <th>Pais</th>
+                                    <th>Ciudad</th>
+                                    <th>Telefono</th>
+                                    <th>Institucion</th>
+                                    <th>Ocupacion</th>
+                                    <th>Area Ponencia</th>
+                                    <th>Ingles</th>
+                                    <th>Razon Social</th>
+                                    <th>RUC</th>
+                                    <th>Monto</th>
+                                    <th>Forma de Pago</th>
+                                    <th>Interes</th>
+                                    <th>Fecha de Pago</th>
+                                    <th>Numero de pedido</th>
+                                    <th>Monto sin interes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in data1 %}
+                                <tr>
+                                    
+                                    
+                                    
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                    <td>{{ row[2] }}</td>
+                                    <td>{{ row[3] }}</td>
+                                    <td>{{ row[4] }}</td>
+                                    <td>{{ row[5] }}</td>
+                                    <td>{{ row[6] }}</td>
+                                    <td>{{ row[7] }}</td>
+                                    <td>{{ row[8] }}</td>
+                                    <td>{{ row[9] }}</td>
+                                    <td>{{ row[10] }}</td>
+                                    <td>{{ row[12] }}</td>
+                                    <td>{{ row[13] }}</td>
+                                    <td>{{ row[14] }}</td>
+                                    <td>{{ row[15] }}</td>
+                                    <td>{% if row[15] == 'Procard - Tarjetas de crédito' or row[15] == 'Bancard - Tarjetas de crédito' %} 6.2% {% else %} 4.9% {% endif %}</td>
+                                    <td>{{ row[16]}}</td>
+                                    <td>{{ row[17] }}</td>
+                                    <td>
+                                        {% if row[15] == 'Procard - Tarjetas de crédito' or row[15] == 'Bancard - Tarjetas de crédito' %}
+                                        {{ ((row[14]*93.18)/100)|round|int }}
+                                        {% else %}
+                                        {{ ((row[14]*94.61)/100)|round|int }}
+                                        {% endif %}
+                                    </td>
+                                    
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+
+        </div>
+        <div class="tab-pane container fade" id="menu2">
+
+        </div>
+      </div>
+
+    
 <br><br>
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead class="thead-inverse">
-                <tr>
-                    <th>Nombre Completo</th>
-                    <th>tipo Identificación</th>
-                    <th>Nro Documento</th>
-                    <th>Email</th>
-                    <th>Pais</th>
-                    <th>Ciudad</th>
-                    <th>Telefono</th>
-                    <th>Institucion</th>
-                    <th>Ocupacion</th>
-                    <th>Area Ponencia</th>
-                    <th>Ingles</th>
-                    <th>Razon Social</th>
-                    <th>RUC</th>
-                    <th>Monto</th>
-                    <th>Forma de Pago</th>
-                    <th>Interes</th>
-                    <th>Fecha de Pago</th>
-                    <th>Numero de pedido</th>
-                    <th>Monto sin interes</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in data1 %}
-                <tr>
-                    <td>{{ row[0] }}</td>
-                    <td>{{ row[1] }}</td>
-                    <td>{{ row[2] }}</td>
-                    <td>{{ row[3] }}</td>
-                    <td>{{ row[4] }}</td>
-                    <td>{{ row[5] }}</td>
-                    <td>{{ row[6] }}</td>
-                    <td>{{ row[7] }}</td>
-                    <td>{{ row[8] }}</td>
-                    <td>{{ row[9] }}</td>
-                    <td>{{ row[10] }}</td>
-                    <td>{{ row[12] }}</td>
-                    <td>{{ row[13] }}</td>
-                    <td>{{ row[14] }}</td>
-                    <td>{{ row[15] }}</td>
-                    <td>{% if row[15] == 'Procard - Tarjetas de crédito' or row[15] == 'Bancard - Tarjetas de crédito' %} 6.2% {% else %} 4.9% {% endif %}</td>
-                    <td>{{ row[16]}}</td>
-                    <td>{{ row[17] }}</td>
-                    <td>
-                        {% if row[15] == 'Procard - Tarjetas de crédito' or row[15] == 'Bancard - Tarjetas de crédito' %}
-                        {{ ((row[14]*93.18)/100)|round|int }}
-                        {% else %}
-                        {{ ((row[14]*94.61)/100)|round|int }}
-                        {% endif %}
-                    </td>
-                    
-                </tr>
-            </tbody>
-            {% endfor %}
-        </table>
-    </div>
+    
 
-
-
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
 
 </body>
 
