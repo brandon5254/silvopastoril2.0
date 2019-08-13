@@ -381,6 +381,11 @@ def empresa():
 
    return render_template('formulario3.html')
 
+@app.route('/registro-empresa1', methods=['POST', 'GET'])
+def empresa1():
+   return render_template('formulario4.html')
+
+
 @app.route('/homei')
 def homei():
    return render_template('index-e.html')

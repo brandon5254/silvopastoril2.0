@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title %}Formulario de Registro{% endblock %}
+{% block content %}
+
+
+<div class="cont-form">
+
+    <div class="content-form-2">
+
+        <h1>Registro de Auspiciantes y Organizadores</h1>
+        <br>
+        <form id="myForm" action="/registro-empresa" method="POST" class="needs-validation" novalidate>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nombre Completo*</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Tipo de Documento de Identificación*</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="tipo_documento" required>
+                    <option value="CI" selected="selected">Cédula de Identificación</option>
+                    <option value="pasaporte">Pasaporte</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Número de Documento de Identificación*</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" placeholder="Ingrese solo caracteres númericos" required>
+                <span style="color: white; font-size: 12px;">*En caso de que posea pasaporte favor ingresar solo los caracteres númericos</span>    
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email*</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese email"
+                    name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">País de Residencia*</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="pais" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Ciudad de Residencia*</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Dirección de Residencia*</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="direccion" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Teléfono*</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Institución/Empresa/Particular*</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="ocupacion" onchange="">
+                    <option value="Estudiante Nacional" selected="selected">FECOPROD</option>
+                    <option value="Estudiante Extranjero">POMERA</option>
+                    <option value="Estudiante Extranjero">VOLENDAM</option>
+                    <option value="Estudiante Extranjero">WWF</option>
+                    <option value="Estudiante Extranjero">GENEFOR</option>
+                    <option value="Estudiante Extranjero">INPASA</option>
+                    <option value="Estudiante Extranjero">NEULAND</option>
+                    <option value="Estudiante Extranjero">FRISCO</option>
+                    <option value="Estudiante Extranjero">COPACO</option>
+                    <option value="Estudiante Extranjero">UNIQUEWOOD</option>
+                    <option value="Estudiante Extranjero">SOLIDARIDAD</option>
+                    <option value="Estudiante Extranjero">MAG</option>
+                    <option value="Estudiante Extranjero">MADES</option>
+                    <option value="Estudiante Extranjero">ARP</option>
+                    <option value="Estudiante Extranjero">FAC. CIENCIAS AGRARIAS</option>
+                    <option value="Estudiante Extranjero">INTA</option>
+                    <option value="Estudiante Extranjero">CIPAV</option>
+                    <option value="Estudiante Extranjero">FORESTAL SYLVIS</option>
+                    <option value="Estudiante Extranjero">RED GLOBAL SISTEMAS SILVOPASTORILES</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Categoria de Inscripción*</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="ocupacion" onchange="">
+                    <option value="Estudiante Nacional" selected="selected">Auspiciante</option>
+                    <option value="Estudiante Extranjero">Organizador</option>
+                </select>
+            </div>
+
+            <br><br>
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Enviar</button>
+            <button type="reset" class="btn btn-primary" style="margin-top: 10px;">Limpiar</button>
+
+        </form>
+
+        <!-- modal - mensajes al usuario -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 style="padding: 2%;" class="modal-title" id="exampleModalLongTitle">Atención!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin: 0;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        {% for message in messages %}
+                        <div>{{message}}</div>
+                        {% endfor %}
+
+                    </div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+    </div>
+</div>
+
+<script>
+
+    document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
+
+</script>
+
+
+
+{% endblock %}
