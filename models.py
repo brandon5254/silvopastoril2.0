@@ -92,7 +92,7 @@ def insertData4(name, document, n_document, mail, country, city, address, phone,
     try:
         con = sql.connect("datos3.db")
         cur = con.cursor()
-        cur.execute("INSERT INTO empresas VALUES (?,?,?,?,?,?,?,?,?,?,?)", (None, name, document, n_document, mail, country, city, address, phone, institute, ocupation))
+        cur.execute("INSERT INTO registro VALUES (?,?,?,?,?,?,?,?,?,?,?)", (None, name, document, n_document, mail, country, city, address, phone, institute, ocupation))
 
         con.commit()
         band = True
@@ -116,7 +116,23 @@ def listData3():
 def listData4():
     con = sql.connect("datos3.db")
     cur = con.cursor()
-    cur.execute("SELECT * FROM empresas;")
+    cur.execute("SELECT * FROM registro;")
+    data = cur.fetchall()
+    con.close()
+    return data
+
+def cantidadIncripto(institucion, ocupacion):
+    con = sql.connect("datos3.db")
+    cur = con.cursor()
+    cur.execute("SELECT count(*) FROM registro where institucion = ? AND ocupacion = ?;", (institucion, ocupacion, ))
+    data = cur.fetchall()
+    con.close()
+    return data
+
+def cantMaxInscripto(institucion, ocupacion):
+    con = sql.connect("datos3.db")
+    cur = con.cursor()
+    cur.execute("SELECT cantidad FROM cant_max_inscrip where empresa = ? AND ocupacion = ?;", (institucion, ocupacion))
     data = cur.fetchall()
     con.close()
     return data

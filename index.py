@@ -3,7 +3,7 @@ from flask_mail import Mail, Message
 from pago_servicio import procesar
 from generador_token import generarToken
 from pagopar_traer import TraerPedido
-from models import listData, insertData1, sortData, insertData2, listjoindata, listData2, insertData3, insertData4, listData3, listData4
+from models import listData, insertData1, sortData, insertData2, listjoindata, listData2, insertData3, insertData4, listData3, listData4, cantidadIncripto, cantMaxInscripto
 from send_mail import mailer
 import json
 import requests
@@ -429,19 +429,34 @@ def empresa1():
          mensaje = "No se aceptan campos vacios!!"
          flash(mensaje)
          return render_template('formulario4.html')
+      
+      cant_max = cantidadIncripto(institute, ocupation)
+      
+      cant_permitido = cantMaxInscripto(institute, ocupation)
 
-      if institute == None or institute == '' or institute == ' ':
-         mensaje = "No se aceptan campos vacios!!"
-         flash(mensaje)
-         return render_template('formulario4.html')
+      if not cant_max == cant_permitido:
+         
+         band = insertData4(name, document, n_document, mail, country, city, address, phone, institute, ocupation)
+         
+         if band == False:
+            
+            mensaje = "Lo siento ya se ha registrado!!"
 
-      band = insertData4(name, document, n_document, mail, country, city, address, phone, institute, ocupation)
-      if band == False:
-         mensaje = "Lo siento ya se ha registrado!!"
+         else:
+            
+            mensaje = "Registro Exitoso!!!"
+         
+            flash(mensaje)
+         
+            return render_template('formulario4.html')
+      
       else:
-         mensaje = "Registro Exitoso!!!"
-      flash(mensaje)
-      return render_template('formulario4.html')
+         
+         mensaje = "No esta permitido o Ya se ha sobrepasado el limite para la inscripcion!!!"
+         
+         flash(mensaje)
+
+         return render_template('formulario4.html')
 
    return render_template('formulario4.html')
 
