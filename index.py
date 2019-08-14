@@ -452,13 +452,17 @@ def empresa1():
       
       else:
          
-         mensaje = "No esta permitido o Ya se ha sobrepasado el limite para la inscripcion!!!"
+         mensaje = "Ha alcanzado su cupo limite!!!"
          
          flash(mensaje)
 
          return render_template('formulario4.html')
 
    return render_template('formulario4.html')
+
+@app.route('/reporte')
+def report():
+   return render_template('reporte.html')
 
 @app.route('/homei')
 def homei():
