@@ -430,7 +430,8 @@ def empresa1():
          flash(mensaje)
          return render_template('formulario4.html')
 
-      if ocupation == '1':
+      if (ocupation == '22' or ocupation == '23'):
+         institute = request.form['ocupacion']
          ocupation = 'ORGANIZADOR'
 
       cant_max = cantidadIncripto(institute, ocupation)
