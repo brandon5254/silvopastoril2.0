@@ -98,6 +98,7 @@ def insertData4(name, document, n_document, mail, country, city, address, phone,
         band = True
 
     except sql.Error as e:
+        print(e)
         con.rollback()
         band = False
         

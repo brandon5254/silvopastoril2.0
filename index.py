@@ -317,7 +317,7 @@ def visit():
 
    return render_template('formulario2.html')
 
-@app.route('/registro-empresa', methods=['POST', 'GET'])
+"""@app.route('/registro-empresa', methods=['POST', 'GET'])
 def empresa():
    if request.method=='POST':
       name = request.form['nombre']
@@ -379,7 +379,7 @@ def empresa():
       flash(mensaje)
       return render_template('formulario3.html')
 
-   return render_template('formulario3.html')
+   return render_template('formulario3.html')"""
 
 @app.route('/registro-empresa1', methods=['POST', 'GET'])
 def empresa1():
@@ -390,7 +390,7 @@ def empresa1():
       mail = request.form['email']
       country = request.form['pais']
       city = request.form['ciudad']
-      address = request.form['direccion']
+      address = None
       phone = request.form['telefono']
       institute = request.form['institucion']
       ocupation = request.form['ocupacion']
@@ -420,10 +420,10 @@ def empresa1():
          flash(mensaje)
          return render_template('formulario4.html')
 
-      if address == None or address == '' or address == ' ':
+      """if address == None or address == '' or address == ' ':
          mensaje = "No se aceptan campos vacios!!"
          flash(mensaje)
-         return render_template('formulario4.html')
+         return render_template('formulario4.html')"""
 
       if phone == None or phone == '' or phone == ' ':
          mensaje = "No se aceptan campos vacios!!"
