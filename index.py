@@ -429,7 +429,10 @@ def empresa1():
          mensaje = "No se aceptan campos vacios!!"
          flash(mensaje)
          return render_template('formulario4.html')
-      
+
+      if ocupation == '1':
+         ocupation = 'ORGANIZADOR'
+
       cant_max = cantidadIncripto(institute, ocupation)
       
       cant_permitido = cantMaxInscripto(institute, ocupation)

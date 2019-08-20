@@ -24,8 +24,10 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Número de Documento de Identificación*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento" placeholder="Ingrese solo caracteres númericos" required>
-                <span style="color: white; font-size: 12px;">*En caso de que posea pasaporte favor ingresar solo los caracteres númericos</span>    
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="numero_documento"
+                    placeholder="Ingrese solo caracteres númericos" required>
+                <span style="color: white; font-size: 12px;">*En caso de que posea pasaporte favor ingresar solo los
+                    caracteres númericos</span>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email*</label>
@@ -49,6 +51,15 @@
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="telefono" required>
             </div>
             <div class="form-group">
+                <label for="exampleFormControlSelect1">Categoria de Inscripción*</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="ocupacion" onchange="HiddenSelect()">
+                    <option value="AUSPICIANTE">AUSPICIANTE</option>
+                    <option value="ORGANIZADOR" selected="selected">ORGANIZADOR</option>
+                    <option value=22>APOYO ESTUDIANTE</option>
+                    <option value=23>BECA ESTUDIANTE</option>
+                </select>
+            </div>
+            <div class="form-group" id="ocultar">
                 <label for="exampleFormControlInput1">Institución/Empresa/Particular*</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="institucion" onchange="">
                     <option value=1 selected="selected">FECOPROD</option>
@@ -72,15 +83,6 @@
                     <option value=19>NELORE</option>
                     <option value=20>SECRETARIA NACIONAL DE TURISMO</option>
                     <option value=21>INSTITUTO FORESTAL NACIONAL</option>
-                    <option value=22>APOYO ESTUDIANTE</option>
-                    <option value=23>BECA ESTUDIANTE</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Categoria de Inscripción*</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="ocupacion" onchange="">
-                    <option value="AUSPICIANTE">Auspiciante</option>
-                    <option value="ORGANIZADOR" selected="selected">Organizador</option>
                 </select>
             </div>
 
@@ -125,6 +127,17 @@
 <script>
 
     document.body.style.backgroundImage = 'url(./static/img/fondo.png)';
+
+    function HiddenSelect(){
+        var selection = document.getElementsByName("ocupacion");
+        if (selection[0].options.selectedIndex == 2 || selection[0].options.selectedIndex == 3){ 
+            document.getElementById("ocultar").hidden = true;
+            } 
+        else { 
+            document.getElementById("ocultar").hidden = false; 
+        }
+    }
+
 
 </script>
 
