@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reporte</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/reporte-style.css')}}">
 </head>
+
 <body>
+    <!-- {{data[0]}} -->
+
+    <br>
     
+    <p>
+        Fecha
+    </p>
+    {{ data[0][16] }}<br>
+    <br>
+    Comercio<br><br>
+    {%if data[0][15] == 'Procard - Tarjetas de crédito'%}
+    INFONA - Tarjetas de Credito {%else%} INFONA COMERCIO<br>
+    {%endif%}
+    <br>
+    Nombre<br><br>
+    {{ data[0][0] }}<br><br>
+    Descripcion<br>
+    Inscripción
+    {{ data[0][8] }}<br><br>
+    E-mail<br>
+    {{ data[0][3] }}<br><br>
+    Telefono<br>
+    {{ data[0][6] }}<br><br>
+    CI<br>
+    {{ data[0][2] }}<br><br>
+    Razón Social / RUC<br>
+    {{ data[0][12] }} / {{ data[0][13] }}<br><br>
+    Compras<br><br>
+    <table>
+        <tr>
+            <th>Descripcion</th>
+            <th>Cantidad</th>
+            <th>Monto</th>
+        </tr>
+        <tr>
+            <td>Inscripción Estudiante Nacional, el monto que figura corresponde a la
+                    moneda local (Guaraníes) lo cual equivale al monto total de 100 USD (Tipo de
+                    cambio del día)</td>
+            <td>1</td>
+            <td>{{ data[0][14] }}</td>
+        </tr>
+        <tr>
+            <td>Comision Pagopar</td>
+            <td>1</td>
+            <td>35436</td>
+        </tr>
+        <tr>
+            <td>Acreditado {%if data[0][15] == 'Procard - Tarjetas de crédito'%}
+                    INFONA - Tarjetas de Credito {%else%} INFONA COMERCIO<br>
+                    {%endif%}</td>
+            <td>1</td>
+            <td>621999</td>
+        </tr>
+    </table>
 </body>
+
 </html>
