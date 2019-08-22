@@ -464,6 +464,14 @@ def empresa1():
 
    return render_template('formulario4.html')
 
+@app.route('/programa')
+def programa():
+   return render_template('programa.html')
+
+@app.route('/exponentes')
+def exponentes():
+   return render_template('exponentes.html')
+
 @app.route('/reporte')
 def report():
    return render_template('reporte.html')

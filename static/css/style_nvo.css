@@ -1,6 +1,7 @@
 @import url(galeria-style.css);
 @import url(formulario-style.css);
 @import url(modal.css);
+@import url(program-style.css);
 
 html{
     position: relative;
