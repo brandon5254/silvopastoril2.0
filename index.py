@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask_moment import Moment
 from flask_mail import Mail, Message
 from pago_servicio import procesar
 from generador_token import generarToken
@@ -7,6 +8,7 @@ from models import listData, insertData1, sortData, insertData2, listjoindata, l
 from send_mail import mailer
 import json
 import requests
+import datetime
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -18,6 +20,7 @@ app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = 'organizacion@silvopastoril2019.org.py'
 app.config['MAIL_PASSWORD'] = 'organizacion'
 mail = Mail(app)
+moment = Moment(app)
 
 @app.route('/')
 def home():
@@ -276,7 +279,8 @@ def board():
    data1 = listjoindata()
    data2 = listData3()
    data3 = listData4()
-   return render_template('board.html', data=data, len=len(data1), data1=data1, data2=data2, data3=data3)
+   list1 = list(range(1, len(data1)+1))
+   return render_template('board.html', data=data, list1=list1, data1=data1, data2=data2, data3=data3)
 
 @app.route('/visita-registro', methods=['POST', 'GET'])
 def visit():
@@ -408,10 +412,34 @@ def programa():
 def exponentes():
    return render_template('exponentes.html')
 
-@app.route('/reporte')
-def report():
+@app.route('/reporte/<int:num>')
+def report(num):
    data = listjoindata()
-   return render_template('reporte.html', data=data)
+   strFecha = data[num][16]
+   d_date = datetime.datetime.strptime(strFecha, '%Y-%m-%d %H:%M:%S.%f')
+   fecha = d_date.strftime("%d %B %Y %I:%M:%S %p")
+   medio_pago = data[num][15]
+   nombre = data[num][0]
+   descripcion = data[num][8]
+   email = data[num][3]
+   telefono = data[num][6]
+   ci = data[num][2]
+   razon = data[num][12]
+   ruc = data[num][13]
+   monto_total = data[num][14]
+   if medio_pago == 'Procard - Tarjetas de crédito' or medio_pago == 'Bancard - Tarjetas de crédito':
+      ms_inter = int((monto_total*93.18)/100)
+   else:
+      ms_inter =  int((monto_total*94.61)/100)
+   comision = (monto_total - ms_inter)
+
+   return render_template('reporte.html', fecha=fecha, medio_pago=medio_pago, nombre=nombre, descripcion=descripcion, email=email, telefono=telefono, ci=ci, razon=razon, ruc=ruc, monto_total=monto_total, ms_inter=ms_inter, comision=comision)
+
+@app.route('/reportes')
+def reports():
+   data1 = listjoindata()
+   return render_template('reportes.html', data1=data1)
+
 
 @app.route('/homei')
 def homei():

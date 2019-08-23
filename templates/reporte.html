@@ -7,61 +7,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reporte</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/reporte-style.css')}}">
+    {{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
 </head>
 
 <body>
-    <!-- {{data[0]}} -->
-
-    <br>
     
-    <p>
-        Fecha
-    </p>
-    {{ data[0][16] }}<br>
     <br>
-    Comercio<br><br>
-    {%if data[0][15] == 'Procard - Tarjetas de crédito'%}
-    INFONA - Tarjetas de Credito {%else%} INFONA COMERCIO<br>
+    Fecha<br>
+    {{ fecha }}<br>
+    <br>
+    Comercio<br>
+    {%if medio_pago == 'Procard - Tarjetas de crédito' or medio_pago == 'Bancard - Tarjetas de crédito' %}
+    INFONA - Tarjetas de Credito {%else%} Instituto Forestal Nacional<br>
     {%endif%}
     <br>
-    Nombre<br><br>
-    {{ data[0][0] }}<br><br>
+    Nombre<br>
+    {{ nombre }}<br><br>
     Descripcion<br>
     Inscripción
-    {{ data[0][8] }}<br><br>
+    {{ descripcion }}<br><br>
     E-mail<br>
-    {{ data[0][3] }}<br><br>
+    {{ email }}<br><br>
     Telefono<br>
-    {{ data[0][6] }}<br><br>
+    {{ telefono }}<br><br>
     CI<br>
-    {{ data[0][2] }}<br><br>
+    {{ ci }}<br><br>
     Razón Social / RUC<br>
-    {{ data[0][12] }} / {{ data[0][13] }}<br><br>
+    {{razon }} / {{ ruc }}<br><br>
     Compras<br><br>
     <table>
         <tr>
-            <th>Descripcion</th>
+            <th style="text-align: left;">Descripcion</th>
             <th>Cantidad</th>
             <th>Monto</th>
         </tr>
         <tr>
-            <td>Inscripción Estudiante Nacional, el monto que figura corresponde a la
-                    moneda local (Guaraníes) lo cual equivale al monto total de 100 USD (Tipo de
-                    cambio del día)</td>
+            <td>Inscripcion Estudiante Nacional/Internacional, el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total de 100 USD (Tipo de cambio del dia)</td>
             <td>1</td>
-            <td>{{ data[0][14] }}</td>
+            <td>{{ monto_total }}</td>
         </tr>
         <tr>
             <td>Comision Pagopar</td>
             <td>1</td>
-            <td>35436</td>
+            <td>{{ comision }}</td>
         </tr>
         <tr>
-            <td>Acreditado {%if data[0][15] == 'Procard - Tarjetas de crédito'%}
-                    INFONA - Tarjetas de Credito {%else%} INFONA COMERCIO<br>
+            <td>Acreditado {%if medio_pago == 'Procard - Tarjetas de crédito'%}
+                    INFONA - Tarjetas de Credito {%else%} Instituto Forestal Nacional<br>
                     {%endif%}</td>
             <td>1</td>
-            <td>621999</td>
+            <td>{{ ms_inter }}</td>
         </tr>
     </table>
 </body>

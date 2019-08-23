@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Reportes</title>
+</head>
+<body>
+    
+        <div class="table-responsive">
+                <ol class="breadcrumb my-4">
+                        <li class="breadcrumb-item active">Inscripciones Pagadas</li>
+                    </ol>
+                <table class="table table-bordered">
+                    <thead class="thead-inverse">
+                        <tr>
+                            
+                            <th>Nombre Completo</th>
+                            <th>tipo Identificación</th>
+                            <th>Nro Documento</th>
+                            <th>Razon Social</th>
+                            <th>RUC</th>
+                            <th>Monto</th>
+                            <th>Forma de Pago</th>
+                            <th>Numero de pedido</th>
+                            <th>Reportes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        {% for row in data1%}
+                        
+                        <tr>
+                        
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[12] }}</td>
+                            <td>{{ row[13] }}</td>
+                            <td>{{ row[14] }}</td>
+                            <td>{{ row[15] }}</td>
+                            <td>{{ row[17] }}</td>
+                            <td>Descargar</td>
+                        </tr>
+                        
+                    </tbody>
+                    
+                    
+                    {% endfor %}
+                </table>
+            </div>
+
+</body>
+</html>
