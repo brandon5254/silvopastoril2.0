@@ -31,6 +31,8 @@
     {{ email }}<br><br>
     Telefono<br>
     {{ telefono }}<br><br>
+    Dirección<br>
+    {{ direccion }}<br><br>
     CI<br>
     {{ ci }}<br><br>
     Razón Social / RUC<br>
@@ -40,24 +42,41 @@
         <tr>
             <th style="text-align: left;">Descripcion</th>
             <th>Cantidad</th>
-            <th>Monto</th>
+            <th style="text-align: right;">Monto</th>
         </tr>
         <tr>
-            <td>Inscripcion Estudiante Nacional/Internacional, el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total de 100 USD (Tipo de cambio del dia)</td>
-            <td>1</td>
-            <td>{{ monto_total }}</td>
+            <td>{% if ocupacion == 'Estudiante Nacional' or ocupacion == 'Estudiante Extranjero' %}
+                
+                Inscripcion Estudiante Nacional/Internacional, 
+                el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total 
+                de 100 USD (Tipo de cambio del dia Gs. {{ (ms_inter/100)|int|round }})
+                {% elif ocupacion == 'Profesional Nacional'%}
+                
+                Inscripcion Profesional Nacional, 
+                el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total 
+                de 150 USD (Tipo de cambio del dia Gs. {{ (ms_inter/150)|int|round }})
+                
+                {% else %}
+                Inscripcion Profesional Extranjero, 
+                el monto que figura corresponde a la moneda local (Guaraníes) lo cual equivale al monto total 
+                de 150 USD (Tipo de cambio del dia Gs. {{ (ms_inter/200)|int|round }})
+
+                {% endif %}
+            </td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: right;">{{ monto_total }}</td>
         </tr>
         <tr>
             <td>Comision Pagopar</td>
-            <td>1</td>
-            <td>{{ comision }}</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: right;">{{ comision }}</td>
         </tr>
         <tr>
             <td>Acreditado {%if medio_pago == 'Procard - Tarjetas de crédito'%}
                     INFONA - Tarjetas de Credito {%else%} Instituto Forestal Nacional<br>
                     {%endif%}</td>
-            <td>1</td>
-            <td>{{ ms_inter }}</td>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: right;">{{ ms_inter }}</td>
         </tr>
     </table>
 </body>

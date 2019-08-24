@@ -55,7 +55,7 @@ def insertData2(pagado, forma_pago, fecha_pago, monto, fecha_maxima_pago, hash_p
 def listjoindata():
     con = sql.connect("datos.db")
     cur = con.cursor()
-    cur.execute("select s.nombre_completo, s.tipo_identificacion, s.nro_documento, s.email, s.pais, s.ciudad, s.telefono, s.institucion, s.ocupacion, s.area_ponencia, s.ingles, s.comentarios, s.nombre_razon_social, s.ruc, s.monto, tp.forma_pago, tp.fecha_pago, tp.numero_pedido from silvopastoril s INNER JOIN transactions_pagopar tp ON s.token_api=tp.hash_pedido;")
+    cur.execute("select s.nombre_completo, s.tipo_identificacion, s.nro_documento, s.email, s.pais, s.ciudad, s.telefono, s.institucion, s.ocupacion, s.area_ponencia, s.ingles, s.comentarios, s.nombre_razon_social, s.ruc, s.monto, tp.forma_pago, tp.fecha_pago, tp.numero_pedido, s.direccion from silvopastoril s INNER JOIN transactions_pagopar tp ON s.token_api=tp.hash_pedido;")
     data = cur.fetchall()
     con.close()
     return data

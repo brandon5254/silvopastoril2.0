@@ -6,9 +6,11 @@ from generador_token import generarToken
 from pagopar_traer import TraerPedido
 from models import listData, insertData1, sortData, insertData2, listjoindata, listData2, insertData3, insertData4, listData3, listData4, cantidadIncripto, cantMaxInscripto
 from send_mail import mailer
+from flask_weasyprint import HTML, render_pdf
 import json
 import requests
 import datetime
+
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -427,18 +429,24 @@ def report(num):
    razon = data[num][12]
    ruc = data[num][13]
    monto_total = data[num][14]
+   ocupacion = data[num][8]
+   direccion = data[num][18]
+   
    if medio_pago == 'Procard - Tarjetas de crédito' or medio_pago == 'Bancard - Tarjetas de crédito':
       ms_inter = int((monto_total*93.18)/100)
    else:
       ms_inter =  int((monto_total*94.61)/100)
+   
    comision = (monto_total - ms_inter)
 
-   return render_template('reporte.html', fecha=fecha, medio_pago=medio_pago, nombre=nombre, descripcion=descripcion, email=email, telefono=telefono, ci=ci, razon=razon, ruc=ruc, monto_total=monto_total, ms_inter=ms_inter, comision=comision)
+   html = render_template('reporte.html', fecha=fecha, medio_pago=medio_pago, nombre=nombre, descripcion=descripcion, email=email, telefono=telefono, ci=ci, razon=razon, ruc=ruc, monto_total=monto_total, ms_inter=ms_inter, comision=comision, ocupacion=ocupacion, direccion=direccion)
+   return render_pdf(HTML(string=html))
+
 
 @app.route('/reportes')
 def reports():
    data1 = listjoindata()
-   return render_template('reportes.html', data1=data1)
+   return render_template('reportes.html', data1=data1, len=enumerate(data1,0))
 
 
 @app.route('/homei')

@@ -19,7 +19,7 @@
                 <table class="table table-bordered">
                     <thead class="thead-inverse">
                         <tr>
-                            
+                            <th>ID</th>
                             <th>Nombre Completo</th>
                             <th>tipo Identificación</th>
                             <th>Nro Documento</th>
@@ -32,11 +32,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        {% for row in data1%}
-                        
+                    
+                        {% for row in data1 %}
+                            
                         <tr>
-                        
+                            
+                            <td> {{ loop.index }}</td>
                             <td>{{ row[0] }}</td>
                             <td>{{ row[1] }}</td>
                             <td>{{ row[2] }}</td>
@@ -45,12 +46,12 @@
                             <td>{{ row[14] }}</td>
                             <td>{{ row[15] }}</td>
                             <td>{{ row[17] }}</td>
-                            <td>Descargar</td>
+                            <td><a href="/reporte/{{loop.index0}}">Descargar</a></td>
+                        
                         </tr>
                         
-                    </tbody>
-                    
-                    
+                    </tbody>  
+                        
                     {% endfor %}
                 </table>
             </div>
