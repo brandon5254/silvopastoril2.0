@@ -2,6 +2,7 @@
 @import url(formulario-style.css);
 @import url(modal.css);
 @import url(program-style.css);
+@import url(expositores-style.css);
 
 html{
     position: relative;
@@ -366,10 +367,6 @@ table{
 #sede .auspices img{
   margin: 5% 0 0 3%;
 }
-
-/*#sede .organize img{
-  margin: 2.4%;
-}*/
 
 #sede .auspices .ot{
   width:100%;

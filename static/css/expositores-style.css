@@ -1,0 +1,97 @@
+h1{
+    color: white;
+}
+
+h3{
+    color: white;
+}
+h4{
+    color: white;
+}
+p{
+    color: white;
+    font-size: 15px;
+    text-align: justify;
+}
+
+#logo-expositor{
+    width: 50%;
+    border-radius: 0;
+}
+
+#caja{
+    width: 250px;
+    text-align: center;
+    background-color: #182e08;
+    padding: 20px;
+    margin: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-bottom-color: white;
+    float: left;
+    
+
+}
+
+#caja1{
+    width: 270px;
+    text-align: center;
+    background-color: #182e08;
+    padding: 20px;
+    margin: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-bottom-color: white;
+    float: left;
+
+}
+
+#caja-circular{
+    width: 175px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+#caja2{
+    width: 270px;
+    text-align: center;
+    background-color: #182e08;
+    padding: 20px;
+    margin: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-bottom-color: white;
+    float: left;
+
+}
+
+#caja3{
+    width: 270px;
+    text-align: center;
+    background-color: #182e08;
+    padding: 20px;
+    margin: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-bottom-color: white;
+    float: left;
+
+}
+
+#caja img, #caja1 img, #caja2 img, #caja3 img{
+    width: 80%;
+    border-radius: 50%;
+    
+}
+
+
+#bloque{
+    width: 80%;
+    height: auto;
+
+}

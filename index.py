@@ -448,6 +448,9 @@ def reports():
    data1 = listjoindata()
    return render_template('reportes.html', data1=data1, len=enumerate(data1,0))
 
+@app.route('/expositores')
+def expositores():
+   return render_template('expositores.html')
 
 @app.route('/homei')
 def homei():
