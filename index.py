@@ -452,6 +452,10 @@ def reports():
 def expositores():
    return render_template('expositores.html')
 
+@app.route('/noticias')
+def noticias():
+   return render_template('noticias.html')
+
 @app.route('/homei')
 def homei():
    return render_template('index-e.html')
