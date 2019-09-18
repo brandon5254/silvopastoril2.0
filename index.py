@@ -284,7 +284,7 @@ def board():
    list1 = list(range(1, len(data1)+1))
    return render_template('board.html', data=data, list1=list1, data1=data1, data2=data2, data3=data3)
 
-@app.route('/visita-registro', methods=['POST', 'GET'])
+""" @app.route('/visita-registro', methods=['POST', 'GET'])
 def visit():
    if request.method=='POST':
       name = request.form['nombre']
@@ -321,7 +321,7 @@ def visit():
       flash(mensaje)
       return render_template('formulario2.html')
 
-   return render_template('formulario2.html')
+   return render_template('formulario2.html') """
 
 @app.route('/registro-empresa1', methods=['POST', 'GET'])
 def empresa1():

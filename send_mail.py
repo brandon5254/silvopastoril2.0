@@ -30,10 +30,6 @@ def mailer(email_to):
 
                     </p>
                     
-                    <p>Si desea participar de la visita técnica a la ciudad de San Pedro de la Región Oriental, el día 27 de septiembre del corriente, registrese a traves del siguiente <a href="http://silvopastoril2019.org.py/visita-registro" target="_blank" rel="noopener">link</a></p>
-
-                    <p>CUPOS LIMITADOS</p>
-
                     <p>
                         ¡Les esperamos!
                     </p>
