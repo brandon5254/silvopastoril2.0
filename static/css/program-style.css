@@ -17,3 +17,15 @@
     display: block;
     padding-top: 5%;
 }
+
+#panel{
+    background-color: white;
+}
+tr{
+    color: black;
+    font-size: 16px;
+}
+
+th, td{
+    padding: 10px;
+}

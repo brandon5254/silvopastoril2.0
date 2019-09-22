@@ -3,27 +3,14 @@
 {% block content %}
 
 <div class="container-program">
-    
-    <h1>PROGRAMA X CONGRESO INTERNACIONAL DE SISTEMAS SILVOPASTORILES</h1>
 
-    <img src="{{url_for('static', filename='img/program/programa_manana1.png')}}" alt="" style="width: 60%" class="center">
-    <img src="{{url_for('static', filename='img/program/programa_tarde1.png')}}" alt="" style="width: 60%" class="center">
-    <img src="{{url_for('static', filename='img/program/programa_dia2_manana1.png')}}" alt="" style="width: 60%" class="center">
-    <img src="{{url_for('static', filename='img/program/programa_dia2_manana2.png')}}" alt="" style="width: 60%" class="center">
-    <img src="{{url_for('static', filename='img/program/programa_dia2_tarde.png')}}" alt="" style="width: 60%" class="center">
-    <img src="{{url_for('static', filename='img/program/programa_dia3_manana1.png')}}" alt="" style="width: 60%" class="center">
-    <img src="{{url_for('static', filename='img/program/programa_dia3_manana2.png')}}" alt="" style="width: 60%" class="center">
-    <img src="{{url_for('static', filename='img/program/programa_ultimo _dia3.png')}}" alt="" style="width: 60%" class="center">
+    <h1>PROGRAMA X CONGRESO INTERNACIONAL DE SISTEMAS SILVOPASTORILES</h1><br><br>
 
 </div>
 
-    <p style="color: white;">
-        Aqui podras descarga el programa del Congreso
-    </p><br>
-    <a style="text-decoration: none; margin:20px; font-size: 30px; color: #28a745;"
-            href="{{url_for('static', filename='files/X CISSP 2019-Py_Programa Congreso.pdf')}}"
-            download>>>>Programa Para el Congreso<<<</a>
-
-
-
-{% endblock %}
+<p style="color: white;">
+    Aqui podras descarga el programa del Congreso en formato PDF
+</p><br>
+<a style="text-decoration: none; margin:20px; font-size: 30px; color: #28a745;"
+    href="{{url_for('static', filename='files/X CISSP 2019-Py_Programa Congreso.pdf')}}" download>>>>Programa Para el
+    Congreso<<<</a> {% endblock %}
