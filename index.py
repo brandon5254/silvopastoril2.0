@@ -417,20 +417,20 @@ def exponentes():
 @app.route('/reporte/<int:num>')
 def report(num):
    data = listjoindata()
-   strFecha = data[num][16]
+   strFecha = data[num][17]
    d_date = datetime.datetime.strptime(strFecha, '%Y-%m-%d %H:%M:%S.%f')
    fecha = d_date.strftime("%d %B %Y %I:%M:%S %p")
-   medio_pago = data[num][15]
+   medio_pago = data[num][16]
    nombre = data[num][0]
    descripcion = data[num][8]
    email = data[num][3]
    telefono = data[num][6]
    ci = data[num][2]
-   razon = data[num][12]
-   ruc = data[num][13]
-   monto_total = data[num][14]
+   razon = data[num][13]
+   ruc = data[num][14]
+   monto_total = data[num][15]
    ocupacion = data[num][8]
-   direccion = data[num][18]
+   direccion = data[num][19]
    
    if medio_pago == 'Procard - Tarjetas de crédito' or medio_pago == 'Bancard - Tarjetas de crédito':
       ms_inter = int((monto_total*93.18)/100)
