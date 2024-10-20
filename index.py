@@ -256,9 +256,7 @@ def board():
    data = listData()
    return render_template('board.html', data=data)
 
-@app.route('/homei')
-def homei():
-   return render_template('index-e.html')
+
 
 
 
