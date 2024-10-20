@@ -7,11 +7,18 @@ bot = telebot.TeleBot("7996201736:AAEwdMHRSCb78FAvXxH6d-QmM3GfcwXaiq4")
 def send_welcome(message):
     bot.reply_to(
         message,
+       """
+        ¡Hola! Bienvenido a nuestra plataforma tecnológica para la gestión eficiente de sistemas silvopastoriles.
+        
+        Estos son los comandos disponibles para ayudarte a mejorar la sostenibilidad de tu producción:
+        \n /count - Contar palabras o caracteres de un texto
+        \n /start - Ver este mensaje de bienvenida
+        \n /sensor_data - Recibir datos en tiempo real de tus sensores IoT
+        \n /optimize - Consejos de optimización basados en inteligencia artificial para tu producción ganadera
+        \n /visualize - Ver visualizaciones interactivas de tus datos de suelo, vegetación y animales
+        
+        Estamos aquí para ayudarte a incrementar la productividad y preservar el medio ambiente. 🌱🐄
         """
-        Hola, soy tu primer bot, estos son los comandos disponibles:
-        \n /count - contar palabras o caracteres de un texto
-        \n /start - mensaje de bienvenida
-        """,
     )
 
 @bot.message_handler(commands=["count"])
