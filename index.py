@@ -18,9 +18,6 @@ app.config['MAIL_USE_SSL'] = True
 def home():
    return render_template('index.html')
 
-@app.route('/normas')
-def normas():
-   return render_template('normas.html')
 
 
 
@@ -263,9 +260,7 @@ def board():
 def homei():
    return render_template('index-e.html')
 
-@app.route('/homei/norms')
-def norms():
-   return render_template('normas-e.html')
+
 
 @app.route('/homei/gallery')
 def gallery():
