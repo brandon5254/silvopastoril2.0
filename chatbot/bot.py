@@ -1,5 +1,6 @@
 import telebot
 from telebot.types import KeyboardButton, ReplyKeyboardMarkup
+import random
 
 bot = telebot.TeleBot("7996201736:AAEwdMHRSCb78FAvXxH6d-QmM3GfcwXaiq4")
 
@@ -20,6 +21,28 @@ def send_welcome(message):
         Estamos aquí para ayudarte a incrementar la productividad y preservar el medio ambiente. 🌱🐄
         """
     )
+
+
+@bot.message_handler(commands=["sensor_data"])
+def get_sensor_data(message):
+    # Datos simulados (simulación de sensores IoT)
+    ciudad = "Cali"
+    temperatura = round(random.uniform(20.0, 35.0), 1)  # Temperatura aleatoria entre 20 y 35 grados Celsius
+    humedad = random.randint(40, 100)  # Humedad aleatoria entre 40% y 100%
+    velocidad_viento = round(random.uniform(0.0, 10.0), 1)  # Velocidad del viento aleatoria entre 0 y 10 m/s
+    descripcion = "Cielo parcialmente nublado"
+
+    # Mensaje de respuesta con los datos simulados
+    respuesta = (
+        f"🌤 Datos en tiempo real del clima en {ciudad} (Simulación):\n\n"
+        f"🌡️ Temperatura: {temperatura}°C\n"
+        f"💧 Humedad: {humedad}%\n"
+        f"🌬️ Velocidad del viento: {velocidad_viento} m/s\n"
+        f"☁️ Condición: {descripcion}\n"
+    )
+
+    bot.reply_to(message, respuesta)
+
 
 @bot.message_handler(commands=["count"])
 def count(message):
