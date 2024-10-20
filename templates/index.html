@@ -55,11 +55,11 @@
                                 </li>-->
             </ul>
         </div>
-=======
+
         </button>-->
 
     <a class="navbar-brand" href="/" hidden>
-        <img class="img-fluid" src="/static/img/Logo%20Congreso%20Silvopastoril%20-%20%20MRA%202.png" id="encabezado">
+        <img class="img-fluid" src="/static/img/logo_silvosmart.png" id="encabezado">
     </a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -79,8 +79,7 @@
                     <a class="dropdown-item" href="#evento"><span style="color: #97bf72;">|</span> Mas sobre el problema</a>
                     
                     <!--<a class="dropdown-item" href="#sede"><span style="color: #97bf72;">|</span> Sede</a>-->
-                    <a class="dropdown-item" href="#comite"><span style="color: #97bf72;">|</span> Comite
-                        Cientifico</a>
+                    
                 </div>
             </li>
             <li class="nav-item">
@@ -91,7 +90,7 @@
                 <a class="nav-link" href="#sede"><span style="color: #97bf72;">|</span> Sede</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#seccion"><span style="color: #97bf72;">|</span> Sesiones</a>
+                <a class="nav-link" href="#seccion"><span style="color: hsl(91, 38%, 60%);">|</span> Sesiones</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url_for('galeria')}}"><span style="color: #97bf72;">|</span> Galeria</a>
@@ -106,7 +105,7 @@
             </li>
         </ul>
 
->>>>>>> 3d654c87a63bb92b550293142a1f76f9fd5f90e4
+
     </div>
     <!--</div>-->
 </nav>
@@ -115,11 +114,40 @@
     <section class="titulo">
         <div class="row align-items-center h-100 w-100">
 
-            <img class="img-fluid" src="{{url_for('static', filename='img/Logo Congreso Silvopastoril -  MRA 2.png')}}"
-                style="margin: 0 auto;">
+            <img class="img-fluid" src="{{url_for('static', filename='img/logo_silvosmart.jpg')}}"
+     style="margin: 0 auto; border-radius: 50%; width: 450px; height: 450px;margin-top: 150px;">
+
 
         </div>
+        <style>
+            /* Estilo del botón flotante */
+            .telegram-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #0088cc;
+                color: white;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 3px #999;
+                z-index: 100;
+            }
+    
+            .telegram-float i {
+                margin-top: 16px;
+            }
+        </style>
+
+         <!-- Botón flotante de Telegram -->
+    <a href="https://t.me/tu_nombre_de_usuario_del_bot" target="_blank" class="telegram-float">
+        <i class="fa fa-telegram"></i> <!-- Si tienes Font Awesome -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" width="40px" style="margin-top: 10px;"> <!-- Imagen de Telegram -->
+    </a>
     </section>
+    
 
     <section id="presentacion" class="px-md-4 px-xl-5">
         <h3 class="titulo_seccion px-md-5">PRESENTACIÓN</h3>
@@ -152,6 +180,7 @@
                 (Brasil) en 2012, el octavo en Iguazú (Argentina) en 2015 y en su novena edición, el Congreso
                 Internacional Silvopastoril en Manizales (Colombia) en 2017.</p>
     </section>
+    
 
     <section id="evento" class="px-md-4 px-xl-5">
         <h3 class="titulo_seccion px-md-5">Mas sobre el problema</h3>
@@ -295,7 +324,7 @@
                 </div>
                 <div class="conter">
                     <a href="https://sac.org.co/" target="_blank">
-                        <img class="img-fluid image" src="{{url_for('static', filename='img/Logo-palemara-blanca.png')}}"
+                        <img class="img-fluid image" src="{{url_for('static', filename='img/Logo_palemara_blanca.png')}}"
                             style="width: 25%; border-style:solid;border-color: #97bf72; padding: 1% 4% 1% 4%;">
                         <div class="overlay">
                             <div class="text"><p style="color: #113c09;">Descubre La sociedad de AGRICULTORES<br>INGRESA AQUI</p></div>
@@ -348,7 +377,7 @@
                     <!--<p style="text-align:center"><img alt="" src="denuncias_web.jpg" width="500"></p>
           <p style="text-align: right;">Para mas información clic <a href="#">AQUI</a></p>-->
                     <a href="{{url_for('registro')}}" target="_blank"><img
-                            src="{{url_for('static', filename='img/ventana_modal.png')}}" width="100%"></a>
+                            src="{{url_for('static', filename='img/logo_silvosmart.jpg')}}" width="100%"></a>
                 </div>
                 <!--<div class="modal-footer">
           
